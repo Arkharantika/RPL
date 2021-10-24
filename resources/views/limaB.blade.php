@@ -122,12 +122,12 @@
                             <th class="d-none d-sm-table-cell text-center">No</th>
                             <th class="d-none d-sm-table-cell text-center">Topik Paparan Pada Pertemuan Teknis
                             </th>
-                            <th class="text-center">Judul Paparan 
-Pada Pertemuan Teknis</th>
+                            <th class="text-center">Judul Paparan
+                                Pada Pertemuan Teknis</th>
                             <th class="text-center">Nama Lembaga
-Pemberi Tugas</th>
-                            <th class="text-center">Kedudukan di 
-Dalam Paparan</th>
+                                Pemberi Tugas</th>
+                            <th class="text-center">Kedudukan di
+                                Dalam Paparan</th>
                             <!-- <th class="text-center">Lamanya Pendidikan</th> -->
                             <th class="text-center">Link G-Drive Jadwal</th>
                             <th class="text-center">Link G-Drive Sertifikat</th>

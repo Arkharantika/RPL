@@ -364,3 +364,18 @@ Route::post('lima/a/kirim','TadraftController@limaA')->name('limaA');
 
 Route::get('lima/b','TadraftController@limaBshow')->name('limaBshow');
 Route::post('lima/b/kirim','TadraftController@limaB')->name('limaB');
+
+Route::get('lima/c','TadraftController@limaCshow')->name('limaCshow');
+Route::post('lima/c/kirim','TadraftController@limaC')->name('limaC');
+
+Route::get('lima/d','TadraftController@limaDshow')->name('limaDshow');
+Route::post('lima/d/kirim','TadraftController@limaD')->name('limaD');
+
+Route::get('lima/e','TadraftController@limaEshow')->name('limaEshow');
+Route::post('lima/e/kirim','TadraftController@limaE')->name('limaE');
+
+Route::get('lima/f','TadraftController@limaFshow')->name('limaFshow');
+Route::post('lima/f/kirim','TadraftController@limaF')->name('limaF');
+
+Route::get('enam/a','TadraftController@enamAshow')->name('enamAshow');
+Route::post('enam/a/kirim','TadraftController@enamA')->name('enamA');

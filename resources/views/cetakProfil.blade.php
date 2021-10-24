@@ -1958,31 +1958,30 @@
                                         <span style="vertical-align:3pt;">C</span></p>
                                 </td>
                             </tr>
-                            <!-- <tr>
+                            @if(($limaB ?? '') != null)
+                            @foreach ($limaB as $row)
+                            <tr>
                                 <td
                                     style="width:17.7pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;"><span
-                                            style="vertical-align:3pt;">1</span></p>
+                                            style="vertical-align:3pt;">{{$no++}}</span></p>
                                 </td>
                                 <td
                                     style="width:102.25pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
-                                    <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;">Innovation in Polymer
-                                        Science and Technology, Bali, November 28-December, 2011</p>
+                                    <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;">{{$row->topik}}</p>
                                 </td>
                                 <td
                                     style="width:237.4pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
-                                    <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;">The Influences of
-                                        elastomer toward crystallization of poly(****** acid)</p>
+                                    <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;">{{$row->judul}}</p>
                                 </td>
                                 <td
                                     style="width:95.6pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
-                                    <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;">Himpunan polimer
-                                        Indonesia (HPI)- Asian Polymer Association (APA)</p>
+                                    <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;">{{$row->nama_lembaga}}</p>
                                 </td>
                                 <td
                                     style="width:54.15pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;"><span
-                                            style="vertical-align:3pt;">Pemateri</span></p>
+                                            style="vertical-align:3pt;">{{$row->kedudukan}}</span></p>
                                 </td>
                                 <td
                                     style="width:26.7pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
@@ -1999,7 +1998,9 @@
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:18pt;">
                                         <span style="font-size:12pt; vertical-align:3pt;">&nbsp;</span></p>
                                 </td>
-                            </tr> -->
+                            </tr>
+                            @endforeach
+                            @endif
                             <tr style="height:14.25pt;">
                                 <td
                                     style="width:17.7pt; border-top-style:solid; border-top-width:0.75pt; padding-right:5.35pt; padding-left:5.35pt; vertical-align:top;">
@@ -2115,40 +2116,36 @@
                                         <span style="font-family:Tahoma; vertical-align:3pt;">C</span></p>
                                 </td>
                             </tr>
-                            <!-- <tr>
+                            @if(($limaC ?? '') != null)
+                            @foreach ($limaC as $row)
+                            <tr>
                                 <td
                                     style="width:17.7pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;"><span
-                                            style="vertical-align:3pt;">1</span></p>
+                                            style="vertical-align:3pt;">{{$no++}}</span></p>
                                 </td>
                                 <td
                                     style="width:173.15pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
-                                    <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;">The Effects of
-                                        Molecular Weight of Poly Lactic Acid Matrix on Release Time of Smart Urea
-                                        Fertilizer (SUF)</p>
+                                    <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;">{{$row->judul}}</p>
                                 </td>
                                 <td
                                     style="width:67.25pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
-                                    <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;">Hotel Alana,
-                                        Surakarta, 9-11 Oktober 2018</p>
+                                    <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;">{{$row->waktu}}</p>
                                 </td>
                                 <td
                                     style="width:116.9pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
-                                    <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;">ICIMECE 2017
-                                        (International Conference on Industrial, Mechanical, and Chemical Engineering)
+                                    <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;">{{$row->nama_lembaga}}
                                     </p>
-                                    <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;">Universitas *******
-                                        Maret</p>
                                 </td>
                                 <td
                                     style="width:46pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;"><span
-                                            style="vertical-align:3pt;">200</span></p>
+                                            style="vertical-align:3pt;">{{$row->jumlah}}</span></p>
                                 </td>
                                 <td
                                     style="width:75.4pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;"><span
-                                            style="vertical-align:3pt;">International</span></p>
+                                            style="vertical-align:3pt;">{{$row->jenis}}</span></p>
                                 </td>
                                 <td
                                     style="width:26.7pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
@@ -2165,7 +2162,9 @@
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:18pt;">
                                         <span style="font-size:12pt; vertical-align:3pt;">&nbsp;</span></p>
                                 </td>
-                            </tr> -->
+                            </tr>
+                            @endforeach
+                            @endif
                             <tr style="height:28.35pt;">
                                 <td
                                     style="width:17.7pt; border-top-style:solid; border-top-width:0.75pt; padding-right:5.35pt; padding-left:5.35pt; vertical-align:top;">
@@ -2289,37 +2288,38 @@
                                         <span style="font-family:Tahoma; vertical-align:3pt;">C</span></p>
                                 </td>
                             </tr>
-                            <!-- <tr>
+                            @if(($limaD ?? '') != null)
+                            @foreach ($limaD as $row)
+                            <tr>
                                 <td
                                     style="width:17.7pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">
-                                        <span style="vertical-align:3pt;">1</span></p>
+                                        <span style="vertical-align:3pt;">{{$no++}}</span></p>
                                 </td>
                                 <td
                                     style="width:119.45pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">
-                                        <span style="vertical-align:3pt;">Dosen Tamu</span></p>
+                                        <span style="vertical-align:3pt;">{{$row->jenis}}</span></p>
                                 </td>
                                 <td
                                     style="width:142.2pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">
-                                        <span style="vertical-align:3pt;">***** ****** Kimia, Universitas Setia Budi, 3
-                                            November 2018</span></p>
+                                        <span style="vertical-align:3pt;">{{$row->waktu}}</span></p>
                                 </td>
                                 <td
                                     style="width:102.7pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">
-                                        <span style="vertical-align:3pt;">Universitas Setia Budi, Surakarta</span></p>
+                                        <span style="vertical-align:3pt;">{{$row->nama_lembaga}}</span></p>
                                 </td>
                                 <td
                                     style="width:53.1pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">
-                                        <span style="vertical-align:3pt;">100</span></p>
+                                        <span style="vertical-align:3pt;">{{$row->jumlah}}</span></p>
                                 </td>
                                 <td
                                     style="width:61.25pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">
-                                        <span style="vertical-align:3pt;">6</span></p>
+                                        <span style="vertical-align:3pt;">{{$row->lamanya}}</span></p>
                                 </td>
                                 <td
                                     style="width:26.7pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
@@ -2336,7 +2336,9 @@
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:18pt;">
                                         <span style="font-size:12pt; vertical-align:3pt;">&nbsp;</span></p>
                                 </td>
-                            </tr> -->
+                            </tr>
+                            @endforeach
+                            @endif
                             <tr style="height:22.15pt;">
                                 <td
                                     style="width:17.7pt; border-top-style:solid; border-top-width:0.75pt; padding-right:5.35pt; padding-left:5.35pt; vertical-align:top;">
@@ -2446,28 +2448,28 @@
                                         <span style="vertical-align:3pt;">C</span></p>
                                 </td>
                             </tr>
-                            <!-- <tr>
+                            @if(($limaE ?? '') != null)
+                            @foreach ($limaE as $row)
+                            <tr>
                                 <td
                                     style="width:17.7pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;"><span
-                                            style="vertical-align:3pt;">1</span></p>
+                                            style="vertical-align:3pt;">{{$no++}}</span></p>
                                 </td>
                                 <td
                                     style="width:88.1pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;"><span
-                                            style="vertical-align:3pt;">Material Science</span></p>
+                                            style="vertical-align:3pt;">{{$row->topik}}</span></p>
                                 </td>
                                 <td
                                     style="width:209pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;"><span
-                                            style="background-color:#ffffff;">Grafted ********** based on the modified
-                                            taro starch varied by length of polyacrylamide chain</span></p>
+                                            style="background-color:#ffffff;">{{$row->judul}}</span></p>
                                 </td>
                                 <td
                                     style="width:203pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;"><span
-                                            style="background-color:#ffffff;">IOP Conference Series: Materials Science
-                                            and Engineering 403 (1), 012010, 2018</span></p>
+                                            style="background-color:#ffffff;">{{$row->jenis}}</span></p>
                                 </td>
                                 <td
                                     style="width:26.7pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
@@ -2484,7 +2486,9 @@
                                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;"><span
                                             style="vertical-align:3pt;">&nbsp;</span></p>
                                 </td>
-                            </tr> -->
+                            </tr>
+                            @endforeach
+                            @endif
                             <tr style="height:22.15pt;">
                                 <td
                                     style="width:17.7pt; border-top-style:solid; border-top-width:0.75pt; padding-right:5.35pt; padding-left:5.35pt; vertical-align:top;">
@@ -2578,27 +2582,27 @@
                                         <span style="vertical-align:3pt;">C</span></p>
                                 </td>
                             </tr>
-                            <!-- <tr>
+                            @if(($limaF ?? '') != null)
+                            @foreach ($limaF as $row)
+                            <tr>
                                 <td
                                     style="width:17.7pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">
-                                        <span style="vertical-align:3pt;">1</span></p>
+                                        <span style="vertical-align:3pt;">{{$no++}}</span></p>
                                 </td>
                                 <td
                                     style="width:385.75pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
-                                    <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;">Proses Start Up
-                                        Produksi Bioetanol dari Tepung ******* *********** Reaktor Anaerobik
-                                        Berpenghalang (********** seminar 2016)</p>
+                                    <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;">{{$row->judul}}</p>
                                 </td>
                                 <td
                                     style="width:67.3pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;"><span
-                                            style="vertical-align:3pt;">Teknik Kimia</span></p>
+                                            style="vertical-align:3pt;">{{$row->bidang}}</span></p>
                                 </td>
                                 <td
                                     style="width:47.05pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">
-                                        <span style="vertical-align:3pt;">6</span></p>
+                                        <span style="vertical-align:3pt;">{{$row->jumlah}}</span></p>
                                 </td>
                                 <td
                                     style="width:26.7pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
@@ -2615,7 +2619,9 @@
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;">
                                         <span style="vertical-align:3pt;">&nbsp;</span></p>
                                 </td>
-                            </tr> -->
+                            </tr>
+                            @endforeach
+                            @endif
                             <tr style="height:23.95pt;">
                                 <td
                                     style="width:17.7pt; border-top-style:solid; border-top-width:0.75pt; padding-right:5.35pt; padding-left:5.35pt; vertical-align:top;">
@@ -2724,38 +2730,28 @@
                                         <span style="vertical-align:3pt;">C</span></p>
                                 </td>
                             </tr>
-                            <!-- <tr>
+                            @if(($enamA ?? '') != null)
+                            @foreach ($enamA as $row)
+                            <tr>
                                 <td
                                     style="width:17.7pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:18pt;">
-                                        <span style="font-size:12pt; vertical-align:3pt;">1</span></p>
+                                        <span style="font-size:12pt; vertical-align:3pt;">{{$no++}}</span></p>
                                 </td>
                                 <td
                                     style="width:88.1pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; line-height:115%; font-size:12pt;">
-                                        ***** Tim</p>
+                                        {{$row->jenis_pendidikan}}</p>
                                 </td>
                                 <td
                                     style="width:336.6pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;"><span
-                                            style="vertical-align:3pt;">2018, Teknik Kimia UNS</span></p>
-                                    <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;"><span
-                                            style="vertical-align:3pt;">Hibah Penelitian Terapan Unggulan Perguruan
-                                            Tinggi</span></p>
-                                    <p style="margin-top:0pt; margin-bottom:0pt; font-size:12pt;"><span
-                                            style="vertical-align:3pt;">Pengembangan poli asam laktat berberat molekul
-                                            rendah sebagai matrik pupuk **** dalam bentuk&nbsp;</span><em><span
-                                                style="vertical-align:3pt;">slow release fertilizer</span></em><span
-                                            style="vertical-align:3pt;">&nbsp;(</span><strong><span
-                                                style="vertical-align:3pt;">tahun Kedua</span></strong><span
-                                            style="vertical-align:3pt;">)</span></p>
+                                            style="vertical-align:3pt;">{{$row->waktu}}</span></p>
                                 </td>
                                 <td
                                     style="width:75.4pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; line-height:115%; font-size:12pt;">
-                                        Kemenristek</p>
-                                    <p style="margin-top:0pt; margin-bottom:0pt; line-height:115%; font-size:12pt;">
-                                        dikti</p>
+                                    {{$row->nama_alamat_telp}}</p>
                                 </td>
                                 <td
                                     style="width:26.7pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
@@ -2772,7 +2768,9 @@
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:18pt;">
                                         <span style="font-size:12pt; vertical-align:3pt;">&nbsp;</span></p>
                                 </td>
-                            </tr> -->
+                            </tr>
+                            @endforeach
+                            @endif
                             <tr style="height:23.05pt;">
                                 <td
                                     style="width:17.7pt; border-top-style:solid; border-top-width:0.75pt; padding-right:5.35pt; padding-left:5.35pt; vertical-align:top;">

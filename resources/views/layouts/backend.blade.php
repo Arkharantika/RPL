@@ -389,26 +389,26 @@
                             </a>
                         </li> 
                         <li>
-                            <a class="{{ request()->is('kp/seminar') || request()->is('kp/seminar/*') ? ' active' : '' }}"
-                                href="{{url('PresensiSeminarKP')}}">
+                            <a class="{{ request()->is('lima/c') || request()->is('lima/c/*') ? ' active' : '' }}"
+                                href="{{url('lima/c')}}">
                                 <i class="si si-note"></i><span class="sidebar-mini-hide">Penulisan Makalah Untuk Pertemuan Profesi </span>
                             </a>
                         </li> 
                         <li>
-                            <a class="{{ request()->is('kp/seminar') || request()->is('kp/seminar/*') ? ' active' : '' }}"
-                                href="{{url('PresensiSeminarKP')}}">
+                            <a class="{{ request()->is('lima/d') || request()->is('lima/d/*') ? ' active' : '' }}"
+                                href="{{url('lima/d')}}">
                                 <i class="si si-note"></i><span class="sidebar-mini-hide">Pengajar / Pelatih / Instruktur / Dosen Tamu pada pembelajaran atau pelatihan keinsinyuran </span>
                             </a>
                         </li> 
                         <li>
-                            <a class="{{ request()->is('kp/seminar') || request()->is('kp/seminar/*') ? ' active' : '' }}"
-                                href="{{url('PresensiSeminarKP')}}">
+                            <a class="{{ request()->is('lima/e') || request()->is('lima/e/*') ? ' active' : '' }}"
+                                href="{{url('lima/e')}}">
                                 <i class="si si-note"></i><span class="sidebar-mini-hide">Karya tulis pada penerbitan berkala (jurnal / majalah / surat kabar dlsb)</span>
                             </a>
                         </li> 
                         <li>
-                            <a class="{{ request()->is('kp/seminar') || request()->is('kp/seminar/*') ? ' active' : '' }}"
-                                href="{{url('PresensiSeminarKP')}}">
+                            <a class="{{ request()->is('lima/f') || request()->is('lima/f/*') ? ' active' : '' }}"
+                                href="{{url('lima/f')}}">
                                 <i class="si si-note"></i><span class="sidebar-mini-hide">Penulisan Buku Keinsinyuran</span>
                             </a>
                         </li> 
@@ -419,8 +419,8 @@
                         </li>
                         
                         <li>
-                            <a class="{{ request()->is('kp/seminar') || request()->is('kp/seminar/*') ? ' active' : '' }}"
-                                href="{{url('PresensiSeminarKP')}}">
+                            <a class="{{ request()->is('enam/a') || request()->is('enam/a/*') ? ' active' : '' }}"
+                                href="{{url('enam/a')}}">
                                 <i class="si si-note"></i><span class="sidebar-mini-hide">Sebagai Pakar atau Nara sumber pada bidang keinsinyuran (saksi ahli, tim ahli, dewan pakar dst)</span>
                             </a>
                         </li> 

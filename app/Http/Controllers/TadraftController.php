@@ -238,15 +238,12 @@ class TadraftController extends Controller
         $empatA = empat_a::where('nim',$kampretos)->get();
         $empatB = empat_b::where('nim',$kampretos)->get();
         $limaA = lima_a::where('nim',$kampretos)->get();
-        // return $mahasiswa;
-        // $pembimbing = Dosen::find($data->pem_akademik);
-        // $kalabsel = Jabatan::kalabsel();
-        // $kalabik = Jabatan::kalabik();
-        // $kalabele = Jabatan::kalabele();
-        // $kalabtele = Jabatan::kalabtele();
-        // $laboranele = Jabatan::laboranele();
-        // $kalabkj = Jabatan::kalabkj();
-        // $bebaslab = Bebaslab::where('mahasiswa_id',$id)->first();
+        $limaB = lima_b::where('nim',$kampretos)->get();
+        $limaC = lima_c::where('nim',$kampretos)->get();
+        $limaD = lima_d::where('nim',$kampretos)->get();
+        $limaE = lima_e::where('nim',$kampretos)->get();
+        $limaF = lima_f::where('nim',$kampretos)->get();
+        $enamA = enam_a::where('nim',$kampretos)->get();
         $config = [
             'format' => 'A4-L', // Portrait
              'margin_left'          => 10,
@@ -269,7 +266,7 @@ class TadraftController extends Controller
               'Nov' => 'November',
               'Dec' => 'Desember',
           );
-        $pdf = PDF::loadview('cetakProfil',compact('limaA','empatB','empatA','tigaB','tigaA','duaC','duaB','no','duaA','mahasiswa','monthList'),[],$config);
+        $pdf = PDF::loadview('cetakProfil',compact('enamA','limaF','limaE','limaD','limaC','limaB','limaA','empatB','empatA','tigaB','tigaA','duaC','duaB','no','duaA','mahasiswa','monthList'),[],$config);
         return $pdf->stream();
     }
 
@@ -557,6 +554,176 @@ class TadraftController extends Controller
         
         // // return $request;
         return redirect('lima/b')->with('message','Data Berhasil Ditambah !!');
+
+    }
+
+    public function limaCshow(){
+        // return 0;
+        $mhs = Mahasiswa::mhs(Auth::user()->nim)->first();
+        $nimnya = $mhs->nim;
+        $datanya = lima_c::where('nim',$nimnya)->get();
+        
+        // return $nimnya;
+        return view('limaC',compact('datanya'));
+        
+    }
+
+    public function limaC(Request $request){
+
+        $mhs = Mahasiswa::mhs(Auth::user()->nim)->first();
+        $nimnya = $mhs->nim;
+
+        // return $nimnya;
+
+       lima_c::create([
+            'nim' => $nimnya,
+            'judul' => $request->judul,
+            'waktu' => $request->waktu,
+            'nama_lembaga' => $request->nama_alamat,
+            'jumlah' => $request->kedudukan,
+            'jenis' => $request->kedudukan_penulisan,
+            'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        
+        // // return $request;
+        return redirect('lima/c')->with('message','Data Berhasil Ditambah !!');
+
+    }
+
+    public function limaDshow(){
+        // return 0;
+        $mhs = Mahasiswa::mhs(Auth::user()->nim)->first();
+        $nimnya = $mhs->nim;
+        $datanya = lima_d::where('nim',$nimnya)->get();
+        
+        // return $nimnya;
+        return view('limaD',compact('datanya'));
+        
+    }
+
+    public function limaD(Request $request){
+
+        $mhs = Mahasiswa::mhs(Auth::user()->nim)->first();
+        $nimnya = $mhs->nim;
+
+        // return $nimnya;
+
+       lima_d::create([
+            'nim' => $nimnya,
+            'jenis' => $request->judul,
+            'waktu' => $request->waktu,
+            'nama_lembaga' => $request->nama_alamat,
+            'jumlah' => $request->kedudukan,
+            'lamanya' => $request->kedudukan_penulisan,
+            'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        
+        // // return $request;
+        return redirect('lima/d')->with('message','Data Berhasil Ditambah !!');
+
+    }
+
+    public function limaEshow(){
+        // return 0;
+        $mhs = Mahasiswa::mhs(Auth::user()->nim)->first();
+        $nimnya = $mhs->nim;
+        $datanya = lima_e::where('nim',$nimnya)->get();
+        
+        // return $nimnya;
+        return view('limaE',compact('datanya'));
+        
+    }
+
+    public function limaE(Request $request){
+
+        $mhs = Mahasiswa::mhs(Auth::user()->nim)->first();
+        $nimnya = $mhs->nim;
+
+        // return $nimnya;
+
+       lima_e::create([
+            'nim' => $nimnya,
+            'topik' => $request->judul,
+            'judul' => $request->waktu,
+            'jenis' => $request->nama_alamat,
+            // 'jumlah' => $request->kedudukan,
+            // 'lamanya' => $request->kedudukan_penulisan,
+            'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        
+        // // return $request;
+        return redirect('lima/e')->with('message','Data Berhasil Ditambah !!');
+
+    }
+
+    public function limaFshow(){
+        // return 0;
+        $mhs = Mahasiswa::mhs(Auth::user()->nim)->first();
+        $nimnya = $mhs->nim;
+        $datanya = lima_f::where('nim',$nimnya)->get();
+        
+        // return $nimnya;
+        return view('limaF',compact('datanya'));
+        
+    }
+
+    public function limaF(Request $request){
+
+        $mhs = Mahasiswa::mhs(Auth::user()->nim)->first();
+        $nimnya = $mhs->nim;
+
+        // return $nimnya;
+
+       lima_f::create([
+            'nim' => $nimnya,
+            'judul' => $request->judul,
+            'bidang' => $request->waktu,
+            'jumlah' => $request->nama_alamat,
+            // 'jumlah' => $request->kedudukan,
+            // 'lamanya' => $request->kedudukan_penulisan,
+            'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        
+        // // return $request;
+        return redirect('lima/f')->with('message','Data Berhasil Ditambah !!');
+
+    }
+
+    public function enamAshow(){
+        // return 0;
+        $mhs = Mahasiswa::mhs(Auth::user()->nim)->first();
+        $nimnya = $mhs->nim;
+        $datanya = enam_a::where('nim',$nimnya)->get();
+        
+        // return $nimnya;
+        return view('enamA',compact('datanya'));
+        
+    }
+
+    public function enamA(Request $request){
+
+        $mhs = Mahasiswa::mhs(Auth::user()->nim)->first();
+        $nimnya = $mhs->nim;
+
+        // return $nimnya;
+
+       enam_a::create([
+            'nim' => $nimnya,
+            'jenis_pendidikan' => $request->judul,
+            'waktu' => $request->waktu,
+            'nama_alamat_telp' => $request->nama_alamat,
+            // 'jumlah' => $request->kedudukan,
+            // 'lamanya' => $request->kedudukan_penulisan,
+            'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        
+        // // return $request;
+        return redirect('enam/a')->with('message','Data Berhasil Ditambah !!');
 
     }
 
