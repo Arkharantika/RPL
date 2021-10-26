@@ -2880,34 +2880,33 @@
                                         <span style="font-family:Tahoma; vertical-align:3pt;">C</span></p>
                                 </td>
                             </tr>
-                            <!-- <tr>
+                            @if(($enamB ?? '') != null)
+                            @foreach ($enamB as $row)
+                            <tr>
                                 <td
                                     style="width:17.7pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:18pt;">
-                                        <span style="font-size:11pt; vertical-align:3pt;">1</span></p>
+                                        <span style="font-size:11pt; vertical-align:3pt;">{{$no++}}</span></p>
                                 </td>
                                 <td
                                     style="width:119.45pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; line-height:115%; font-size:11pt;">
-                                        <span style="vertical-align:3pt;">Korps Pegawai Republik Indonesia</span></p>
-                                    <p style="margin-top:0pt; margin-bottom:0pt; line-height:115%; font-size:11pt;">
-                                        <span style="vertical-align:3pt;">(KORPRI)</span></p>
+                                        <span style="vertical-align:3pt;">{{$row->nama_organisasi}}</span></p>
                                 </td>
                                 <td
                                     style="width:138.9pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; line-height:115%; font-size:11pt;">
-                                        <span style="vertical-align:3pt;">Unit *********** Sebelas Maret (UNS)
-                                            Surakarta</span></p>
+                                        <span style="vertical-align:3pt;">{{$row->nama_alamat_telp}}</span></p>
                                 </td>
                                 <td
                                     style="width:129.55pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; line-height:115%; font-size:11pt;">
-                                        <span style="vertical-align:3pt;">Anggota</span></p>
+                                        <span style="vertical-align:3pt;">{{$row->kedudukan}}</span></p>
                                 </td>
                                 <td
                                     style="width:101.5pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; line-height:115%; font-size:11pt;">
-                                        <span style="vertical-align:3pt;">2003-sekarang</span></p>
+                                        <span style="vertical-align:3pt;">{{$row->lamanya}}</span></p>
                                 </td>
                                 <td
                                     style="width:26.7pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
@@ -2924,7 +2923,9 @@
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:18pt;">
                                         <span style="font-size:11pt; vertical-align:3pt;">&nbsp;</span></p>
                                 </td>
-                            </tr> -->
+                            </tr>
+                            @endforeach
+                            @endif
                             <tr style="height:18.7pt;">
                                 <td
                                     style="width:17.7pt; padding-right:5.35pt; padding-left:5.35pt; vertical-align:top;">
@@ -3024,31 +3025,29 @@
                                         <span style="vertical-align:3pt;">C</span></p>
                                 </td>
                             </tr>
-                            <!-- <tr>
+                            @if(($enamC ?? '') != null)
+                            @foreach ($enamC as $row)
+                            <tr>
                                 <td
                                     style="width:17.7pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:18pt;">
-                                        <span style="font-size:12pt; vertical-align:3pt;">1</span></p>
+                                        <span style="font-size:12pt; vertical-align:3pt;">{{$no++}}</span></p>
                                 </td>
                                 <td
                                     style="width:187.3pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:18pt;">
-                                        <span style="font-size:12pt;">Pemenang kedua ******** lingkungan pada
-                                            3</span><span style="font-size:8pt;"><sup>rd</sup></span><span
-                                            style="font-size:12pt;">&nbsp;International Biotechnology Competition and
-                                            Exhibitions 2017 sebagai pembimbing</span></p>
+                                        <span style="font-size:12pt;">{{$row->bentuk}}</span></p>
                                 </td>
                                 <td
                                     style="width:209.05pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p
                                         style="margin-top:0pt; margin-right:1.9pt; margin-bottom:0pt; text-align:justify; line-height:18pt;">
-                                        <span style="font-size:12pt;">Deputy vice ********** (Academic and
-                                            International), Universiti Teknologi Malaysia</span></p>
+                                        <span style="font-size:12pt;">{{$row->instansi}}</span></p>
                                 </td>
                                 <td
                                     style="width:103.75pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:18pt;">
-                                        <span style="font-size:12pt;">15 ***** 2017</span></p>
+                                        <span style="font-size:12pt;">{{$row->tahun}}</span></p>
                                 </td>
                                 <td
                                     style="width:26.7pt; border-style:solid; border-width:0.75pt; padding-right:4.97pt; padding-left:4.97pt; vertical-align:top;">
@@ -3065,7 +3064,9 @@
                                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:18pt;">
                                         <span style="font-size:12pt; vertical-align:3pt;">&nbsp;</span></p>
                                 </td>
-                            </tr> -->
+                            </tr>
+                            @endforeach
+                            @endif
                             <tr style="height:22.7pt;">
                                 <td
                                     style="width:17.7pt; border-top-style:solid; border-top-width:0.75pt; padding-right:5.35pt; padding-left:5.35pt; vertical-align:top;">

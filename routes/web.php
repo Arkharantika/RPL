@@ -379,3 +379,9 @@ Route::post('lima/f/kirim','TadraftController@limaF')->name('limaF');
 
 Route::get('enam/a','TadraftController@enamAshow')->name('enamAshow');
 Route::post('enam/a/kirim','TadraftController@enamA')->name('enamA');
+
+Route::get('enam/b','TadraftController@enamBshow')->name('enamBshow');
+Route::post('enam/b/kirim','TadraftController@enamB')->name('enamB');
+
+Route::get('enam/c','TadraftController@enamCshow')->name('enamCshow');
+Route::post('enam/c/kirim','TadraftController@enamC')->name('enamC');

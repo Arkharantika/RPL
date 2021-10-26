@@ -425,14 +425,14 @@
                             </a>
                         </li> 
                         <li>
-                            <a class="{{ request()->is('kp/seminar') || request()->is('kp/seminar/*') ? ' active' : '' }}"
-                                href="{{url('PresensiSeminarKP')}}">
+                            <a class="{{ request()->is('enam/b') || request()->is('enam/b/*') ? ' active' : '' }}"
+                                href="{{url('enam/b')}}">
                                 <i class="si si-note"></i><span class="sidebar-mini-hide">Pengurus organisasi profesi atau pimpinan lembaga / institusi</span>
                             </a>
                         </li> 
                         <li>
-                            <a class="{{ request()->is('kp/seminar') || request()->is('kp/seminar/*') ? ' active' : '' }}"
-                                href="{{url('PresensiSeminarKP')}}">
+                            <a class="{{ request()->is('enam/c') || request()->is('enam/c/*') ? ' active' : '' }}"
+                                href="{{url('enam/c')}}">
                                 <i class="si si-note"></i><span class="sidebar-mini-hide">Penerima tanda jasa, award, tanda penghargaan dan sejenisnya</span>
                             </a>
                         </li> 

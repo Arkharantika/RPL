@@ -24,13 +24,12 @@
                         <!-- <a class="nav-link active" href="#wizard-validation-classic-step1" data-toggle="tab">
                             <h3>HAI</h3>
                         </a> -->
-                        <h3 class="mt-10">Sebagai Pakar atau Nara sumber pada bidang keinsinyuran (saksi ahli, tim ahli,
-                            dewan pakar dst)</h3>
+                        <h3 class="mt-10">Pengurus organisasi profesi atau pimpinan lembaga / institusi</h3>
                     </li>
                 </ul>
                 <!-- END Step Tabs -->
 
-                <form method="post" action="a/kirim" enctype="multipart/form-data">
+                <form method="post" action="b/kirim" enctype="multipart/form-data">
                     @csrf
 
                     <div class="block-content block-content-full tab-content" style="min-height: 265px;">
@@ -39,18 +38,17 @@
                         <div class="tab-pane active" id="wizard-validation-classic-step1" role="tabpanel">
 
                             <div class="form-group">
-                                <label class="form-label"><i class="bx bx-caret-right"></i>Jenis / Kedudukan Sebagai
-                                    Pakar /
-                                    Nara Sumber :</label>
+                                <label class="form-label"><i class="bx bx-caret-right"></i>Nama Organisasi Profesi /
+                                    Lembaga / Institusi :</label>
                                 <textarea type="form-control" class="form-control" placeholder="" name="judul"
                                     id="judul" required></textarea>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Waktu dan Tempat
                                     Sebagai Pakar/Nara Sumber :</label>
                                 <textarea type="form-control" class="form-control" placeholder="hai" name="waktu"
                                     id="waktu" required></textarea>
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Nama Lembaga
                                     Pemberi Tugas
@@ -58,26 +56,28 @@
                                 <textarea type="form-control" class="form-control" placeholder="" name="nama_alamat"
                                     id="nama_alamat" required></textarea>
                             </div>
-                            <!-- <div class="form-group">
-                                <label class="form-label"><i class="bx bx-caret-right"></i>Jumlah Peserta
+                            <div class="form-group">
+                                <label class="form-label"><i class="bx bx-caret-right"></i>Kedudukan / Jabatan Dalam
+                                    Organisasi Profesi / Lembaga / Institusi
                                     :</label>
                                 <textarea type="form-control" class="form-control" placeholder="" name="kedudukan"
                                     id="kedudukan" required></textarea>
                             </div>
                             <div class="form-group">
-                                <label class="form-label"><i class="bx bx-caret-right"></i>Lamanya Kegiatan Instruktur
-                                    (Jam) :</label>
+                                <label class="form-label"><i class="bx bx-caret-right"></i>Periode Tahun
+                                    Masa Jabatan :</label>
                                 <textarea type="form-control" class="form-control" placeholder=""
                                     name="kedudukan_penulisan" id="kedudukan_penulisan" required></textarea>
-                            </div> -->
+                            </div>
                             <div class="form-group">
-                                <label class="form-label"><i class="bx bx-caret-right"></i>Link G-Drive Surat penugasan/undangan
+                                <label class="form-label"><i class="bx bx-caret-right"></i>Link G-Drive Surat penugasan
                                     :</label>
                                 <textarea type="form-control" class="form-control" placeholder="" name="jadwal"
                                     id="jadwal" required></textarea>
                             </div>
                             <div class="form-group">
-                                <label class="form-label"><i class="bx bx-caret-right"></i>Link G-Drive Sertifikat
+                                <label class="form-label"><i class="bx bx-caret-right"></i>Link G-Drive Sertifikat/surat
+                                    keterangan atau keanggotaan
                                     :</label>
                                 <textarea type="form-control" class="form-control" placeholder="" name="sertifikat"
                                     id="sertifikat" required></textarea>
@@ -120,20 +120,20 @@
                     <thead>
                         <tr>
                             <th class="d-none d-sm-table-cell text-center">No</th>
-                            <th class="d-none d-sm-table-cell text-center">Jenis / Kedudukan Sebagai
-                                    Pakar /
-                                    Nara Sumber
+                            <th class="d-none d-sm-table-cell text-center">Nama Organisasi Profesi / Lembaga / Institusi
                             </th>
-                            <th class="text-center">Waktu dan Tempat
-                                    Sebagai Pakar/Nara Sumber</th>
-                            <th class="text-center">>Nama Lembaga
-                                    Pemberi Tugas</th>
-                            <!-- <th class="text-center">Jumlah Peserta</th>
-                            <th class="text-center">Lamanya Kegiatan Instruktur
-                                (Jam)</th> -->
-                            <th class="text-center">Link G-Drive Nomor contoh atau fotokopi jurnal/majalah/surat kabar
+                            <!-- <th class="text-center">Waktu dan Tempat
+                                Sebagai Pakar/Nara Sumber</th> -->
+                            <th class="text-center">Alamat
+                                (No. Telp.; Fax; E-mail)</th>
+                            <th class="text-center">Kedudukan / Jabatan Dalam Organisasi Profesi / Lembaga / Institusi
                             </th>
-                            <th class="text-center">Link G-Drive Jadwal kegiatan instruktur dan silabusnya</th>
+                            <th class="text-center">Periode Tahun
+                                Masa Jabatan</th>
+                            <th class="text-center">Link G-Drive Surat penugasan
+                            </th>
+                            <th class="text-center">Link G-Drive Sertifikat/surat
+                                    keterangan atau keanggotaan</th>
                             <th class="text-center">action</th>
                         </tr>
                     </thead>
@@ -143,19 +143,19 @@
                         <tr>
                             <td class="d-none d-sm-table-cell text-center font-size-sm text-center">{{ $no++}}</td>
                             <td class="d-none d-sm-table-cell text-center font-size-sm text-center">
-                                {{ $row->jenis_pendidikan}}
+                                {{ $row->nama_organisasi}}
                             </td>
-                            <td class="font-w600 font-size-sm text-center">
-                                <a href="#">{{ $row->waktu }}</a></td>
+                            <!-- <td class="font-w600 font-size-sm text-center">
+                                <a href="#">{{ $row->waktu }} </a></td> -->
                             <td class="font-size-sm text-center">
                                 {{ $row->nama_alamat_telp}}
                             </td>
-                            <!-- <td class="font-w600 font-size-sm text-center">
-                                <a href="#">{{ $row->jumlah}}</a>
+                            <td class="font-w600 font-size-sm text-center">
+                                <a href="#">{{ $row->kedudukan}}</a>
                             </td>
                             <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->lamanya}}</a>
-                            </td> -->
+                            </td>
                             <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->jadwal}}</a>
                             </td>
