@@ -337,8 +337,11 @@ Route::resource('penguji','pengujianController');
 /// [] == <----- RPL New Routes ------> == [] 
 /// [] =================================== [] 
 Route::get('nole','TadraftController@wordExport')->name('wordExport');
+Route::get('lihat','TadraftController@lihat')->name('lihat');
 
 Route::get('ta/wisuda/cetakprofil/{id}','TadraftController@cetakProfil')->name('cetakProfil');
+Route::get('ta/wisuda/dataprofil/{id}','TadraftController@dataProfil')->name('dataProfil');
+
 Route::post('dua/a','TadraftController@duaA')->name('duaA');
 
 Route::get('dua/b','TadraftController@duaBshow')->name('duaBshow');

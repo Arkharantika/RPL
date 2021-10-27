@@ -244,6 +244,11 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                                    <a class="{{ request()->is('admin/lihat') || request()->is('admin/lihat/*') ? ' active' : '' }}"
+                                        href="{{url('lihat')}}"><i class="si si-lock"></i>
+                                        User Management</a>
+                                </li>
                         @endcan
                         @can('dosen')
                         <!-- <li class="{{ request()->is('dosen/*') ? ' open' : '' }}">
