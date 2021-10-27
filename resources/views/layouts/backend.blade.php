@@ -194,60 +194,10 @@
                             </a>
                         </li>
                         @can('manage-users')
-                        <li class="{{ request()->is('admin/*') ? ' open' : '' }}">
-                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-lock"></i><span
-                                    class="sidebar-mini-hide">Admin</span></a>
-                            <ul>
-                                <li>
-                                    <a class="{{ request()->is('admin/users') || request()->is('admin/users/*') ? ' active' : '' }}"
-                                        href="{{route('admin.users.index')}}">
-                                        User Management</a>
-                                </li>
-                                <li>
-                                    <a class="{{ request()->is('admin/akademik') || request()->is('admin/akademik/*') ? ' active' : '' }}"
-                                        href="{{route('admin.akademik.index')}}">
-                                        Pembimbing Akademik</a>
-                                </li>
-                                <li class="nav-main-heading">
-                                    <span class="sidebar-mini-visible">DP</span><span
-                                        class="sidebar-mini-hidden text-warning">Data Pendukung</span>
-                                </li>
-                                <li>
-                                    <a class="{{ request()->is('admin/dosen') || request()->is('admin/dosen/*') ? ' active' : '' }}"
-                                        href="{{route('admin.dosen.index')}}">
-                                        List Dosen</a>
-                                </li>
-                                <li>
-                                    <a class="{{ request()->is('admin/mahasiswa') || request()->is('admin/mahasiswa/*') ? ' active' : '' }}"
-                                        href="{{route('admin.mahasiswa.index')}}">
-                                        List Mahasiswa</a>
-                                </li>
-                                <li>
-                                    <a class="{{ request()->is('admin/matkul') || request()->is('admin/matkul/*') ? ' active' : '' }}"
-                                        href="{{route('admin.matkul.index')}}">
-                                        List Mata Kuliah</a>
-                                </li>
-                                <li>
-                                    <a class="{{ request()->is('admin/peminatan') || request()->is('admin/peminatan/*') ? ' active' : '' }}"
-                                        href="{{route('admin.peminatan.index')}}">
-                                        List Peminatan</a>
-                                </li>
-                                <li>
-                                    <a class="{{ request()->is('admin/ruang') || request()->is('admin/ruang/*') ? ' active' : '' }}"
-                                        href="{{route('admin.ruang.index')}}">
-                                        List Ruang</a>
-                                </li>
-                                <li>
-                                    <a class="{{ request()->is('admin/jabatan') || request()->is('admin/jabatan/*') ? ' active' : '' }}"
-                                        href="{{route('admin.jabatan.index')}}">
-                                        List TTD Jabatan</a>
-                                </li>
-                            </ul>
-                        </li>
                         <li>
                                     <a class="{{ request()->is('admin/lihat') || request()->is('admin/lihat/*') ? ' active' : '' }}"
                                         href="{{url('lihat')}}"><i class="si si-lock"></i>
-                                        User Management</a>
+                                        Lihat Data Form</a>
                                 </li>
                         @endcan
                         @can('dosen')
