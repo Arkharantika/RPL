@@ -201,6 +201,7 @@
                                 </li>
                         @endcan
                         @can('dosen')
+                        
                         <!-- <li class="{{ request()->is('dosen/*') ? ' open' : '' }}">
                                 <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-badge"></i><span class="sidebar-mini-hide">Dosen</span></a>
                                 <ul>

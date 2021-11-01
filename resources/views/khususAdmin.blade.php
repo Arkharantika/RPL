@@ -14,12 +14,12 @@
     <!-- Dynamic Table Full -->
     <div class="block">
         <div class="block-header block-header-default">
-            <h3 class="block-title">User <small>Management</small></h3>
+            <h3 class="block-title">List Peserta</h3>
         </div>
         <div class="block-content block-content-full">
             <p align="right">
-                <a href="{{route('admin.users.create')}}" class="btn btn-primary">Tambah User</a>
-                <a href="{{route('admin.importuser')}}" class="btn btn-success">Import User</a>
+                <!-- <a href="{{route('admin.users.create')}}" class="btn btn-primary">Tambah User</a>
+                <a href="{{route('admin.importuser')}}" class="btn btn-success">Import User</a> -->
             </p>
             <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/tables_datatables.js -->
             <table class="table table-bordered table-striped table-vcenter js-dataTable-edited">
