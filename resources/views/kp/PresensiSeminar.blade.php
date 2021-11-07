@@ -164,8 +164,7 @@
                         </td>
                         </td>
                         <td width="250" style="text-align: center;">
-                            <form action="{{url('PresensiSeminarKP/'.$row->id)}}" method="post" class="d-inline">
-                                @method('delete')
+                            <form action="{{url('hapus2a/'.$row->id)}}" method="post" class="d-inline">
                                 @csrf
                                 <button type="submit" class="btn btn-sm btn-alt-danger"><i
                                         class="fa fa-trash"></i></button>

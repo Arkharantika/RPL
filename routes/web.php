@@ -342,6 +342,9 @@ Route::get('lihat','TadraftController@lihat')->name('lihat');
 Route::get('ta/wisuda/cetakprofil/{id}','TadraftController@cetakProfil')->name('cetakProfil');
 Route::get('ta/wisuda/dataprofil/{id}','TadraftController@dataProfil')->name('dataProfil');
 
+Route::get('pembimbing/cetakprofil/{id}','TadraftController@pembimbingcetakProfil')->name('pembimbingcetakProfil');
+Route::get('pembimbing/dataprofil/{id}','TadraftController@pembimbingdataProfil')->name('pembimbingdataProfil');
+
 Route::post('dua/a','TadraftController@duaA')->name('duaA');
 
 Route::get('dua/b','TadraftController@duaBshow')->name('duaBshow');
@@ -388,3 +391,27 @@ Route::post('enam/b/kirim','TadraftController@enamB')->name('enamB');
 
 Route::get('enam/c','TadraftController@enamCshow')->name('enamCshow');
 Route::post('enam/c/kirim','TadraftController@enamC')->name('enamC');
+
+// untuk menghapus data
+
+Route::post('hapus2a/{id}','TadraftController@hapus2a')->name('hapus2a');
+Route::post('hapus2b/{id}','TadraftController@hapus2b')->name('hapus2b');
+Route::post('hapus2c/{id}','TadraftController@hapus2c')->name('hapus2c');
+
+Route::post('hapus3a/{id}','TadraftController@hapus3a')->name('hapus3a');
+Route::post('hapus3b/{id}','TadraftController@hapus3b')->name('hapus3b');
+
+Route::post('hapus4a/{id}','TadraftController@hapus4a')->name('hapus4a');
+Route::post('hapus4b/{id}','TadraftController@hapus4b')->name('hapus4b');
+
+Route::post('hapus5a/{id}','TadraftController@hapus5a')->name('hapus5a');
+Route::post('hapus5b/{id}','TadraftController@hapus5b')->name('hapus5b');
+Route::post('hapus5c/{id}','TadraftController@hapus5c')->name('hapus5c');
+Route::post('hapus5d/{id}','TadraftController@hapus5d')->name('hapus5d');
+Route::post('hapus5e/{id}','TadraftController@hapus5e')->name('hapus5e');
+Route::post('hapus5f/{id}','TadraftController@hapus5f')->name('hapus5f');
+
+Route::post('hapus6a/{id}','TadraftController@hapus6a')->name('hapus6a');
+Route::post('hapus6b/{id}','TadraftController@hapus6b')->name('hapus6b');
+Route::post('hapus6c/{id}','TadraftController@hapus6c')->name('hapus6c');
+

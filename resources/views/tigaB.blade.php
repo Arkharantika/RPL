@@ -151,8 +151,7 @@
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
                             <td width="250" style="text-align: center;">
-                                <form action="{{url('PresensiSeminarKP/'.$row->id)}}" method="post" class="d-inline">
-                                    @method('delete')
+                                <form action="{{url('hapus3b/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
                                     <button type="submit" class="btn btn-sm btn-alt-danger"><i
                                             class="fa fa-trash"></i></button>
@@ -178,127 +177,6 @@
         var modal = $(this)
         modal.find('.block-content #user_id').val(user_id);
     })
-</script>
-<script>
-    function myFunction() {
-        var checkBox = document.getElementById("checkAntigen");
-        var text = document.getElementById("antigen");
-        if (checkBox.checked == true) {
-            text.style.display = "block";
-            document.getElementById("covid").disabled = false;
-        } else {
-            text.style.display = "none";
-        }
-    }
-
-    function myFunction2() {
-        var checkBox2 = document.getElementById("checkPCR");
-        var text2 = document.getElementById("PCR");
-        if (checkBox2.checked == true) {
-            text2.style.display = "block";
-            document.getElementById("covid").disabled = false;
-        } else {
-            text2.style.display = "none";
-        }
-    }
-
-    // Untuk lapor Sembuh !
-    function myFunction3() {
-        var checkBox3 = document.getElementById("myCheck");
-        var text3 = document.getElementById("upload");
-        if (checkBox3.checked == true) {
-            text3.style.display = "block";
-        } else {
-            text3.style.display = "none";
-        }
-    }
-
-    // Untuk Opsi Isoman
-
-    var isomanlabel1 = document.getElementById("isomansendirilabel");
-    var isomanlabel2 = document.getElementById("isomanalamatlabel");
-    var isomanlabel3 = document.getElementById("isomanurllabel");
-    var isomantext1 = document.getElementById("isomansendiri");
-    var isomantext2 = document.getElementById("isomanalamat");
-    var isomantext3 = document.getElementById("isomanurl");
-
-    var rslabel1 = document.getElementById("rslabel");
-    var rstext1 = document.getElementById("rs");
-
-    var rslainlabel1 = document.getElementById("rslainnamalabel");
-    var rslainlabel2 = document.getElementById("rslainalamatlabel");
-    var rslainlabel3 = document.getElementById("rslainurllabel");
-    var rslaintext1 = document.getElementById("rslainnama");
-    var rslaintext2 = document.getElementById("rslainalamat");
-    var rslaintext3 = document.getElementById("rslainurl");
-
-
-
-    function isomanFunction() {
-        var checkBox3 = document.getElementById("inlineRadio1");
-        if (checkBox3.checked == true) {
-            isomantext1.style.display = "block";
-            isomantext2.style.display = "block";
-            isomantext3.style.display = "block";
-            isomanlabel1.style.display = "block";
-            isomanlabel2.style.display = "block";
-            isomanlabel3.style.display = "block";
-
-            rslabel1.style.display = "none";
-            rstext1.style.display = "none";
-
-            rslainlabel1.style.display = "none";
-            rslainlabel2.style.display = "none";
-            rslainlabel3.style.display = "none";
-            rslaintext1.style.display = "none";
-            rslaintext2.style.display = "none";
-            rslaintext3.style.display = "none";
-        }
-    }
-
-    function rsFunction() {
-        var checkBox3 = document.getElementById("inlineRadio2");
-        if (checkBox3.checked == true) {
-            isomantext1.style.display = "none";
-            isomantext2.style.display = "none";
-            isomantext3.style.display = "none";
-            isomanlabel1.style.display = "none";
-            isomanlabel2.style.display = "none";
-            isomanlabel3.style.display = "none";
-
-            rslabel1.style.display = "block";
-            rstext1.style.display = "block";
-
-            rslainlabel1.style.display = "none";
-            rslainlabel2.style.display = "none";
-            rslainlabel3.style.display = "none";
-            rslaintext1.style.display = "none";
-            rslaintext2.style.display = "none";
-            rslaintext3.style.display = "none";
-        }
-    }
-
-    function rslainFunction() {
-        var checkBox3 = document.getElementById("inlineRadio3");
-        if (checkBox3.checked == true) {
-            isomantext1.style.display = "none";
-            isomantext2.style.display = "none";
-            isomantext3.style.display = "none";
-            isomanlabel1.style.display = "none";
-            isomanlabel2.style.display = "none";
-            isomanlabel3.style.display = "none";
-
-            rslabel1.style.display = "none";
-            rstext1.style.display = "none";
-
-            rslainlabel1.style.display = "block";
-            rslainlabel2.style.display = "block";
-            rslainlabel3.style.display = "block";
-            rslaintext1.style.display = "block";
-            rslaintext2.style.display = "block";
-            rslaintext3.style.display = "block";
-        }
-    }
 </script>
 <script>
     jQuery(function () {

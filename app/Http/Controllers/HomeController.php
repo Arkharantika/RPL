@@ -19,6 +19,23 @@ use App\Models\notifikasi_kp;
 use App\Models\Dokumenkp;
 use App\Models\Nilaikp;
 
+use App\Models\dua_a;
+use App\Models\dua_b;
+use App\Models\dua_c;
+use App\Models\tiga_a;
+use App\Models\tiga_b;
+use App\Models\empat_a;
+use App\Models\empat_b;
+use App\Models\lima_a;
+use App\Models\lima_b;
+use App\Models\lima_c;
+use App\Models\lima_d;
+use App\Models\lima_e;
+use App\Models\lima_f;
+use App\Models\enam_a;
+use App\Models\enam_b;
+use App\Models\enam_c;
+
 
 class HomeController extends Controller
 {
@@ -47,6 +64,13 @@ class HomeController extends Controller
         $mhs = Mahasiswa::mhs(Auth::user()->nim)->first();
         $dosen = Dosen::where('nip',Auth::user()->nim)->first();
         $user = User::find(Auth::user()->id);
+        $kampretos = $user->nim;
+
+        
+
+        // return $duaA;
+
+        // return $nimnya;
         // dd($kp);
         //Cek apakah user login pertama kali atau tidak, jika tidak makan redirect ke home
         if($user->isLogin == 1){
@@ -78,7 +102,7 @@ class HomeController extends Controller
                 $logbookta2 = Dosen::bimbinganlogbookta($dosen->nip)->where('status_logbook2',2)->where('pem',2)->count();
                 $logbookta = $logbookta1 + $logbookta2;
                 // dd($logbookta);
-                return view('home',compact('dosen','user','kp','semkp','semhas','pendadaran','ta',
+                return view('home',compact('enamC','enamB','enamA','limaF','limaE','limaD','limaC','limaB','limaA','empatB','empatA','tigaB','tigaA','duaC','duaB','duaA','dosen','user','kp','semkp','semhas','pendadaran','ta',
                     'tapending','semhaspending','pendadaranpending','ict','meka','sel',
                     'bimbinganta','bimbingansemhas','bimbinganpendadaran','logbookta','ask_permohonan','ask_surattugas','ask_nilai'));
             //Cek apakah user mahasiswa
@@ -88,8 +112,27 @@ class HomeController extends Controller
                 $ta = Ta::statusta($mhs->id)->first();
                 $semhas = Seminarta::statussemhas($mhs->id)->first();
                 $pendadaran = Pendadaran::statuspendadaran($mhs->id)->first();
+
+                // Tambahan Khsusus
+        $duaA = dua_a::where('nim',$kampretos)->get()->count();
+        $duaB = dua_b::where('nim',$kampretos)->get()->count();
+        $duaC = dua_c::where('nim',$kampretos)->get()->count();
+        $tigaA = tiga_a::where('nim',$kampretos)->get()->count();
+        $tigaB = tiga_b::where('nim',$kampretos)->get()->count();
+        $empatA = empat_a::where('nim',$kampretos)->get()->count();
+        $empatB = empat_b::where('nim',$kampretos)->get()->count();
+        $limaA = lima_a::where('nim',$kampretos)->get()->count();
+        $limaB = lima_b::where('nim',$kampretos)->get()->count();
+        $limaC = lima_c::where('nim',$kampretos)->get()->count();
+        $limaD = lima_d::where('nim',$kampretos)->get()->count();
+        $limaE = lima_e::where('nim',$kampretos)->get()->count();
+        $limaF = lima_f::where('nim',$kampretos)->get()->count();
+        $enamA = enam_a::where('nim',$kampretos)->get()->count();
+        $enamB = enam_b::where('nim',$kampretos)->get()->count();
+        $enamC = enam_c::where('nim',$kampretos)->get()->count();
+        //
                 // dd($ta);
-                return view('home',compact('mhs','user','kp','semkp','ta','semhas','pendadaran'));
+                return view('home',compact('enamC','enamB','enamA','limaF','limaE','limaD','limaC','limaB','limaA','empatB','empatA','tigaB','tigaA','duaC','duaB','duaA','mhs','user','kp','semkp','ta','semhas','pendadaran'));
             //Cek apabila mahasiswa tidak memiliki pembimbing akademik akan redirect error
             }else{
                 return view('errors.pemakademik');

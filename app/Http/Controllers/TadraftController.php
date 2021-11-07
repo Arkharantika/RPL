@@ -272,11 +272,115 @@ class TadraftController extends Controller
         return $pdf->stream();
     }
 
+    public function pembimbingcetakProfil($id)
+    {
+        // return $id;
+
+        // $data = Dosen::bimbingan(Auth::user()->nim)->where('id',$id)->get()->last();
+        // $data = User::where('nim',$id)->get();
+
+        // return $data;
+
+        $no = 0;
+        $kampretos = $id;
+        $mahasiswa = Mahasiswa::where('nim',$kampretos)->get()->last();
+        $duaA = dua_a::where('nim',$kampretos)->get();
+        $duaB = dua_b::where('nim',$kampretos)->get();
+        $duaC = dua_c::where('nim',$kampretos)->get();
+        $tigaA = tiga_a::where('nim',$kampretos)->get();
+        $tigaB = tiga_b::where('nim',$kampretos)->get();
+        $empatA = empat_a::where('nim',$kampretos)->get();
+        $empatB = empat_b::where('nim',$kampretos)->get();
+        $limaA = lima_a::where('nim',$kampretos)->get();
+        $limaB = lima_b::where('nim',$kampretos)->get();
+        $limaC = lima_c::where('nim',$kampretos)->get();
+        $limaD = lima_d::where('nim',$kampretos)->get();
+        $limaE = lima_e::where('nim',$kampretos)->get();
+        $limaF = lima_f::where('nim',$kampretos)->get();
+        $enamA = enam_a::where('nim',$kampretos)->get();
+        $enamB = enam_b::where('nim',$kampretos)->get();
+        $enamC = enam_c::where('nim',$kampretos)->get();
+        $config = [
+            'format' => 'A4-L', // Portrait
+             'margin_left'          => 10,
+             'margin_right'         => 10,
+             'margin_top'           => 15,
+            // 'margin_bottom'        => 25,
+          ];
+
+          $monthList = array(
+              'Jan' => 'Januari',
+              'Feb' => 'Februari',
+              'Mar' => 'Maret',
+              'Apr' => 'April',
+              'May' => 'Mei',
+              'Jun' => 'Juni',
+              'Jul' => 'Juli',
+              'Aug' => 'Agustus',
+              'Sep' => 'September',
+              'Oct' => 'Oktober',
+              'Nov' => 'November',
+              'Dec' => 'Desember',
+          );
+        $pdf = PDF::loadview('cetakProfil',compact('enamC','enamB','enamA','limaF','limaE','limaD','limaC','limaB','limaA','empatB','empatA','tigaB','tigaA','duaC','duaB','no','duaA','mahasiswa','monthList'),[],$config);
+        return $pdf->stream();
+    }
+
     public function dataProfil($id)
     {
         $no = 0;
         $data = User::find($id);
         $kampretos = $data->nim;
+        $mahasiswa = Mahasiswa::where('nim',$kampretos)->get()->last();
+        $datanya = dua_a::where('nim',$kampretos)->get();
+        $duaA = dua_a::where('nim',$kampretos)->get();
+        $duaB = dua_b::where('nim',$kampretos)->get();
+        $duaC = dua_c::where('nim',$kampretos)->get();
+        $tigaA = tiga_a::where('nim',$kampretos)->get();
+        $tigaB = tiga_b::where('nim',$kampretos)->get();
+        $empatA = empat_a::where('nim',$kampretos)->get();
+        $empatB = empat_b::where('nim',$kampretos)->get();
+        $limaA = lima_a::where('nim',$kampretos)->get();
+        $limaB = lima_b::where('nim',$kampretos)->get();
+        $limaC = lima_c::where('nim',$kampretos)->get();
+        $limaD = lima_d::where('nim',$kampretos)->get();
+        $limaE = lima_e::where('nim',$kampretos)->get();
+        $limaF = lima_f::where('nim',$kampretos)->get();
+        $enamA = enam_a::where('nim',$kampretos)->get();
+        $enamB = enam_b::where('nim',$kampretos)->get();
+        $enamC = enam_c::where('nim',$kampretos)->get();
+        $config = [
+            'format' => 'A4-L', // Portrait
+             'margin_left'          => 10,
+             'margin_right'         => 10,
+             'margin_top'           => 15,
+            // 'margin_bottom'        => 25,
+          ];
+
+          $monthList = array(
+              'Jan' => 'Januari',
+              'Feb' => 'Februari',
+              'Mar' => 'Maret',
+              'Apr' => 'April',
+              'May' => 'Mei',
+              'Jun' => 'Juni',
+              'Jul' => 'Juli',
+              'Aug' => 'Agustus',
+              'Sep' => 'September',
+              'Oct' => 'Oktober',
+              'Nov' => 'November',
+              'Dec' => 'Desember',
+          );
+          return view('dataProfil',compact('datanya','enamC','enamB','enamA','limaF','limaE','limaD','limaC','limaB','limaA','empatB','empatA','tigaB','tigaA','duaC','duaB','no','duaA','mahasiswa','monthList'),[],$config);
+        // return $pdf->stream();
+    }
+    public function pembimbingdataProfil($id)
+    {
+        // $data = User::where('nim',$id)->get();
+        // return $data;
+
+        $no = 0;
+        $kampretos = $id;
         $mahasiswa = Mahasiswa::where('nim',$kampretos)->get()->last();
         $datanya = dua_a::where('nim',$kampretos)->get();
         $duaA = dua_a::where('nim',$kampretos)->get();
@@ -856,5 +960,117 @@ class TadraftController extends Controller
     public function lihat(){
         $users = User::all();
         return view('khususAdmin',compact('users'));
+    }
+
+    public function hapus2a($id){
+
+        dua_a::destroy($id);
+        return redirect('PresensiSeminarKP')->with('message','Data Berhasil Dihapus !!');
+
+    }
+
+    public function hapus2b($id){
+        
+        dua_b::destroy($id);
+        return redirect('dua/b')->with('message','Data Berhasil Dihapus !!');
+    
+    }
+
+    public function hapus2c($id){
+        
+        dua_c::destroy($id);
+        return redirect('dua/c')->with('message','Data Berhasil Dihapus !!');
+    
+    }
+
+    public function hapus3a($id){
+        
+        tiga_a::destroy($id);
+        return redirect('tiga/a')->with('message','Data Berhasil Dihapus !!');
+    
+    }
+
+    public function hapus3b($id){
+        
+        tiga_b::destroy($id);
+        return redirect('tiga/b')->with('message','Data Berhasil Dihapus !!');
+    
+    }
+    
+    public function hapus4a($id){
+        
+        empat_a::destroy($id);
+        return redirect('empat/a')->with('message','Data Berhasil Dihapus !!');
+    
+    }
+
+    public function hapus4b($id){
+        
+        empat_b::destroy($id);
+        return redirect('empat/b')->with('message','Data Berhasil Dihapus !!');
+    
+    }
+
+    public function hapus5a($id){
+        
+        lima_a::destroy($id);
+        return redirect('lima/a')->with('message','Data Berhasil Dihapus !!');
+    
+    }
+
+    public function hapus5b($id){
+        
+        lima_b::destroy($id);
+        return redirect('lima/b')->with('message','Data Berhasil Dihapus !!');
+    
+    }
+
+    public function hapus5c($id){
+        
+        lima_c::destroy($id);
+        return redirect('lima/c')->with('message','Data Berhasil Dihapus !!');
+    
+    }
+
+    public function hapus5d($id){
+        
+        lima_d::destroy($id);
+        return redirect('lima/d')->with('message','Data Berhasil Dihapus !!');
+    
+    }
+
+    public function hapus5e($id){
+        
+        lima_e::destroy($id);
+        return redirect('lima/e')->with('message','Data Berhasil Dihapus !!');
+    
+    }
+
+    public function hapus5f($id){
+        
+        lima_f::destroy($id);
+        return redirect('lima/f')->with('message','Data Berhasil Dihapus !!');
+    
+    }
+
+    public function hapus6a($id){
+        
+        enam_a::destroy($id);
+        return redirect('enam/a')->with('message','Data Berhasil Dihapus !!');
+    
+    }
+
+    public function hapus6b($id){
+        
+        enam_b::destroy($id);
+        return redirect('enam/b')->with('message','Data Berhasil Dihapus !!');
+    
+    }
+
+    public function hapus6c($id){
+        
+        enam_c::destroy($id);
+        return redirect('enam/c')->with('message','Data Berhasil Dihapus !!');
+    
     }
 }

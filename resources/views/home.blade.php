@@ -252,13 +252,253 @@
                 </div>
 
             </div> -->
+            <div class="row invisible" data-toggle="appear">
+                <div class="col-md-6">
+                    <a class="block block-rounded" href="{{url('PresensiSeminarKP')}}">
+                        <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
+                            <div class="ribbon-box">
+                                {{$duaA}}
+                            </div>
+                            <div class="text-center py-30">
+                                <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
+                                <h5 class="mb-0">Pendidikan Strata satu dan strata lanjut</h5>
+                                <!-- <div class="text-muted">Membutuhkan Konfirmasi Dosen</div> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a class="block block-rounded" href="{{url('dua/b')}}">
+                        <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
+                            <div class="ribbon-box">
+                                {{$duaB}}
+                            </div>
+                            <div class="text-center py-30">
+                                <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
+                                <h5 class="mb-0">Pendidikan Singkat</h5>
+                                <!-- <div class="text-muted">Membutuhkan Konfirmasi Dosen</div> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row invisible" data-toggle="appear">
+                <div class="col-md-6">
+                    <a class="block block-rounded" href="{{url('dua/c')}}">
+                        <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
+                            <div class="ribbon-box">
+                                {{$duaC}}
+                            </div>
+                            <div class="text-center py-30">
+                                <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
+                                <h5 class="mb-0"> Pendidikan / Pelatihan Kerja Formal</h5>
+                                <!-- <div class="text-muted">Membutuhkan Konfirmasi Dosen</div> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                        <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
+                            <div class="ribbon-box">
+                                {{tigaA}}
+                            </div>
+                            <div class="text-center py-30">
+                                <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
+                                <h5 class="mb-0">Pembelajaran Mandiri</h5>
+                                <!-- <div class="text-muted">Membutuhkan Konfirmasi Dosen</div> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row invisible" data-toggle="appear">
+                <div class="col-md-6">
+                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                        <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
+                            <div class="ribbon-box">
+                                {{tigaB}}
+                            </div>
+                            <div class="text-center py-30">
+                                <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
+                                <h5 class="mb-0">Pembelajaran Sehubungan Dengan Penugasan Kerja</h5>
+                                <!-- <div class="text-muted">Membutuhkan Konfirmasi Dosen</div> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                        <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
+                            <div class="ribbon-box">
+                                {{empatA}}
+                            </div>
+                            <div class="text-center py-30">
+                                <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
+                                <h5 class="mb-0">Pengalaman Praktik Keinsinyuran pada lembaga / institusi formal (memiliki badan hukum)</h5>
+                                <!-- <div class="text-muted">Membutuhkan Konfirmasi Dosen</div> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row invisible" data-toggle="appear">
+                <div class="col-md-6">
+                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                        <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
+                            <div class="ribbon-box">
+                                {{empatB}}
+                            </div>
+                            <div class="text-center py-30">
+                                <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
+                                <h5 class="mb-0">Pengalaman Praktik Keinsinyuran pada lembaga / institusi non-formal (tidak ada badan hukum)</h5>
+                                <!-- <div class="text-muted">Membutuhkan Konfirmasi Dosen</div> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                        <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
+                            <div class="ribbon-box">
+                                2
+                            </div>
+                            <div class="text-center py-30">
+                                <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
+                                <h5 class="mb-0">Paparan dan Laporan Internal, Konsultasi, dan Inspeksi pada praktik keinsinyuran</h5>
+                                <!-- <div class="text-muted">Membutuhkan Konfirmasi Dosen</div> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row invisible" data-toggle="appear">
+                <div class="col-md-6">
+                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                        <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
+                            <div class="ribbon-box">
+                                2
+                            </div>
+                            <div class="text-center py-30">
+                                <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
+                                <h5 class="mb-0">Paparan Pada Pertemuan Teknis (Pemateri dalam pertemuan profesi keinsinyuran)</h5>
+                                <!-- <div class="text-muted">Membutuhkan Konfirmasi Dosen</div> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                        <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
+                            <div class="ribbon-box">
+                                2
+                            </div>
+                            <div class="text-center py-30">
+                                <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
+                                <h5 class="mb-0">Penulisan Makalah Untuk Pertemuan Profesi</h5>
+                                <!-- <div class="text-muted">Membutuhkan Konfirmasi Dosen</div> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row invisible" data-toggle="appear">
+                <div class="col-md-6">
+                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                        <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
+                            <div class="ribbon-box">
+                                2
+                            </div>
+                            <div class="text-center py-30">
+                                <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
+                                <h5 class="mb-0">Pengajar / Pelatih / Instruktur / Dosen Tamu pada pembelajaran atau pelatihan keinsinyuran</h5>
+                                <!-- <div class="text-muted">Membutuhkan Konfirmasi Dosen</div> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                        <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
+                            <div class="ribbon-box">
+                                2
+                            </div>
+                            <div class="text-center py-30">
+                                <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
+                                <h5 class="mb-0">Karya tulis pada penerbitan berkala (jurnal / majalah / surat kabar dlsb)</h5>
+                                <!-- <div class="text-muted">Membutuhkan Konfirmasi Dosen</div> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row invisible" data-toggle="appear">
+                <div class="col-md-6">
+                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                        <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
+                            <div class="ribbon-box">
+                                2
+                            </div>
+                            <div class="text-center py-30">
+                                <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
+                                <h5 class="mb-0">Penulisan Buku Keinsinyuran</h5>
+                                <!-- <div class="text-muted">Membutuhkan Konfirmasi Dosen</div> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                        <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
+                            <div class="ribbon-box">
+                                2
+                            </div>
+                            <div class="text-center py-30">
+                                <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
+                                <h5 class="mb-0">Sebagai Pakar atau Nara sumber pada bidang keinsinyuran (saksi ahli, tim ahli, dewan pakar dst)</h5>
+                                <!-- <div class="text-muted">Membutuhkan Konfirmasi Dosen</div> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row invisible" data-toggle="appear">
+                <div class="col-md-6">
+                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                        <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
+                            <div class="ribbon-box">
+                                2
+                            </div>
+                            <div class="text-center py-30">
+                                <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
+                                <h5 class="mb-0">Pengurus organisasi profesi atau pimpinan lembaga / institusi</h5>
+                                <!-- <div class="text-muted">Membutuhkan Konfirmasi Dosen</div> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                        <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
+                            <div class="ribbon-box">
+                                2
+                            </div>
+                            <div class="text-center py-30">
+                                <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
+                                <h5 class="mb-0">Penerima tanda jasa, award, tanda penghargaan dan sejenisnya</h5>
+                                <!-- <div class="text-muted">Membutuhkan Konfirmasi Dosen</div> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
         </div>
         @endcan
         <!-- Close Mahasiswa  -->
         <!-- Open Dosen  -->
         @can('dosen')
-        <!-- <div class="row invisible" data-toggle="appear">
+        <div class="row invisible" data-toggle="appear">
             <div class="col-md-6">
                 <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
                     <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
@@ -317,7 +557,7 @@
                     </div>
                 </a>
             </div>
-        </div> -->
+        </div>
         @endcan
         <!-- Close Dosen -->
         <!-- Open Koordinator Kp  -->

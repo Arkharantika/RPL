@@ -155,8 +155,8 @@
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td> -->
                             <td width="250" style="text-align: center;">
-                                <form action="{{url('PresensiSeminarKP/'.$row->id)}}" method="post" class="d-inline">
-                                    @method('delete')
+                                <form action="{{url('hapus5f/'.$row->id)}}" method="post" class="d-inline">
+                                    
                                     @csrf
                                     <button type="submit" class="btn btn-sm btn-alt-danger"><i
                                             class="fa fa-trash"></i></button>

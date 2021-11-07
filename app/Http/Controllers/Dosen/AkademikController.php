@@ -28,6 +28,7 @@ class AkademikController extends Controller
     {
         $data = Dosen::bimbingan(Auth::user()->nim);
         // dd($data);
+        // return $data;
         return view('dosen.akademik.list_akademik',compact('data'));
     }
 

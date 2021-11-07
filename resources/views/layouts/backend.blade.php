@@ -37,8 +37,8 @@
         window.Laravel = {
             !!json_encode(['csrfToken' => csrf_token(), ]) !!
         };
-
     </script>
+    
 </head>
 
 <body>
@@ -182,34 +182,63 @@
                             </a>
                         </li>
                         <li>
-                            <a class="{{ request()->is('profil') || request()->is('profil/*') ? ' active' : '' }}" href="{{route('profil.index')}}">
+                            <a class="{{ request()->is('profil') || request()->is('profil/*') ? ' active' : '' }}"
+                                href="{{route('profil.index')}}">
                                 <i class="si si-user"></i><span class="sidebar-mini-hide">Profile</span>
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a class="{{ request()->is('usermanual') || request()->is('usermanual/*') ? ' active' : '' }}"
                                 href=" @if(Auth::user()->can('manage-users'))
                                     {{route('usermanual.create')}} @else {{route('usermanual.index')}} @endif">
                                 <i class="si si-bag"></i><span class="sidebar-mini-hide">Users Manual</span>
                             </a>
-                        </li>
+                        </li> -->
                         @can('manage-users')
-                        <li>
+                        <li class="{{ request()->is('dosen/*') ? ' open' : '' }}">
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-user"></i><span
+                                    class="sidebar-mini-hide">Admin</span></a>
+                            <ul>
+                                <li>
                                     <a class="{{ request()->is('admin/lihat') || request()->is('admin/lihat/*') ? ' active' : '' }}"
-                                        href="{{url('lihat')}}"><i class="si si-lock"></i>
+                                        href="{{url('lihat')}}">
                                         Lihat Data Form</a>
                                 </li>
+                                <li>
+                                    <a class="{{ request()->is('admin/users') || request()->is('admin/users/*') ? ' active' : '' }}"
+                                        href="{{route('admin.users.index')}}">
+                                        User Management</a>
+                                </li>
+                                <li>
+                                    <a class="{{ request()->is('admin/mahasiswa') || request()->is('admin/mahasiswa/*') ? ' active' : '' }}"
+                                        href="{{route('admin.mahasiswa.index')}}">
+                                        List Mahasiswa</a>
+                                </li>
+                                <li>
+                                    <a class="{{ request()->is('admin/dosen') || request()->is('admin/dosen/*') ? ' active' : '' }}"
+                                        href="{{route('admin.dosen.index')}}">
+                                        List Dosen</a>
+                                </li>
+                                <li>
+                                    <a class="{{ request()->is('admin/akademik') || request()->is('admin/akademik/*') ? ' active' : '' }}"
+                                        href="{{route('admin.akademik.index')}}">
+                                        Pembimbing Akademik</a>
+                                </li>
+                            </ul>
+                        </li>
                         @endcan
                         @can('dosen')
-                        
-                        <!-- <li class="{{ request()->is('dosen/*') ? ' open' : '' }}">
-                                <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-badge"></i><span class="sidebar-mini-hide">Dosen</span></a>
-                                <ul>
-                                    <li>
-                                        <a class="{{ request()->is('dosen/akademik') ? ' active' : '' }}" href="{{route('dosen.akademik.index')}}">
-                                            Bimbingan Akademik</a>
-                                    </li>
-                                    <li>
+
+                        <li class="{{ request()->is('dosen/*') ? ' open' : '' }}">
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-badge"></i><span
+                                    class="sidebar-mini-hide">Dosen</span></a>
+                            <ul>
+                                <li>
+                                    <a class="{{ request()->is('dosen/akademik') ? ' active' : '' }}"
+                                        href="{{route('dosen.akademik.index')}}">
+                                        Bimbingan Akademik</a>
+                                </li>
+                                <!-- <li>
                                         <a class="{{ request()->is('dosen/kp') || request()->is('dosen/kp/*') ? ' active' : '' }}" href="{{route('dosen.kp.index')}}">
                                             Bimbingan KP</a>
                                     </li>
@@ -244,23 +273,26 @@
                                     <li>
                                         <a class="{{ request()->is('dosen/perpanjanganta') || request()->is('dosen/perpanjanganta/*') ? ' active' : '' }}" href="{{route('dosen.perpanjanganta.index')}}">
                                             Perpanjangan TA</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="{{ request()->is('kelengkapanta/*') ? ' open' : '' }}">
-                                <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-check-square-o"></i><span class="sidebar-mini-hide">Kelengkapan Wisuda</span></a>
-                                <ul>
-                                    <li>
-                                        <a class="{{ request()->is('kelengkapanta/persetujuanpa') || request()->is('kelengkapanta/persetujuanpa/*') ? ' active' : '' }}" href="{{route('dosen.persetujuanpa.index')}}">
-                                            Persetujuan Dosen PA</a>
-                                    </li>
-                                    <li>
-                                        <a class="{{ request()->is('kelengkapanta/persetujuandraft') || request()->is('kelengkapanta/persetujuandraft/*') || request()->is('kelengkapanta/draftpenguji/*')
+                                    </li> -->
+                            </ul>
+                        </li>
+                        <!-- <li class="{{ request()->is('kelengkapanta/*') ? ' open' : '' }}">
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i
+                                    class="fa fa-check-square-o"></i><span class="sidebar-mini-hide">Kelengkapan
+                                    Wisuda</span></a>
+                            <ul>
+                                <li>
+                                    <a class="{{ request()->is('kelengkapanta/persetujuanpa') || request()->is('kelengkapanta/persetujuanpa/*') ? ' active' : '' }}"
+                                        href="{{route('dosen.persetujuanpa.index')}}">
+                                        Persetujuan Dosen PA</a>
+                                </li>
+                                <li>
+                                    <a class="{{ request()->is('kelengkapanta/persetujuandraft') || request()->is('kelengkapanta/persetujuandraft/*') || request()->is('kelengkapanta/draftpenguji/*')
                                          ? ' active' : '' }}" href="{{route('dosen.persetujuandraft.index')}}">
-                                            Persetujuan Draft</a>
-                                    </li>
-                                </ul>
-                            </li> -->
+                                        Persetujuan Draft</a>
+                                </li>
+                            </ul>
+                        </li> -->
                         @endcan
                         @can('kalab')
                         <!-- <li>
@@ -277,122 +309,136 @@
                         <li>
                             <a class="{{ request()->is('kp/seminar') || request()->is('kp/seminar/*') ? ' active' : '' }}"
                                 href="{{url('PresensiSeminarKP')}}">
-                                <i class="si si-note"></i><span class="sidebar-mini-hide">Pendidikan Strata Satu dan Lanjut</span>
+                                <i class="si si-note"></i><span class="sidebar-mini-hide">Pendidikan Strata Satu dan
+                                    Lanjut</span> 
                             </a>
                         </li>
                         <li>
                             <a class="{{ request()->is('dua/b') || request()->is('dua/b/*') ? ' active' : '' }}"
                                 href="{{url('dua/b')}}">
-                                <i class="si si-doc"></i><span class="sidebar-mini-hide">Pendidikan Singkat</span>
+                                <i class="si si-doc"></i><span class="sidebar-mini-hide">Pendidikan Singkat</span> 
                             </a>
                         </li>
                         <li>
                             <a class="{{ request()->is('dua/c') || request()->is('dua/c/*') ? ' active' : '' }}"
                                 href="{{url('dua/c')}}">
-                                <i class="si si-doc"></i><span class="sidebar-mini-hide">Pendidikan / Pelatihan Kerja Formal</span>
+                                <i class="si si-doc"></i><span class="sidebar-mini-hide">Pendidikan / Pelatihan Kerja
+                                    Formal</span>
                             </a>
                         </li>
                         <li class="nav-main-heading">
                             <span class="sidebar-mini-visible">KP</span><span
                                 class="sidebar-mini-hidden text-primary">3. Pendidikan Nonformal atau Informal</span>
-                        </li>                        
+                        </li>
                         <li>
                             <a class="{{ request()->is('tiga/a') || request()->is('tiga/a/*') ? ' active' : '' }}"
                                 href="{{url('tiga/a')}}">
                                 <i class="si si-note"></i><span class="sidebar-mini-hide">Pembelajaran Mandiri</span>
                             </a>
-                        </li>                        
+                        </li>
                         <li>
                             <a class="{{ request()->is('tiga/b') || request()->is('tiga/b/*') ? ' active' : '' }}"
                                 href="{{url('tiga/b')}}">
-                                <i class="si si-note"></i><span class="sidebar-mini-hide">Pendidikan Sehubungan dengan Penugasan Kerja</span>
+                                <i class="si si-note"></i><span class="sidebar-mini-hide">Pendidikan Sehubungan dengan
+                                    Penugasan Kerja</span> 
                             </a>
                         </li>
-                        
+
                         <li class="nav-main-heading">
                             <span class="sidebar-mini-visible">KP</span><span
                                 class="sidebar-mini-hidden text-primary">4. Pengalaman Kerja Praktik Keinsinyuran</span>
-                        </li>     
+                        </li>
 
                         <li>
                             <a class="{{ request()->is('empat/a') || request()->is('empat/a/*') ? ' active' : '' }}"
                                 href="{{url('empat/a')}}">
-                                <i class="si si-note"></i><span class="sidebar-mini-hide">Pengalaman Praktik Keinsinyuran pada lembaga / institusi formal (memiliki badan hukum)</span>
+                                <i class="si si-note"></i><span class="sidebar-mini-hide">Pengalaman Praktik
+                                    Keinsinyuran pada lembaga / institusi formal (memiliki badan hukum)</span>
                             </a>
                         </li>
                         <li>
                             <a class="{{ request()->is('empat/b') || request()->is('empat/b/*') ? ' active' : '' }}"
                                 href="{{url('empat/b')}}">
-                                <i class="si si-note"></i><span class="sidebar-mini-hide">Pengalaman Praktik Keinsinyuran pada lembaga / institusi non-formal (tidak ada badan hukum)</span>
+                                <i class="si si-note"></i><span class="sidebar-mini-hide">Pengalaman Praktik
+                                    Keinsinyuran pada lembaga / institusi non-formal (tidak ada badan hukum)</span>
                             </a>
-                        </li> 
+                        </li>
 
                         <li class="nav-main-heading">
                             <span class="sidebar-mini-visible">KP</span><span
                                 class="sidebar-mini-hidden text-primary">5. Paparan dan Karya Tulis Keinsinyuran</span>
                         </li>
-                        
+
                         <li>
                             <a class="{{ request()->is('lima/a') || request()->is('lima/a/*') ? ' active' : '' }}"
                                 href="{{url('lima/a')}}">
-                                <i class="si si-note"></i><span class="sidebar-mini-hide">Paparan dan Laporan Internal, Konsultasi, dan Inspeksi pada praktik keinsinyuran</span>
+                                <i class="si si-note"></i><span class="sidebar-mini-hide">Paparan dan Laporan Internal,
+                                    Konsultasi, dan Inspeksi pada praktik keinsinyuran</span>
                             </a>
-                        </li> 
+                        </li>
                         <li>
                             <a class="{{ request()->is('lima/b') || request()->is('lima/b/*') ? ' active' : '' }}"
                                 href="{{url('lima/b')}}">
-                                <i class="si si-note"></i><span class="sidebar-mini-hide">Paparan Pada Pertemuan Teknis (Pemateri dalam pertemuan profesi keinsinyuran)</span>
+                                <i class="si si-note"></i><span class="sidebar-mini-hide">Paparan Pada Pertemuan Teknis
+                                    (Pemateri dalam pertemuan profesi keinsinyuran)</span>
                             </a>
-                        </li> 
+                        </li>
                         <li>
                             <a class="{{ request()->is('lima/c') || request()->is('lima/c/*') ? ' active' : '' }}"
                                 href="{{url('lima/c')}}">
-                                <i class="si si-note"></i><span class="sidebar-mini-hide">Penulisan Makalah Untuk Pertemuan Profesi </span>
+                                <i class="si si-note"></i><span class="sidebar-mini-hide">Penulisan Makalah Untuk
+                                    Pertemuan Profesi </span>
                             </a>
-                        </li> 
+                        </li>
                         <li>
                             <a class="{{ request()->is('lima/d') || request()->is('lima/d/*') ? ' active' : '' }}"
                                 href="{{url('lima/d')}}">
-                                <i class="si si-note"></i><span class="sidebar-mini-hide">Pengajar / Pelatih / Instruktur / Dosen Tamu pada pembelajaran atau pelatihan keinsinyuran </span>
+                                <i class="si si-note"></i><span class="sidebar-mini-hide">Pengajar / Pelatih /
+                                    Instruktur / Dosen Tamu pada pembelajaran atau pelatihan keinsinyuran </span>
                             </a>
-                        </li> 
+                        </li>
                         <li>
                             <a class="{{ request()->is('lima/e') || request()->is('lima/e/*') ? ' active' : '' }}"
                                 href="{{url('lima/e')}}">
-                                <i class="si si-note"></i><span class="sidebar-mini-hide">Karya tulis pada penerbitan berkala (jurnal / majalah / surat kabar dlsb)</span>
+                                <i class="si si-note"></i><span class="sidebar-mini-hide">Karya tulis pada penerbitan
+                                    berkala (jurnal / majalah / surat kabar dlsb)</span>
                             </a>
-                        </li> 
+                        </li>
                         <li>
                             <a class="{{ request()->is('lima/f') || request()->is('lima/f/*') ? ' active' : '' }}"
                                 href="{{url('lima/f')}}">
-                                <i class="si si-note"></i><span class="sidebar-mini-hide">Penulisan Buku Keinsinyuran</span>
+                                <i class="si si-note"></i><span class="sidebar-mini-hide">Penulisan Buku
+                                    Keinsinyuran</span>
                             </a>
-                        </li> 
-                        
+                        </li>
+
                         <li class="nav-main-heading">
                             <span class="sidebar-mini-visible">KP</span><span
-                            class="sidebar-mini-hidden text-primary">6. Kegiatan Penunjang Lain</span>
+                                class="sidebar-mini-hidden text-primary">6. Kegiatan Penunjang Lain</span>
                         </li>
-                        
+
                         <li>
                             <a class="{{ request()->is('enam/a') || request()->is('enam/a/*') ? ' active' : '' }}"
                                 href="{{url('enam/a')}}">
-                                <i class="si si-note"></i><span class="sidebar-mini-hide">Sebagai Pakar atau Nara sumber pada bidang keinsinyuran (saksi ahli, tim ahli, dewan pakar dst)</span>
+                                <i class="si si-note"></i><span class="sidebar-mini-hide">Sebagai Pakar atau Nara sumber
+                                    pada bidang keinsinyuran (saksi ahli, tim ahli, dewan pakar dst)</span>
                             </a>
-                        </li> 
+                        </li>
                         <li>
                             <a class="{{ request()->is('enam/b') || request()->is('enam/b/*') ? ' active' : '' }}"
                                 href="{{url('enam/b')}}">
-                                <i class="si si-note"></i><span class="sidebar-mini-hide">Pengurus organisasi profesi atau pimpinan lembaga / institusi</span>
+                                <i class="si si-note"></i><span class="sidebar-mini-hide">Pengurus organisasi profesi
+                                    atau pimpinan lembaga / institusi</span>
                             </a>
-                        </li> 
+                        </li>
                         <li>
                             <a class="{{ request()->is('enam/c') || request()->is('enam/c/*') ? ' active' : '' }}"
                                 href="{{url('enam/c')}}">
-                                <i class="si si-note"></i><span class="sidebar-mini-hide">Penerima tanda jasa, award, tanda penghargaan dan sejenisnya</span>
+                                <i class="si si-note"></i><span class="sidebar-mini-hide">Penerima tanda jasa, award,
+                                    tanda penghargaan dan sejenisnya</span>
                             </a>
-                        </li> 
-                        
+                        </li>
+
                         <!-- <li>
                             <a class="{{ request()->is('kp/selesaikp') || request()->is('kp/selesaikp/*') ? ' active' : '' }}"
                                 href="{{route('kp.selesaikp.index')}}">
@@ -467,12 +513,14 @@
                                     Pendadaran</span>
                             </a>
                         </li> -->
-                        <li>
+
+                        <!-- <li>
                             <a class="{{ request()->is('ta/wisuda') || request()->is('ta/wisuda/*') ? ' active' : '' }}"
                                 href="{{route('ta.wisuda.index')}}">
                                 <i class="si si-docs"></i><span class="sidebar-mini-hide">Kelengkapan Wisuda</span>
                             </a>
-                        </li>
+                        </li> -->
+
                         @endcan
                         @can('kaprodi')
                         <!-- <li class="nav-main-heading">

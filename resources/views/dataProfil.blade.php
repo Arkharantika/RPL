@@ -33,7 +33,7 @@
                         <th class="text-center">Nama Pembimbing dan Alamat (jika ada)</th>
                         <th class="text-center">link G-Drive Ijazah</th>
                         <th class="text-center">link G-Drive Transkrip</th>
-                        <th class="text-center">Action</th>
+                        <th class="text-center">komentar</th>
                             <!-- <th>Updated at</th> -->
                         </tr>
                     </thead>
@@ -67,12 +67,11 @@
                         </td>
                         </td>
                         <td width="250" style="text-align: center;">
-                            <form action="{{url('PresensiSeminarKP/'.$row->id)}}" method="post" class="d-inline">
-                                @method('delete')
-                                @csrf
-                                <button type="submit" class="btn btn-sm btn-alt-danger"><i
-                                        class="fa fa-trash"></i></button>
-                            </form>
+                        <form action="{{url('komentar2a/'.$row->id)}}" method="post" class="d-inline">
+                                    @csrf
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
+                                </form>
                         </td>
                     </tr>
                     @endforeach
@@ -105,7 +104,7 @@
                             <th class="text-center">Lamanya Pendidikan</th>
                             <th class="text-center">Link G-Drive Jadwal</th>
                             <th class="text-center">Link G-Drive Sertifikat</th>
-                            <th class="text-center">action</th>
+                            <th class="text-center">komentar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -135,11 +134,10 @@
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
                             <td width="250" style="text-align: center;">
-                                <form action="{{url('PresensiSeminarKP/'.$row->id)}}" method="post" class="d-inline">
-                                    @method('delete')
+                            <form action="{{url('komentar2b/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-danger"><i
-                                            class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -172,7 +170,7 @@
                             <th class="text-center">Lamanya Pendidikan</th>
                             <th class="text-center">Link G-Drive Jadwal</th>
                             <th class="text-center">Link G-Drive Sertifikat</th>
-                            <th class="text-center">action</th>
+                            <th class="text-center">komentar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -202,11 +200,10 @@
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
                             <td width="250" style="text-align: center;">
-                                <form action="{{url('PresensiSeminarKP/'.$row->id)}}" method="post" class="d-inline">
-                                    @method('delete')
+                            <form action="{{url('komentar2c/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-danger"><i
-                                            class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -239,7 +236,7 @@
                             <th class="text-center">Daftar Bacaan</th>
                             <!-- <th class="text-center">Link G-Drive Jadwal</th> -->
                             <th class="text-center">Link G-Drive Sertifikat</th>
-                            <th class="text-center">action</th>
+                            <th class="text-center">komentar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -269,11 +266,10 @@
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
                             <td width="250" style="text-align: center;">
-                                <form action="{{url('PresensiSeminarKP/'.$row->id)}}" method="post" class="d-inline">
-                                    @method('delete')
+                            <form action="{{url('komentar3a/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-danger"><i
-                                            class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -306,7 +302,7 @@
                             <th class="text-center">Daftar Bacaan</th>
                             <!-- <th class="text-center">Link G-Drive Jadwal</th> -->
                             <th class="text-center">Link G-Drive Sertifikat</th>
-                            <th class="text-center">action</th>
+                            <th class="text-center">komentar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -336,11 +332,10 @@
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
                             <td width="250" style="text-align: center;">
-                                <form action="{{url('PresensiSeminarKP/'.$row->id)}}" method="post" class="d-inline">
-                                    @method('delete')
+                            <form action="{{url('komentar3b/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-danger"><i
-                                            class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -373,7 +368,7 @@
                             <th class="text-center">Uraian Tugas Keinsinyuran</th>
                             <!-- <th class="text-center">Link G-Drive Jadwal</th> -->
                             <th class="text-center">Link G-Drive Sertifikat</th>
-                            <th class="text-center">action</th>
+                            <th class="text-center">komentar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -403,11 +398,10 @@
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
                             <td width="250" style="text-align: center;">
-                                <form action="{{url('PresensiSeminarKP/'.$row->id)}}" method="post" class="d-inline">
-                                    @method('delete')
+                            <form action="{{url('komentar4a/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-danger"><i
-                                            class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -440,7 +434,7 @@
                             <th class="text-center">Uraian Tugas Keinsinyuran </th>
                             <!-- <th class="text-center">Link G-Drive Jadwal</th> -->
                             <th class="text-center">Link G-Drive Sertifikat</th>
-                            <th class="text-center">action</th>
+                            <th class="text-center">komentar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -470,11 +464,10 @@
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
                             <td width="250" style="text-align: center;">
-                                <form action="{{url('PresensiSeminarKP/'.$row->id)}}" method="post" class="d-inline">
-                                    @method('delete')
+                            <form action="{{url('komentar4b/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-danger"><i
-                                            class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -507,7 +500,7 @@
                             <th class="text-center">Kedudukan di Dalam Paparan</th>
                             <th class="text-center">Link G-Drive Surat keputusan penugasan</th>
                             <th class="text-center">Link G-Drive -Executive summary atau fotokopi laporan teknis</th>
-                            <th class="text-center">action</th>
+                            <th class="text-center">komentar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -537,11 +530,10 @@
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
                             <td width="250" style="text-align: center;">
-                                <form action="{{url('PresensiSeminarKP/'.$row->id)}}" method="post" class="d-inline">
-                                    @method('delete')
+                            <form action="{{url('komentar5a/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-danger"><i
-                                            class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -605,11 +597,10 @@
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
                             <td width="250" style="text-align: center;">
-                                <form action="{{url('PresensiSeminarKP/'.$row->id)}}" method="post" class="d-inline">
-                                    @method('delete')
+                            <form action="{{url('komentar5b/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-danger"><i
-                                            class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -640,7 +631,7 @@
                             <th class="text-center">Jenis Pertemuan Profesi (Lokal, Nasional, Internasional)</th>
                             <th class="text-center">Link G-Drive Jadwal</th>
                             <th class="text-center">Link G-Drive Sertifikat</th>
-                            <th class="text-center">action</th>
+                            <th class="text-center">komentar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -670,11 +661,10 @@
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
                             <td width="250" style="text-align: center;">
-                                <form action="{{url('PresensiSeminarKP/'.$row->id)}}" method="post" class="d-inline">
-                                    @method('delete')
+                            <form action="{{url('komentar5c/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-danger"><i
-                                            class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -707,7 +697,7 @@
                                 (Jam)</th>
                             <th class="text-center">Link G-Drive Surat tugas </th>
                             <th class="text-center">Link G-Drive Jadwal kegiatan instruktur dan silabusnya</th>
-                            <th class="text-center">action</th>
+                            <th class="text-center">komentar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -737,11 +727,10 @@
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
                             <td width="250" style="text-align: center;">
-                                <form action="{{url('PresensiSeminarKP/'.$row->id)}}" method="post" class="d-inline">
-                                    @method('delete')
+                            <form action="{{url('komentar5d/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-danger"><i
-                                            class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -776,7 +765,7 @@
                             <th class="text-center">Link G-Drive Nomor contoh atau fotokopi jurnal/majalah/surat kabar
                             </th>
                             <!-- <th class="text-center">Link G-Drive Jadwal kegiatan instruktur dan silabusnya</th> -->
-                            <th class="text-center">action</th>
+                            <th class="text-center">komentar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -805,11 +794,10 @@
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td> -->
                             <td width="250" style="text-align: center;">
-                                <form action="{{url('PresensiSeminarKP/'.$row->id)}}" method="post" class="d-inline">
-                                    @method('delete')
+                            <form action="{{url('komentar5e/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-danger"><i
-                                            class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -842,7 +830,7 @@
                             <th class="text-center">Link G-Drive Nomor contoh atau fotokopi jurnal/majalah/surat kabar
                             </th>
                             <!-- <th class="text-center">Link G-Drive Jadwal kegiatan instruktur dan silabusnya</th> -->
-                            <th class="text-center">action</th>
+                            <th class="text-center">komentar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -871,11 +859,10 @@
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td> -->
                             <td width="250" style="text-align: center;">
-                                <form action="{{url('PresensiSeminarKP/'.$row->id)}}" method="post" class="d-inline">
-                                    @method('delete')
+                            <form action="{{url('komentar5f/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-danger"><i
-                                            class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -912,7 +899,7 @@
                             <th class="text-center">Link G-Drive Nomor contoh atau fotokopi jurnal/majalah/surat kabar
                             </th>
                             <th class="text-center">Link G-Drive Jadwal kegiatan instruktur dan silabusnya</th>
-                            <th class="text-center">action</th>
+                            <th class="text-center">komentar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -941,11 +928,10 @@
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
                             <td width="250" style="text-align: center;">
-                                <form action="{{url('PresensiSeminarKP/'.$row->id)}}" method="post" class="d-inline">
-                                    @method('delete')
+                            <form action="{{url('komentar6a/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-danger"><i
-                                            class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -982,7 +968,7 @@
                             </th>
                             <th class="text-center">Link G-Drive Sertifikat/surat
                                     keterangan atau keanggotaan</th>
-                            <th class="text-center">action</th>
+                            <th class="text-center">komentar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1011,11 +997,10 @@
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
                             <td width="250" style="text-align: center;">
-                                <form action="{{url('PresensiSeminarKP/'.$row->id)}}" method="post" class="d-inline">
-                                    @method('delete')
+                            <form action="{{url('komentar6b/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-danger"><i
-                                            class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -1051,7 +1036,7 @@
                             </th>
                             <th class="text-center">Link G-Drive Sertifikat/surat
                                     keterangan atau keanggotaan</th>
-                            <th class="text-center">action</th>
+                            <th class="text-center">Komentar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1080,11 +1065,10 @@
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
                             <td width="250" style="text-align: center;">
-                                <form action="{{url('PresensiSeminarKP/'.$row->id)}}" method="post" class="d-inline">
-                                    @method('delete')
+                                <form action="{{url('komentar6c/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-danger"><i
-                                            class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
                                 </form>
                             </td>
                         </tr>
