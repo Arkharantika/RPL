@@ -298,10 +298,10 @@
                     </a>
                 </div>
                 <div class="col-md-6">
-                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                    <a class="block block-rounded" href="{{url('tiga/a')}}">
                         <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
                             <div class="ribbon-box">
-                                {{tigaA}}
+                                {{$tigaA}}
                             </div>
                             <div class="text-center py-30">
                                 <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
@@ -314,10 +314,10 @@
             </div>
             <div class="row invisible" data-toggle="appear">
                 <div class="col-md-6">
-                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                    <a class="block block-rounded" href="{{url('tiga/b')}}">
                         <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
                             <div class="ribbon-box">
-                                {{tigaB}}
+                                {{$tigaB}}
                             </div>
                             <div class="text-center py-30">
                                 <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
@@ -328,10 +328,10 @@
                     </a>
                 </div>
                 <div class="col-md-6">
-                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                    <a class="block block-rounded" href="{{url('empat/a')}}">
                         <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
                             <div class="ribbon-box">
-                                {{empatA}}
+                                {{$empatA}}
                             </div>
                             <div class="text-center py-30">
                                 <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
@@ -344,10 +344,10 @@
             </div>
             <div class="row invisible" data-toggle="appear">
                 <div class="col-md-6">
-                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                    <a class="block block-rounded" href="{{url('empat/b')}}">
                         <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
                             <div class="ribbon-box">
-                                {{empatB}}
+                                {{$empatB}}
                             </div>
                             <div class="text-center py-30">
                                 <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
@@ -358,10 +358,10 @@
                     </a>
                 </div>
                 <div class="col-md-6">
-                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                    <a class="block block-rounded" href="{{url('lima/a')}}">
                         <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
                             <div class="ribbon-box">
-                                2
+                                {{$limaA}}
                             </div>
                             <div class="text-center py-30">
                                 <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
@@ -374,10 +374,10 @@
             </div>
             <div class="row invisible" data-toggle="appear">
                 <div class="col-md-6">
-                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                    <a class="block block-rounded" href="{{url('lima/b')}}">
                         <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
                             <div class="ribbon-box">
-                                2
+                                {{$limaB}}
                             </div>
                             <div class="text-center py-30">
                                 <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
@@ -388,10 +388,10 @@
                     </a>
                 </div>
                 <div class="col-md-6">
-                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                    <a class="block block-rounded" href="{{url('lima/c')}}">
                         <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
                             <div class="ribbon-box">
-                                2
+                            {{$limaC}}
                             </div>
                             <div class="text-center py-30">
                                 <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
@@ -404,10 +404,10 @@
             </div>
             <div class="row invisible" data-toggle="appear">
                 <div class="col-md-6">
-                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                    <a class="block block-rounded" href="{{url('lima/d')}}">
                         <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
                             <div class="ribbon-box">
-                                2
+                            {{$limaD}}
                             </div>
                             <div class="text-center py-30">
                                 <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
@@ -418,10 +418,10 @@
                     </a>
                 </div>
                 <div class="col-md-6">
-                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                    <a class="block block-rounded" href="{{url('lima/e')}}">
                         <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
                             <div class="ribbon-box">
-                                2
+                            {{$limaE}}
                             </div>
                             <div class="text-center py-30">
                                 <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
@@ -434,10 +434,10 @@
             </div>
             <div class="row invisible" data-toggle="appear">
                 <div class="col-md-6">
-                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                    <a class="block block-rounded" href="{{url('lima/f')}}">
                         <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
                             <div class="ribbon-box">
-                                2
+                            {{$limaF}}
                             </div>
                             <div class="text-center py-30">
                                 <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
@@ -448,10 +448,10 @@
                     </a>
                 </div>
                 <div class="col-md-6">
-                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                    <a class="block block-rounded" href="{{url('enam/a')}}">
                         <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
                             <div class="ribbon-box">
-                                2
+                            {{$enamA}}
                             </div>
                             <div class="text-center py-30">
                                 <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
@@ -464,10 +464,10 @@
             </div>
             <div class="row invisible" data-toggle="appear">
                 <div class="col-md-6">
-                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                    <a class="block block-rounded" href="{{url('enam/b')}}">
                         <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
                             <div class="ribbon-box">
-                                2
+                            {{$enamB}}
                             </div>
                             <div class="text-center py-30">
                                 <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
@@ -478,10 +478,10 @@
                     </a>
                 </div>
                 <div class="col-md-6">
-                    <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
+                    <a class="block block-rounded" href="{{url('enam/c')}}">
                         <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
                             <div class="ribbon-box">
-                                2
+                            {{$enamC}}
                             </div>
                             <div class="text-center py-30">
                                 <i class="fa fa-book fa-3x text-primary mb-15 float-left"></i>
