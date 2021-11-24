@@ -33,9 +33,9 @@ class TaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($nim)
     {
-        $nim = Auth::user()->nim;
+        // $nim = Auth::user()->nim;
         $data = Mahasiswa::mhs($nim)->first();
         $dosen = Dosen::all();
         $matakuliah = Matakuliah::all();
@@ -158,8 +158,8 @@ class TaController extends Controller
             $koorta = Jabatan::Ta();
             $es = $koorta->no_telp;
 
-            return redirect()->away('https://localhost:8000/notifKoorTA-pendaftaran/'.$es);
-            // return redirect(route('ta.pendaftaran.index'))->with('message','Terimakasih telah mendaftar Tugas Akhir!');
+            // return redirect()->away('https://localhost:8000/notifKoorTA-pendaftaran/'.$es);
+            return redirect(route('ta.pendaftaran.index'))->with('message','Terimakasih telah mendaftar Tugas Akhir!');
         }
        //return redirect('ta/pendaftaran')->with('message','Terimakasih telah mengajukan Kerja Praktek!');
     }

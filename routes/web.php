@@ -394,6 +394,7 @@ Route::post('enam/c/kirim','TadraftController@enamC')->name('enamC');
 
 // untuk menghapus data
 
+
 Route::post('hapus2a/{id}','TadraftController@hapus2a')->name('hapus2a');
 Route::post('hapus2b/{id}','TadraftController@hapus2b')->name('hapus2b');
 Route::post('hapus2c/{id}','TadraftController@hapus2c')->name('hapus2c');
@@ -414,4 +415,32 @@ Route::post('hapus5f/{id}','TadraftController@hapus5f')->name('hapus5f');
 Route::post('hapus6a/{id}','TadraftController@hapus6a')->name('hapus6a');
 Route::post('hapus6b/{id}','TadraftController@hapus6b')->name('hapus6b');
 Route::post('hapus6c/{id}','TadraftController@hapus6c')->name('hapus6c');
+
+// untuk Komentar
+Route::post('komentar2a/{id}','TadraftController@komentar2a')->name('komentar2a');
+Route::post('komentar2b/{id}','TadraftController@komentar2b')->name('komentar2b');
+Route::post('komentar2c/{id}','TadraftController@komentar2c')->name('komentar2c');
+
+Route::post('komentar3a/{id}','TadraftController@komentar3a')->name('komentar3a');
+Route::post('komentar3b/{id}','TadraftController@komentar3b')->name('komentar3b');
+
+Route::post('komentar4a/{id}','TadraftController@komentar4a')->name('komentar4a');
+Route::post('komentar4b/{id}','TadraftController@komentar4b')->name('komentar4b');
+
+Route::post('komentar5a/{id}','TadraftController@komentar5a')->name('komentar5a');
+Route::post('komentar5b/{id}','TadraftController@komentar5b')->name('komentar5b');
+Route::post('komentar5c/{id}','TadraftController@komentar5c')->name('komentar5c');
+Route::post('komentar5d/{id}','TadraftController@komentar5d')->name('komentar5d');
+Route::post('komentar5e/{id}','TadraftController@komentar5e')->name('komentar5e');
+Route::post('komentar5f/{id}','TadraftController@komentar5f')->name('komentar5f');
+
+Route::post('komentar6a/{id}','TadraftController@komentar6a')->name('komentar6a');
+Route::post('komentar6b/{id}','TadraftController@komentar6b')->name('komentar6b');
+Route::post('komentar6b/{id}','TadraftController@komentar6b')->name('komentar6b');
+
+// penguji
+
+Route::get('ta/pengajuan/pendaftaran/{id}','TaController@index')->name('index');
+
+
 

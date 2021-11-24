@@ -15,7 +15,7 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">Pendidikan Strata satu dan strata lanjut</h3>
+            <h3 class="block-title">2A Pendidikan Strata satu dan strata lanjut</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -69,6 +69,7 @@
                         <td width="250" style="text-align: center;">
                         <form action="{{url('komentar2a/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
+                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -86,7 +87,7 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">Pendidikan Singkat</h3>
+            <h3 class="block-title">2B Pendidikan Singkat</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -136,6 +137,7 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar2b/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
+                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -152,7 +154,7 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">Pendidikan / Pelatihan Kerja Formal</h3>
+            <h3 class="block-title">2C Pendidikan / Pelatihan Kerja Formal</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -202,6 +204,7 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar2c/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
+                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -218,7 +221,7 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">Pembelajaran Mandiri</h3>
+            <h3 class="block-title">3A Pembelajaran Mandiri</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -268,6 +271,7 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar3a/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
+                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -284,7 +288,7 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">Pembelajaran Sehubungan Dengan Penugasan Kerja</h3>
+            <h3 class="block-title">3B Pembelajaran Sehubungan Dengan Penugasan Kerja</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -334,6 +338,7 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar3b/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
+                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -350,7 +355,7 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">Pengalaman Praktik Keinsinyuran pada lembaga / institusi formal (memiliki badan hukum)</h3>
+            <h3 class="block-title">4A Pengalaman Praktik Keinsinyuran pada lembaga / institusi formal (memiliki badan hukum)</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -400,6 +405,7 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar4a/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
+                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -416,7 +422,7 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">Pengalaman Praktik Keinsinyuran pada lembaga / institusi non-formal (tidak ada badan hukum)</h3>
+            <h3 class="block-title">4B Pengalaman Praktik Keinsinyuran pada lembaga / institusi non-formal (tidak ada badan hukum)</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -466,6 +472,7 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar4b/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
+                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -482,7 +489,7 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">Paparan dan Laporan Internal; Konsultasi; dan Inspeksi pada praktik keinsinyuran</h3>
+            <h3 class="block-title">5A Paparan dan Laporan Internal; Konsultasi; dan Inspeksi pada praktik keinsinyuran</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -532,6 +539,7 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar5a/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
+                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -548,7 +556,7 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">Paparan Pada Pertemuan Teknis (Pemateri dalam pertemuan profesi keinsinyuran)</h3>
+            <h3 class="block-title">5B Paparan Pada Pertemuan Teknis (Pemateri dalam pertemuan profesi keinsinyuran)</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -599,6 +607,7 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar5b/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
+                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -615,7 +624,7 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">Penulisan Makalah Untuk Pertemuan Profesi</h3>
+            <h3 class="block-title">5C Penulisan Makalah Untuk Pertemuan Profesi</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -663,6 +672,7 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar5c/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
+                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -679,7 +689,7 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">Pengajar / Pelatih / Instruktur / Dosen Tamu pada pembelajaran atau pelatihan keinsinyuran</h3>
+            <h3 class="block-title">5D Pengajar / Pelatih / Instruktur / Dosen Tamu pada pembelajaran atau pelatihan keinsinyuran</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -729,6 +739,7 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar5d/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
+                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -745,7 +756,7 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">Karya tulis pada penerbitan berkala (jurnal / majalah / surat kabar dlsb)</h3>
+            <h3 class="block-title">5E Karya tulis pada penerbitan berkala (jurnal / majalah / surat kabar dlsb)</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -796,6 +807,7 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar5e/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
+                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -812,7 +824,7 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">Penulisan Buku Keinsinyuran</h3>
+            <h3 class="block-title">5F Penulisan Buku Keinsinyuran</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -861,6 +873,7 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar5f/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
+                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -877,7 +890,7 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">Sebagai Pakar atau Nara sumber pada bidang keinsinyuran (saksi ahli, tim ahli, dewan pakar dst)</h3>
+            <h3 class="block-title">6A Sebagai Pakar atau Nara sumber pada bidang keinsinyuran (saksi ahli, tim ahli, dewan pakar dst)</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -930,6 +943,7 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar6a/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
+                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -946,7 +960,7 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">Pengurus organisasi profesi atau pimpinan lembaga / institusi</h3>
+            <h3 class="block-title">6B Pengurus organisasi profesi atau pimpinan lembaga / institusi</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -999,6 +1013,7 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar6b/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
+                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -1015,7 +1030,7 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">Penerima tanda jasa, award, tanda penghargaan dan sejenisnya</h3>
+            <h3 class="block-title">6C Penerima tanda jasa, award, tanda penghargaan dan sejenisnya</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -1065,8 +1080,9 @@
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
                             <td width="250" style="text-align: center;">
-                                <form action="{{url('komentar6c/'.$row->id)}}" method="post" class="d-inline">
+                            <form action="{{url('komentar6c/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
+                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>

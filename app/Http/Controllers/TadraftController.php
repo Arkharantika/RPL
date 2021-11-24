@@ -1073,4 +1073,181 @@ class TadraftController extends Controller
         return redirect('enam/c')->with('message','Data Berhasil Dihapus !!');
     
     }
+
+    public function komentar2a(Request $request,$id){
+        
+        // return $id;
+        dua_a::where('id',$id)->update([
+            'komentar' => $request->komentar
+        ]);
+        return back()->with('message','Data Berhasil dikomentari !!');
+        // return back()->withInput();
+    
+    }
+
+    public function komentar2b(Request $request,$id){
+        
+        // return $id;
+        dua_b::where('id',$id)->update([
+            'komentar' => $request->komentar
+        ]);
+        return back()->with('message','Data Berhasil dikomentari !!');
+        // return back()->withInput();
+    
+    }
+
+    public function komentar2c(Request $request,$id){
+        
+        // return $id;
+        dua_c::where('id',$id)->update([
+            'komentar' => $request->komentar
+        ]);
+        return back()->with('message','Data Berhasil dikomentari !!');
+        // return back()->withInput();
+    
+    }
+
+    public function komentar3a(Request $request,$id){
+        
+        // return $id;
+        tiga_a::where('id',$id)->update([
+            'komentar' => $request->komentar
+        ]);
+        return back()->with('message','Data Berhasil dikomentari !!');
+        // return back()->withInput();
+    
+    }
+
+    public function komentar3b(Request $request,$id){
+        
+        // return $id;
+        tiga_b::where('id',$id)->update([
+            'komentar' => $request->komentar
+        ]);
+        return back()->with('message','Data Berhasil dikomentari !!');
+        // return back()->withInput();
+    
+    }
+
+    public function komentar4a(Request $request,$id){
+        
+        // return $id;
+        empat_a::where('id',$id)->update([
+            'komentar' => $request->komentar
+        ]);
+        return back()->with('message','Data Berhasil dikomentari !!');
+        // return back()->withInput();
+    
+    }
+
+    public function komentar4b(Request $request,$id){
+        
+        // return $id;
+        empat_b::where('id',$id)->update([
+            'komentar' => $request->komentar
+        ]);
+        return back()->with('message','Data Berhasil dikomentari !!');
+        // return back()->withInput();
+    
+    }
+
+    public function komentar5a(Request $request,$id){
+        
+        // return $id;
+        lima_a::where('id',$id)->update([
+            'komentar' => $request->komentar
+        ]);
+        return back()->with('message','Data Berhasil dikomentari !!');
+        // return back()->withInput();
+    
+    }
+
+    public function komentar5b(Request $request,$id){
+        
+        // return $id;
+        lima_b::where('id',$id)->update([
+            'komentar' => $request->komentar
+        ]);
+        return back()->with('message','Data Berhasil dikomentari !!');
+        // return back()->withInput();
+    
+    }
+
+    public function komentar5c(Request $request,$id){
+        
+        // return $id;
+        lima_c::where('id',$id)->update([
+            'komentar' => $request->komentar
+        ]);
+        return back()->with('message','Data Berhasil dikomentari !!');
+        // return back()->withInput();
+    
+    }
+
+    public function komentar5d(Request $request,$id){
+        
+        // return $id;
+        lima_d::where('id',$id)->update([
+            'komentar' => $request->komentar
+        ]);
+        return back()->with('message','Data Berhasil dikomentari !!');
+        // return back()->withInput();
+    
+    }
+
+    public function komentar5e(Request $request,$id){
+        
+        // return $id;
+        lima_e::where('id',$id)->update([
+            'komentar' => $request->komentar
+        ]);
+        return back()->with('message','Data Berhasil dikomentari !!');
+        // return back()->withInput();
+    
+    }
+
+    public function komentar5f(Request $request,$id){
+        
+        // return $id;
+        lima_f::where('id',$id)->update([
+            'komentar' => $request->komentar
+        ]);
+        return back()->with('message','Data Berhasil dikomentari !!');
+        // return back()->withInput();
+    
+    }
+
+    public function komentar6a(Request $request,$id){
+        
+        // return $id;
+        enam_a::where('id',$id)->update([
+            'komentar' => $request->komentar
+        ]);
+        return back()->with('message','Data Berhasil dikomentari !!');
+        // return back()->withInput();
+    
+    }
+
+    public function komentar6b(Request $request,$id){
+        
+        // return $id;
+        enam_b::where('id',$id)->update([
+            'komentar' => $request->komentar
+        ]);
+        return back()->with('message','Data Berhasil dikomentari !!');
+        // return back()->withInput();
+    
+    }
+
+    public function komentar6c(Request $request,$id){
+        
+        // return $id;
+        enam_c::where('id',$id)->update([
+            'komentar' => $request->komentar
+        ]);
+        return back()->with('message','Data Berhasil dikomentari !!');
+        // return back()->withInput();
+    
+    }
+
 }

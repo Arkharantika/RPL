@@ -456,8 +456,9 @@
                                 href="{{url('/kp/laporan')}}">
                                 <i class="si si-docs"></i><span class="sidebar-mini-hide">Laporan Seminar KP</span>
                             </a>
-                        </li>
-                        <li class="nav-main-heading">
+                        </li> -->
+
+                        <!-- <li class="nav-main-heading">
                             <span class="sidebar-mini-visible">TA</span><span
                                 class="sidebar-mini-hidden text-primary">Tugas Akhir</span>
                         </li>
@@ -467,7 +468,8 @@
                                 <i class="si si-note"></i><span class="sidebar-mini-hide">Bantuan Presensi Seminar
                                     Hasil</span>
                             </a>
-                        </li>
+                        </li> -->
+
                         <li class="{{ request()->is('ta/pengajuan/*') ? ' open' : '' }}">
                             <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-bulb"></i><span
                                     class="sidebar-mini-hide">Tugas Akhir</span></a>
@@ -494,7 +496,8 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
+
+                        <!-- <li>
                             <a class="{{ request()->is('ta/logbook') || request()->is('ta/logbook/*') ? ' active' : '' }}"
                                 href="{{route('ta.logbook.index')}}">
                                 <i class="si si-book-open"></i><span class="sidebar-mini-hide">Log Book TA</span>
@@ -615,7 +618,7 @@
 
                         @endcan
                         @can('koordinatorta')
-                        <!-- <li class="nav-main-heading">
+                        <li class="nav-main-heading">
                             <span class="sidebar-mini-visible">KTA</span><span
                                 class="sidebar-mini-hidden text-primary">Koordinator TA</span>
                         </li>
@@ -725,7 +728,7 @@
                                 <i class="fa fa-sign-out"></i><span class="sidebar-mini-hide">Exit Survey
                                     Mahasiswa</span>
                             </a>
-                        </li> -->
+                        </li>
                         @endcan
                         @can('koordinatorsel')
                         <!-- <li class="nav-main-heading">

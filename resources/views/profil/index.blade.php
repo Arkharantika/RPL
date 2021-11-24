@@ -9,6 +9,7 @@
     <div class="bg-image bg-image-bottom" style="background-image: url('{{asset('/media/photos/SC.jpg')}}');">
         <div class="bg-black-op-75 py-30">
             <div class="content content-full text-center">
+            @can('mahasiswa')
                 <!-- Avatar -->
                 <div class="mb-15">
                     <a class="img-link" href="">
@@ -17,6 +18,17 @@
                     </a>
                 </div>
                 <!-- END Avatar -->
+                @endcan
+            @can('dosen')
+                <!-- Avatar -->
+                <div class="mb-15">
+                    <a class="img-link" href="">
+                        <img class="img-avatar img-avatar96 img-avatar-thumb"
+                            src="{{asset('file_ttd/'.$dosen->signature_mhs)}} " alt="">
+                    </a>
+                </div>
+                <!-- END Avatar -->
+                @endcan
                 @can('mahasiswa')
                 <!-- Personal -->
                 <h1 class="h3 text-white font-w700 mb-10">{{$data->nama_mhs}}</h1>

@@ -101,6 +101,24 @@ class HomeController extends Controller
                 $logbookta1 = Dosen::bimbinganlogbookta($dosen->nip)->where('status_logbook1',2)->where('pem',1)->count();
                 $logbookta2 = Dosen::bimbinganlogbookta($dosen->nip)->where('status_logbook2',2)->where('pem',2)->count();
                 $logbookta = $logbookta1 + $logbookta2;
+
+                $duaA = dua_a::where('nim',$kampretos)->get()->count();
+                $duaB = dua_b::where('nim',$kampretos)->get()->count();
+                $duaC = dua_c::where('nim',$kampretos)->get()->count();
+                $tigaA = tiga_a::where('nim',$kampretos)->get()->count();
+                $tigaB = tiga_b::where('nim',$kampretos)->get()->count();
+                $empatA = empat_a::where('nim',$kampretos)->get()->count();
+                $empatB = empat_b::where('nim',$kampretos)->get()->count();
+                $limaA = lima_a::where('nim',$kampretos)->get()->count();
+                $limaB = lima_b::where('nim',$kampretos)->get()->count();
+                $limaC = lima_c::where('nim',$kampretos)->get()->count();
+                $limaD = lima_d::where('nim',$kampretos)->get()->count();
+                $limaE = lima_e::where('nim',$kampretos)->get()->count();
+                $limaF = lima_f::where('nim',$kampretos)->get()->count();
+                $enamA = enam_a::where('nim',$kampretos)->get()->count();
+                $enamB = enam_b::where('nim',$kampretos)->get()->count();
+                $enamC = enam_c::where('nim',$kampretos)->get()->count();
+                
                 // dd($logbookta);
                 return view('home',compact('enamC','enamB','enamA','limaF','limaE','limaD','limaC','limaB','limaA','empatB','empatA','tigaB','tigaA','duaC','duaB','duaA','dosen','user','kp','semkp','semhas','pendadaran','ta',
                     'tapending','semhaspending','pendadaranpending','ict','meka','sel',
@@ -112,6 +130,8 @@ class HomeController extends Controller
                 $ta = Ta::statusta($mhs->id)->first();
                 $semhas = Seminarta::statussemhas($mhs->id)->first();
                 $pendadaran = Pendadaran::statuspendadaran($mhs->id)->first();
+                // $enamC = enam_c::where('nim',$kampretos)->get()->count();
+
 
                 // Tambahan Khsusus
         $duaA = dua_a::where('nim',$kampretos)->get()->count();
