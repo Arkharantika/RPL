@@ -38,7 +38,7 @@
             !!json_encode(['csrfToken' => csrf_token(), ]) !!
         };
     </script>
-    
+
 </head>
 
 <body>
@@ -199,11 +199,11 @@
                             <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-user"></i><span
                                     class="sidebar-mini-hide">Admin</span></a>
                             <ul>
-                                <li>
+                                <!-- <li>
                                     <a class="{{ request()->is('admin/lihat') || request()->is('admin/lihat/*') ? ' active' : '' }}"
                                         href="{{url('lihat')}}">
                                         Lihat Data Form</a>
-                                </li>
+                                </li> -->
                                 <li>
                                     <a class="{{ request()->is('admin/users') || request()->is('admin/users/*') ? ' active' : '' }}"
                                         href="{{route('admin.users.index')}}">
@@ -239,41 +239,50 @@
                                         Bimbingan Akademik</a>
                                 </li>
                                 <!-- <li>
-                                        <a class="{{ request()->is('dosen/kp') || request()->is('dosen/kp/*') ? ' active' : '' }}" href="{{route('dosen.kp.index')}}">
-                                            Bimbingan KP</a>
-                                    </li>
-                                    <li>
-                                        <a class="{{ request()->is('dosen/ta') || request()->is('dosen/ta/*') ? ' active' : '' }}" href="{{route('dosen.ta.index')}}">
-                                            Bimbingan TA</a>
-                                    </li>
-                                    <li>
-                                        <a class="{{ request()->is('dosen/semhas') || request()->is('dosen/semhas/*') ? ' active' : '' }}" href="{{route('dosen.semhas.index')}}">
-                                            Seminar Hasil</a>
-                                    </li>
-                                    <li>
-                                        <a class="{{ request()->is('dosen/pendadaran') || request()->is('dosen/pendadaran/*') ? ' active' : '' }}" href="{{route('dosen.pendadaran.index')}}">
-                                            Pendadaran TA</a>
-                                    </li>
-                                    <li>
-                                        <a class="{{ request()->is('dosen/tawaran') || request()->is('dosen/tawaran/*') ? ' active' : '' }}" href="{{route('dosen.tawaran.index')}}">
-                                            Tawaran Topik TA</a>
-                                    </li>
-                                    <li>
-                                        <a class="{{ request()->is('dosen/logbookta') || request()->is('dosen/logbookta/*') ? ' active' : '' }}" href="{{route('dosen.logbookta.index')}}">
-                                            Log Book TA</a>
-                                    </li>
-                                    <li>
-                                        <a class="{{ request()->is('dosen/judulta') || request()->is('dosen/judulta/*') ? ' active' : '' }}" href="{{route('dosen.judulta.index')}}">
-                                            Perubahan Judul TA</a>
-                                    </li>
-                                    <li>
-                                        <a class="{{ request()->is('dosen/pembimbingta') || request()->is('dosen/pembimbingta/*') ? ' active' : '' }}" href="{{route('dosen.pembimbingta.index')}}">
-                                            Perubahan Pembimbing TA</a>
-                                    </li>
-                                    <li>
-                                        <a class="{{ request()->is('dosen/perpanjanganta') || request()->is('dosen/perpanjanganta/*') ? ' active' : '' }}" href="{{route('dosen.perpanjanganta.index')}}">
-                                            Perpanjangan TA</a>
-                                    </li> -->
+                                    <a class="{{ request()->is('dosen/kp') || request()->is('dosen/kp/*') ? ' active' : '' }}"
+                                        href="{{route('dosen.kp.index')}}">
+                                        Bimbingan KP</a>
+                                </li>
+                                <li>
+                                    <a class="{{ request()->is('dosen/ta') || request()->is('dosen/ta/*') ? ' active' : '' }}"
+                                        href="{{route('dosen.ta.index')}}">
+                                        Bimbingan TA</a>
+                                </li> -->
+                                <li>
+                                    <a class="{{ request()->is('dosen/semhas') || request()->is('dosen/semhas/*') ? ' active' : '' }}"
+                                        href="{{route('dosen.semhas.index')}}">
+                                        Mahasiswa Yang Diuji</a>
+                                </li>
+                                <!-- <li>
+                                    <a class="{{ request()->is('dosen/pendadaran') || request()->is('dosen/pendadaran/*') ? ' active' : '' }}"
+                                        href="{{route('dosen.pendadaran.index')}}">
+                                        Pendadaran TA</a>
+                                </li>
+                                <li>
+                                    <a class="{{ request()->is('dosen/tawaran') || request()->is('dosen/tawaran/*') ? ' active' : '' }}"
+                                        href="{{route('dosen.tawaran.index')}}">
+                                        Tawaran Topik TA</a>
+                                </li>
+                                <li>
+                                    <a class="{{ request()->is('dosen/logbookta') || request()->is('dosen/logbookta/*') ? ' active' : '' }}"
+                                        href="{{route('dosen.logbookta.index')}}">
+                                        Log Book TA</a>
+                                </li>
+                                <li>
+                                    <a class="{{ request()->is('dosen/judulta') || request()->is('dosen/judulta/*') ? ' active' : '' }}"
+                                        href="{{route('dosen.judulta.index')}}">
+                                        Perubahan Judul TA</a>
+                                </li>
+                                <li>
+                                    <a class="{{ request()->is('dosen/pembimbingta') || request()->is('dosen/pembimbingta/*') ? ' active' : '' }}"
+                                        href="{{route('dosen.pembimbingta.index')}}">
+                                        Perubahan Pembimbing TA</a>
+                                </li>
+                                <li>
+                                    <a class="{{ request()->is('dosen/perpanjanganta') || request()->is('dosen/perpanjanganta/*') ? ' active' : '' }}"
+                                        href="{{route('dosen.perpanjanganta.index')}}">
+                                        Perpanjangan TA</a>
+                                </li> -->
                             </ul>
                         </li>
                         <!-- <li class="{{ request()->is('kelengkapanta/*') ? ' open' : '' }}">
@@ -310,13 +319,13 @@
                             <a class="{{ request()->is('kp/seminar') || request()->is('kp/seminar/*') ? ' active' : '' }}"
                                 href="{{url('PresensiSeminarKP')}}">
                                 <i class="si si-note"></i><span class="sidebar-mini-hide">Pendidikan Strata Satu dan
-                                    Lanjut</span> 
+                                    Lanjut</span>
                             </a>
                         </li>
                         <li>
                             <a class="{{ request()->is('dua/b') || request()->is('dua/b/*') ? ' active' : '' }}"
                                 href="{{url('dua/b')}}">
-                                <i class="si si-doc"></i><span class="sidebar-mini-hide">Pendidikan Singkat</span> 
+                                <i class="si si-doc"></i><span class="sidebar-mini-hide">Pendidikan Singkat</span>
                             </a>
                         </li>
                         <li>
@@ -340,7 +349,7 @@
                             <a class="{{ request()->is('tiga/b') || request()->is('tiga/b/*') ? ' active' : '' }}"
                                 href="{{url('tiga/b')}}">
                                 <i class="si si-note"></i><span class="sidebar-mini-hide">Pendidikan Sehubungan dengan
-                                    Penugasan Kerja</span> 
+                                    Penugasan Kerja</span>
                             </a>
                         </li>
 
@@ -618,7 +627,7 @@
 
                         @endcan
                         @can('koordinatorta')
-                        <li class="nav-main-heading">
+                        <!-- <li class="nav-main-heading">
                             <span class="sidebar-mini-visible">KTA</span><span
                                 class="sidebar-mini-hidden text-primary">Koordinator TA</span>
                         </li>
@@ -728,7 +737,7 @@
                                 <i class="fa fa-sign-out"></i><span class="sidebar-mini-hide">Exit Survey
                                     Mahasiswa</span>
                             </a>
-                        </li>
+                        </li> -->
                         @endcan
                         @can('koordinatorsel')
                         <!-- <li class="nav-main-heading">

@@ -11,6 +11,8 @@ use App\Models\Ta;
 use App\Models\Jabatan;
 use App\Models\Koordinatorkbk;
 use App\Models\Pembimbing;
+use App\Models\Penguji;
+use App\Models\Seminarta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -35,13 +37,16 @@ class TaController extends Controller
      */
     public function index($nim)
     {
+        $datanya = Mahasiswa::mhs($nim)->first()->id;
+        // return $datanya;
         // $nim = Auth::user()->nim;
         $data = Mahasiswa::mhs($nim)->first();
         $dosen = Dosen::all();
         $matakuliah = Matakuliah::all();
         $peminatan = Peminatan::all();
         $pending = Ta::pending($nim)->first();
-        $setuju = Ta::setuju($nim)->first();
+        // $setuju = Ta::setuju($nim)->first();
+        $setuju = Ta::where('mahasiswa_id',$datanya)->first();
         $tolak = Ta::tolak($nim)->first();
         // dd($data);
         if($setuju != null){
@@ -59,7 +64,8 @@ class TaController extends Controller
             // dd($matkul);
             return view('ta.ta_tolak',compact('tolak','matkul','matakuliah','pembimbing','dosen','peminatan')); //Ta ditolak
         }elseif ($data != null){
-            return view('ta.ta_pendaftaran',compact('data','dosen','matakuliah','peminatan')); //Belum daftar ta
+            // return view('ta.ta_pendaftaran',compact('data','dosen','matakuliah','peminatan')); //Belum daftar ta
+            return view('dosenpenguji',compact('data','dosen','matakuliah','peminatan')); //Belum daftar ta
         }else{
             return view('ta.error.pembimbing'); //sementara
         }
@@ -73,30 +79,31 @@ class TaController extends Controller
      */
     public function store(Request $request)
     {
+        
         $validatedTa = $request->validate([
             'mahasiswa_id' => 'required|unique:ta',
             'sks' => 'required',
             'ipk' => 'required',
-            'judul' => 'required',
-            'abstrak' => 'required',
+            // 'judul' => 'required',
+            // 'abstrak' => 'required',
             'status_ta' => 'required',
-            'peminatan_id' => 'required',
+            // 'peminatan_id' => 'required',
             'cetak_ta' => 'required',
         ]);
 
         $validatedData = $request->validate([
             // 'kode_mk1' => 'required',
-            'mk1' => 'required|different:mk3',
-            'nilai_mk1' => 'required|numeric',
-            'huruf_mk1' => 'required',
-            // 'kode_mk2' => 'required',
-            'mk2' => 'required|different:mk1',
-            'nilai_mk2' => 'required|numeric',
-            'huruf_mk2' => 'required',
-            // 'kode_mk3' => 'required',
-            'mk3' => 'required|different:mk2',
-            'nilai_mk3' => 'required|numeric',
-            'huruf_mk3' => 'required',
+            // 'mk1' => 'required|different:mk3',
+            // 'nilai_mk1' => 'required|numeric',
+            // 'huruf_mk1' => 'required',
+            // // 'kode_mk2' => 'required',
+            // 'mk2' => 'required|different:mk1',
+            // 'nilai_mk2' => 'required|numeric',
+            // 'huruf_mk2' => 'required',
+            // // 'kode_mk3' => 'required',
+            // 'mk3' => 'required|different:mk2',
+            // 'nilai_mk3' => 'required|numeric',
+            // 'huruf_mk3' => 'required',
             'pembimbing1' => 'required',
             'pembimbing2' => 'required|different:pembimbing1',
         ]);
@@ -301,5 +308,135 @@ class TaController extends Controller
 
     public function batasan_bimbingan(){
         return view('yuyun');
+    }
+
+    public function paraPenguji(Request $request){
+
+        // return redirect(url('koordinator/ta/semhas/57/edit'))->with('message','Terimakasih telah mendaftar Tugas Akhir!');
+        // return $request;
+        $validatedTa = $request->validate([
+            'mahasiswa_id' => 'required|unique:ta',
+            'sks' => 'required',
+            'ipk' => 'required',
+            // 'judul' => 'required',
+            // 'abstrak' => 'required',
+            'status_ta' => 'required',
+            // 'peminatan_id' => 'required',
+            'cetak_ta' => 'required',
+            'rpl' => 'required',
+        ]);
+
+        $validatedData = $request->validate([
+            // 'kode_mk1' => 'required',
+            // 'mk1' => 'required|different:mk3',
+            // 'nilai_mk1' => 'required|numeric',
+            // 'huruf_mk1' => 'required',
+            // // 'kode_mk2' => 'required',
+            // 'mk2' => 'required|different:mk1',
+            // 'nilai_mk2' => 'required|numeric',
+            // 'huruf_mk2' => 'required',
+            // // 'kode_mk3' => 'required',
+            // 'mk3' => 'required|different:mk2',
+            // 'nilai_mk3' => 'required|numeric',
+            // 'huruf_mk3' => 'required',
+            'pembimbing1' => 'required',
+            'pembimbing2' => 'required|different:pembimbing1',
+        ]);
+        // dd($validatedData);
+
+        // $batas = batasan_bimbingan::where('id',1)->first();
+        // $barier = $batas->jumlah_bimbingan;
+
+        $pembimbing = 'pembimbing1';
+        $pembimbing2 = 'pembimbing2';
+
+        $penguji1 = 'pengujiwawancara1';
+        $penguji2 = 'pengujiwawancara2';
+
+        // $check = Pembimbing::join('ref_dosen','ref_dosen.id','=','ta_pembimbing.pembimbing')
+        // ->where('ref_dosen.id',$request->$pembimbing)->where('pem',1)->where('status_pendadaranpem',null)->count();
+
+        // $check2 = Pembimbing::join('ref_dosen','ref_dosen.id','=','ta_pembimbing.pembimbing')
+        // ->where('ref_dosen.id',$request->$pembimbing2)->where('pem',2)->where('status_pendadaranpem',null)->count();
+
+        // if($check >= $barier){
+        //     return redirect('ta/pengajuan/pendaftaran')->with('message','Pembimbing 1 sudah penuh !');
+        // }else if($check2 >= $barier){
+        //     return redirect('ta/pengajuan/pendaftaran')->with('message','Pembimbing 2 sudah penuh !');
+        // }else{
+        //     $ta = Ta::create($validatedTa); 
+        // }
+        $ta = Ta::create($validatedTa); 
+        
+        $ta_id = $ta->id;
+        if($ta){
+
+            // for ($i = 1; $i <= 3; $i++) {
+            //     $mk = 'mk' . $i;
+            //     $datamk = Matakuliah::where('nama',$request->$mk)->first();
+            //     // $kode_mk = $datamk->kode;
+            //     $nilai_mk = 'nilai_mk' . $i;
+            //     $huruf_mk = 'huruf_mk' . $i;
+            //     DB::table('ta_matkul')->insert([
+            //         'ta_id' => $ta_id,
+            //         'nama_matkul' => $request->$mk,
+            //         'kode_matkul' => $datamk->kode,
+            //         'ip' => $request->$nilai_mk,
+            //         'huruf' => $request->$huruf_mk,
+            //     ]);
+            // }
+
+            for ($i = 1; $i <= 2; $i++) {
+                $pembimbing = 'pembimbing' . $i;
+                Pembimbing::create([
+                    'ta_id' => $ta_id,
+                    'pembimbing' => $request->$pembimbing,
+                    'pem' => $i,
+                    'status_pem' => 'SETUJU',
+                    'status_semhas' => 'SETUJU',
+                ]);
+            }
+
+            // for ($i = 1; $i <= 2; $i++){
+            //     Penguji::create([
+            //         'ta_id' => $ta_id,
+            //     ]);
+            // }
+            Penguji::create([
+                'ta_id' => $ta_id,
+                'penguji_ke' => 1,
+                'penguji_semhas' => $request->pengujiwawancara1,
+            ]);
+            Penguji::create([
+                'ta_id' => $ta_id,
+                'penguji_ke' => 2,
+                'penguji_semhas' => $request->pengujiwawancara2,
+            ]);
+
+            $semta = Seminarta::create([
+                'ta_id' => $ta_id,
+                'status_seminar' => 'SETUJU',
+                'cetak_semhas' => null,
+                'draft_semhas' => null,
+            ]);
+
+            // for ($i = 1; $i <= 2; $i++) {
+            //     $idpem = 'idpem'.$i;
+            //     Pembimbing::where('id',$request->$idpem)->update([
+            //         'status_semhas' => 'PENDING',
+            //     ]);
+            // }
+
+            // Koordinatorkbk::create([
+            //     'ta_id' => $ta_id,
+            //     'status_kbk' => 'PENDING',
+            // ]);
+
+            // $koorta = Jabatan::Ta();
+            // $es = $koorta->no_telp;
+
+            // return redirect()->away('https://localhost:8000/notifKoorTA-pendaftaran/'.$es);
+            return back()->with('message','Data Berhasil diupdate !!');
+        }
     }
 }

@@ -441,6 +441,7 @@ Route::post('komentar6b/{id}','TadraftController@komentar6b')->name('komentar6b'
 // penguji
 
 Route::get('ta/pengajuan/pendaftaran/{id}','TaController@index')->name('index');
+Route::post('paraPenguji','TaController@paraPenguji')->name('paraPenguji');
 
 
 

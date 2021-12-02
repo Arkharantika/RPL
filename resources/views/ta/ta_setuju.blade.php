@@ -5,17 +5,17 @@
 @section('content')
 <div class="content">
     <!-- Bootstrap Design -->
-    <h2 class="content-heading">Pendaftaran Tugas Akhir</h2>
+    <h2 class="content-heading">Pengajuan Penguji Peserta RPL</h2>
     <div class="block">
         <div class="block-header block-header-default">
             <h1 class="block-title" style="text-align: center; color:green;">
-            Pengajuan Tugas Akhir Telah <b>DISETUJUI<b></h1>
+            Pengajuan Penguji Telah <b>BERHASIL<b></h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <div class="block-header block-header-default">
-                <h3 class="block-title">Dosen Pembimbing</h3>
+                <h3 class="block-title">Dosen Penguji ONLINE</h3>
             </div>
             <div class="block">
                 <div class="block-content">
@@ -24,7 +24,7 @@
                         @foreach($pembimbing as $key=>$pembimbings)
                             <div class="form-group">
                                 <input type="text" class="form-control" name="idpem{{$key+1}}" value="{{$pembimbings->id}}" hidden>
-                                <label for="sks">Pembimbing {{$key+1}} Tugas Akhir</label>
+                                <label for="sks">Penguji Online {{$key+1}}</label>
                                 <input type="text" class="form-control "  name="pembimbing{{$key+1}}" Value="{{$pembimbings->nama_dosen}}" readonly>
                             </div>
                         @endforeach
@@ -87,7 +87,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
             <div class="block">
                 <div class="block-header block-header-default">
                     <h3 class="block-title">Tugas Akhir</h3>
@@ -114,17 +114,11 @@
                             <textarea type="text" class="form-control" id="abstrak" name="abstrak" rows="6" readonly>{{$setuju->abstrak}}</textarea>
                         </div>
                     </div>
-                    <!-- <div class="form-group row">
-                        <label class="col-12" for="example-text-input">Tanggal Pengajuan</label>
-                        <div class="col-md-12"> 
-                            <input type="text" class="form-control bg-white" id="flatpickr" name="tgl_pengajuan" placeholder="Y-m-d">
-                        </div>
-                    </div> -->
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-12">
             <div class="block">
                 <div class="block-header block-header-default">
@@ -170,7 +164,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 @endsection
 

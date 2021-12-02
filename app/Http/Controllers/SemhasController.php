@@ -74,6 +74,35 @@ class SemhasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    public function kampret(Request $request)
+    {
+        return 0;
+        $validateData = $request->validate([
+            'ta_id' => 'required|unique:ta_seminar',
+            // 'tanggal' => 'required',
+            // 'tempat' => 'required',
+            // 'jam_mulai' => 'required',
+            // 'jam_selesai' => 'required|after:jam_mulai',
+            'status_seminar' => 'required',
+            'cetak_semhas' => 'required',
+            'draft_semhas' => 'required',
+        ]);
+        // dd($validateData);
+        $semta = Seminarta::create($validateData);
+
+        for ($i = 1; $i <= 2; $i++) {
+            $idpem = 'idpem'.$i;
+            Pembimbing::where('id',$request->$idpem)->update([
+                'status_semhas' => 'PENDING',
+            ]);
+        }
+        for ($i = 1; $i <= 2; $i++){
+            Penguji::create([
+                'ta_id' => $request->ta_id,
+            ]);
+        }
+        return redirect(route('ta.semhas.index'))->with('message','Pendaftaran Seminar Hasil Berhasil dilakukan!');
+    }
     public function store(Request $request)
     {
         $validateData = $request->validate([

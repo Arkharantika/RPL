@@ -498,7 +498,7 @@
         <!-- Close Mahasiswa  -->
         <!-- Open Dosen  -->
         @can('dosen')
-        <div class="row invisible" data-toggle="appear">
+        <!-- <div class="row invisible" data-toggle="appear">
             <div class="col-md-6">
                 <a class="block block-rounded" href="{{route('dosen.ta.index')}}">
                     <div class="block-content block-content-full ribbon ribbon-modern ribbon-primary">
@@ -512,7 +512,7 @@
                         </div>
                     </div>
                 </a>
-            </div>
+            </div> -->
             <div class="col-md-6">
                 <a class="block block-rounded" href="{{route('dosen.semhas.index')}}">
                     <div class="block-content block-content-full ribbon ribbon-modern ribbon-warning">
@@ -521,7 +521,7 @@
                         </div>
                         <div class="text-center py-30">
                             <i class="fa fa-comments fa-3x text-warning mb-15 float-left"></i>
-                            <h5 class="mb-0">Penguji Semhas</h5>
+                            <h5 class="mb-0">Penguji Peserta RPL</h5>
                             <div class="text-muted">Membutuhkan Konfirmasi Dosen</div>
                         </div>
                     </div>
@@ -529,7 +529,7 @@
             </div>
         </div>
         <div class="row invisible" data-toggle="appear">
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
                 <a class="block block-rounded" href="{{route('dosen.pendadaran.index')}}">
                     <div class="block-content block-content-full ribbon ribbon-modern ribbon-info">
                         <div class="ribbon-box">
@@ -556,7 +556,7 @@
                         </div>
                     </div>
                 </a>
-            </div>
+            </div> -->
         </div>
         @endcan
         <!-- Close Dosen -->

@@ -10,6 +10,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\Mahasiswa;
+// use App\Models\Ta;
+
 class NilaisemhasController extends Controller
 {
     /**
@@ -103,14 +106,23 @@ class NilaisemhasController extends Controller
      */
     public function show($id)
     {
-        $data = Dosen::getbimbingansemhas($id,Auth::user()->nim);
-        $nilai = Nilaisemhaspembimbing::where('ta_pembimbing_id', $data->id)->first();
-        if($nilai != null){
-            // dd($data);
-            return view('dosen.semhas.nilai.validasi',compact('data','nilai'));
-        }else{
-            return view('dosen.semhas.nilai.view',compact('data'));
-        }
+        // return 0;
+        
+        // $data = Dosen::getbimbingansemhas($id,Auth::user()->nim);
+        // return $id;
+        // $nilai = Nilaisemhaspembimbing::where('ta_pembimbing_id', $data->id)->first();
+        // if($nilai != null){
+        //     // dd($data);
+        //     return view('dosen.semhas.nilai.validasi',compact('data','nilai'));
+        // }else{
+        //     return view('dosen.semhas.nilai.view',compact('data'));
+        // }
+
+        $murid = Ta::where('id',$id)->get()->first();
+        $nimnya = $murid->mahasiswa_id;
+        $data = Mahasiswa::where('id',$nimnya)->get()->first();
+        // return $murid;
+        return view('dosen.semhas.nilai.view',compact('data'));
     }
 
     /**

@@ -25,8 +25,8 @@
                 <tr>
                     <th class="d-none d-sm-table-cell text-center" style="width: 3%">No</th>
                     <th class="d-none d-sm-table-cell text-center" style="width: 7%">NIM</th>
-                    <th class="text-center" style="width: 20%;">Angkatan</th>
-                    <th class="text-center" style="width: 45%;">Nama</th>
+                    <th class="text-center" style="width: 10%;">Angkatan</th>
+                    <th class="text-center" style="width: 35%;">Nama</th>
                     <th class="d-none d-sm-table-cell text-center" style="width: 10%;">Status</th>
                     <th class="text-center" style="width: 15%;">Action</th>
                 </tr>
@@ -61,10 +61,11 @@
                         @endif
                         ">{{$row->status_mhs}}</span>
                     </td>
-                    <td width="250" style="text-align: center;">
+                    <td width="350" style="text-align: center;">
                         <a href="{{route('admin.mahasiswa.show', $row->id)}}" class="btn btn-sm btn-alt-primary mr-5 mb-5" data-toggle="tooltip" data-placement="top" title="" data-original-title="Lihat"><i class="fa fa-eye"></i></a>
                         <a href="{{route('admin.mahasiswa.edit', $row->id)}}" class="btn btn-sm btn-alt-warning mr-5 mb-5" data-toggle="tooltip" data-placement="top" title="" data-original-title="Perbaharui"><i class="fa fa-edit"></i></a>
                         <a href="javascript:;" data-mhsid="{{$row->id}}" data-toggle="modal" data-target="#delete" class="btn btn-sm btn-alt-danger"><i class="fa fa-trash"></i></a>
+                        <a href="{{url('ta/pengajuan/pendaftaran',$row->nim)}}" class="btn btn-sm btn-alt-success mr-5 mb-5" data-toggle="tooltip" data-placement="top" title="" data-original-title="Set Penguji"><i class="fa fa-edit"></i></a>
                     </td>
                 </tr>
                 @endforeach

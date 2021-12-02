@@ -12,7 +12,7 @@
     @endif
     <div class="block">
         <div class="block-header block-header-default">
-            <h3 class="block-title">Daftar Seminar Hasil Mahasiswa <small>Teknik Elektro</small></h3>
+            <h3 class="block-title">Daftar UJian Peserta RPL</h3>
         </div>
         <div class="block-content block-content-full">
             <!-- DataTables functionality is initialized with .js-dataTable-full class in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
@@ -26,7 +26,7 @@
                     <th class="d-none d-sm-table-cell text-center" style="width: 10%;">Status</th>
                     <!-- <th class="d-none d-sm-table-cell text-center" style="width: 10%;">Status Semhas</th> -->
                     <th class="d-none d-sm-table-cell text-center" style="width: 10%;">Status Pembimbing</th>
-                    <th class="d-none d-sm-table-cell text-center" style="width: 10%;">Waktu</th>
+                    <!-- <th class="d-none d-sm-table-cell text-center" style="width: 10%;">Waktu</th> -->
                     <th class="text-center" style="width: 35%;">Action</th>
                 </tr>
             </thead>
@@ -43,9 +43,9 @@
                     <td class="d-none d-sm-table-cell text-center font-size-sm text-center">
                         <?php $status=$row['pem'] ?>
                         @if($status == '1')
-                            <span class="badge badge-primary">Pembimbing 1</span>
+                            <span class="badge badge-primary">Penguji Online 1</span>
                         @else
-                            <span class="badge badge-info">Pembimbing 2</span>
+                            <span class="badge badge-info">Penguji Online 2</span>
                         @endif
                     </td>
                     <td class="d-none d-sm-table-cell" style="text-align: center;">
@@ -59,9 +59,9 @@
                             <span class="badge badge-danger">DITOLAK</span>
                         @endif
                     </td>
-                    <td class="d-none d-sm-table-cell" style="text-align: center;">
+                    <!-- <td class="d-none d-sm-table-cell" style="text-align: center;">
                         {{$row->tanggal}}, jam {{date("H.i", strtotime($row->jam_mulai))}}
-                    </td>
+                    </td> -->
                     <!-- <td style="text-align: center;">
                         <--?php $status=$row['status_semhas'] ?>
                         @if($status == 'SETUJU')
@@ -74,11 +74,11 @@
                     </td> -->
                     <td style="text-align: center;">
                         @if($row['status_seminar'] == 'SETUJU')
-                        <a href="{{route('dosen.semhas.show', $row->ta_id)}}" class="btn btn-sm btn-alt-primary mr-5 mb-5"><i class="fa fa-eye"></i> Lihat</a>
-                        <a href="{{route('dosen.undangan.semhas', $row->ta_id)}}" class="btn btn-sm btn-alt-warning mr-5 mb-5" target="_blank"><i class="fa fa-print"></i> Undangan</a>
+                        <!-- <a href="{{route('dosen.semhas.show', $row->ta_id)}}" class="btn btn-sm btn-alt-primary mr-5 mb-5"><i class="fa fa-eye"></i> Lihat</a>
+                        <a href="{{route('dosen.undangan.semhas', $row->ta_id)}}" class="btn btn-sm btn-alt-warning mr-5 mb-5" target="_blank"><i class="fa fa-print"></i> Undangan</a> -->
                         <a href="{{route('dosen.nilai_semhas.show', $row->ta_id)}}" class="btn btn-sm btn-alt-danger mr-5 mb-5"><i class="fa fa-edit"></i> Nilai</a>
                             @if($row->pem == 1)
-                                <a href="{{route('dosen.rekap_semhas.edit', $row->ta_id)}}" class="btn btn-sm btn-alt-secondary mr-5 mb-5"><i class="fa fa-calculator"></i> Rekap</a>
+                                <!-- <a href="{{route('dosen.rekap_semhas.edit', $row->ta_id)}}" class="btn btn-sm btn-alt-secondary mr-5 mb-5"><i class="fa fa-calculator"></i> Rekap</a> -->
                             @endif
                         @else
                         <a href="{{route('dosen.semhas.edit', $row->ta_id)}}" class="btn btn-sm btn-alt-warning mr-5 mb-5"><i class="fa fa-edit"></i> Update</a>
@@ -95,18 +95,19 @@
                         <span class="text-primary">{{ $row['nama_mhs'] }}</span>
                     </td>
                     <td class="d-none d-sm-table-cell text-center font-size-sm text-center">
-                        <span class="badge badge-warning">Penguji</span>
+                        <span class="badge badge-warning">Penguji Wawancara</span>
                     </td>
                     <td class="d-none d-sm-table-cell" style="text-align: center;">
                     </td>
-                    <td class="d-none d-sm-table-cell" style="text-align: center;">
+                    <!-- <td class="d-none d-sm-table-cell" style="text-align: center;">
                         {{$row->tanggal}}, jam {{date("H.i", strtotime($row->jam_mulai))}}
-                    </td>
+                    </td> -->
                     <!-- <td style="text-align: center;">
                     </td> -->
                     <td style="text-align: center;">
-                        <a href="{{route('dosen.undangan.semhas', $row->ta_id)}}" class="btn btn-sm btn-alt-warning mr-5 mb-5" target="_blank"><i class="fa fa-print"></i> Undangan</a>
-                        <a href="{{route('dosen.penguji_semhas.show', $row->ta_id)}}" class="btn btn-sm btn-alt-danger mr-5 mb-5"><i class="fa fa-edit"></i> Nilai</a>
+                        <!-- <a href="{{route('dosen.undangan.semhas', $row->ta_id)}}" class="btn btn-sm btn-alt-warning mr-5 mb-5" target="_blank"><i class="fa fa-print"></i> Undangan</a> -->
+                        <!-- <a href="{{route('dosen.penguji_semhas.show', $row->ta_id)}}" class="btn btn-sm btn-alt-danger mr-5 mb-5"><i class="fa fa-edit"></i> Nilai</a> -->
+                        <a href="" class="btn btn-sm btn-alt-danger mr-5 mb-5"><i class="fa fa-edit"></i> Nilai</a>
                     </td>
                 </tr>
                 @endforeach
