@@ -40,7 +40,7 @@
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Nama Organisasi Profesi /
                                     Lembaga / Institusi :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="judul"
+                                <textarea type="form-control" class="form-control" placeholder="contoh : Laboratorium Komputer dan Jaringan, Fakultas Teknik, UNS" name="judul"
                                     id="judul" required></textarea>
                             </div>
                             <!-- <div class="form-group">
@@ -50,23 +50,24 @@
                                     id="waktu" required></textarea>
                             </div> -->
                             <div class="form-group">
-                                <label class="form-label"><i class="bx bx-caret-right"></i>Nama Lembaga
-                                    Pemberi Tugas
+                                <label class="form-label"><i class="bx bx-caret-right"></i>Alamat 
+(No. Telp.; Fax; E-mail)
                                     :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="nama_alamat"
+                                <textarea type="form-control" class="form-control" placeholder="contoh : Fakultas Teknik UNS 
+Jln.Ir. Sutami 36A, Surakarta" name="nama_alamat"
                                     id="nama_alamat" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Kedudukan / Jabatan Dalam
                                     Organisasi Profesi / Lembaga / Institusi
                                     :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="kedudukan"
+                                <textarea type="form-control" class="form-control" placeholder="contoh : Kepala Laboratorium" name="kedudukan"
                                     id="kedudukan" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Periode Tahun
                                     Masa Jabatan :</label>
-                                <textarea type="form-control" class="form-control" placeholder=""
+                                <textarea type="form-control" class="form-control" placeholder="contoh : 2019-sekarang"
                                     name="kedudukan_penulisan" id="kedudukan_penulisan" required></textarea>
                             </div>
                             <div class="form-group">
@@ -133,7 +134,8 @@
                             <th class="text-center">Link G-Drive Surat penugasan
                             </th>
                             <th class="text-center">Link G-Drive Sertifikat/surat
-                                    keterangan atau keanggotaan</th>
+                                keterangan atau keanggotaan</th>
+                            <th class="text-center">komentar</th>
                             <th class="text-center">action</th>
                         </tr>
                     </thead>
@@ -162,9 +164,17 @@
                             <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
+                            <td class="font-w600 font-size-sm text-center">
+                                <a href="#">{{ $row->komentar}}</a>
+                            </td>
                             <td width="250" style="text-align: center;">
+                                <form action="{{url('edit6b/'.$row->id)}}" method="post" class="d-inline">
+                                    @csrf
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
+                                </form>
                                 <form action="{{url('hapus6b/'.$row->id)}}" method="post" class="d-inline">
-                                    
+
                                     @csrf
                                     <button type="submit" class="btn btn-sm btn-alt-danger"><i
                                             class="fa fa-trash"></i></button>

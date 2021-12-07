@@ -29,7 +29,7 @@
                 </ul>
                 <!-- END Step Tabs -->
 
-                <form method="post" action="b/kirim" enctype="multipart/form-data">
+                <form method="post" action="{{url('ubah3b/'.$idnya)}}" enctype="multipart/form-data">
                     @csrf
 
                     <div class="block-content block-content-full tab-content" style="min-height: 265px;">
@@ -40,31 +40,30 @@
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Bentuk Kegiatan Pembelajaran
                                     Sehubungan Dengan Penugasan Kerja :</label>
-                                <textarea type="form-control" class="form-control" placeholder="contoh : Tatap muka, pemberian tugas dan praktikum
-" name="jenis"
+                                <textarea type="form-control" class="form-control" placeholder="{{$datanya->bentuk_kegiatan}}" name="jenis"
                                     id="jenis" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Waktu Pelaksanaan dan Lama
                                     Pelaksanaan :</label>
-                                <textarea type="form-control" class="form-control" placeholder="contoh : 2011-2017" name="waktu"
+                                <textarea type="form-control" class="form-control" placeholder="{{$datanya->waktu}}" name="waktu"
                                     id="waktu" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Nama dan alamat Instruktur
                                     (No. Telpon, Fax, E-mail) :</label>
-                                <textarea type="form-control" class="form-control" placeholder="contoh : King Saud University, Riyadh (KSU), Saudi Arabia" name="nama_alamat"
+                                <textarea type="form-control" class="form-control" placeholder="{{$datanya->nama_alamat_telp}}" name="nama_alamat"
                                     id="nama_alamat" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Judul Kegiatan Pembelajaran
                                     Sehubungan Dengan Penugasan Kerja :</label>
-                                <textarea type="form-control" class="form-control" placeholder="contoh : C++ Programming Lab" name="materi"
+                                <textarea type="form-control" class="form-control" placeholder="{{$datanya->judul}}" name="materi"
                                     id="materi" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Daftar Bacaan :</label>
-                                <textarea type="form-control" class="form-control" placeholder="contoh : Delores M. Etter and Jeanine A. Ingber, “Engineering Problem Solving with C++”, McGraw-Hill, Pearson international edition, 2nd edition " name="lama" id="lama"
+                                <textarea type="form-control" class="form-control" placeholder="{{$datanya->daftar}}" name="lama" id="lama"
                                     required></textarea>
                             </div>
                             <!-- <div class="form-group">
@@ -76,7 +75,7 @@
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Link G-Drive Extended
                                     abstract atau Executive Summary
                                     :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="sertifikat"
+                                <textarea type="form-control" class="form-control" placeholder="{{$datanya->sertifikat}}" name="sertifikat"
                                     id="sertifikat" required></textarea>
                             </div>
 
@@ -89,8 +88,8 @@
                             <!-- INI TOMBOLNYAA !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
                             <div class="form-group">
                                 <div class="d-grid">
-                                    <button type="submit" id="covid" class="btn btn-danger btn-lg px-5"><i
-                                            class="bx bx-sun"></i>Tambah</button>
+                                    <button type="submit" id="covid" class="btn btn-success btn-lg px-5"><i
+                                            class="bx bx-sun"></i>Ubah Data</button>
                                 </div>
                             </div>
                         </div>
@@ -103,77 +102,6 @@
             </div>
             <!-- END Validation Wizard Classic -->
 
-        </div>
-    </div>
-
-    <div class="block">
-        <!-- Judul Halaman -->
-        <div class="block-header block-header-default">
-            <h3 class="block-title">List Pendidikan Yang Pernah di tempuh</h3>
-        </div>
-        <div class="block-content block-content-full">
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered text-center js-dataTable-edited">
-                    <thead>
-                        <tr>
-                            <th class="d-none d-sm-table-cell text-center">No</th>
-                            <th class="d-none d-sm-table-cell text-center">Bentuk Kegiatan Pembelajaran Sehubungan
-                                Dengan Penugasan Kerja
-                            </th>
-                            <th class="text-center">Waktu Pelaksanaan</th>
-                            <th class="text-center">Nama & Alamat
-                                Penyelenggara
-                                (No. Telpon, Fax, E-mail)</th>
-                            <th class="text-center">Judul Kegiatan Pembelajaran Sehubungan Dengan Penugasan Kerja</th>
-                            <th class="text-center">Daftar Bacaan</th>
-                            <!-- <th class="text-center">Link G-Drive Jadwal</th> -->
-                            <th class="text-center">Link G-Drive Sertifikat</th>
-                            <th class="text-center">action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $no=1; $idx=0; ?>
-                        @foreach ($datanya as $row)
-                        <tr>
-                            <td class="d-none d-sm-table-cell text-center font-size-sm text-center">{{ $no++}}</td>
-                            <td class="d-none d-sm-table-cell text-center font-size-sm text-center">
-                                {{ $row->bentuk_kegiatan}}
-                            </td>
-                            <td class="font-w600 font-size-sm text-center">
-                                <a href="#">{{ $row->waktu}}</a>
-                            </td>
-                            <td class="font-size-sm text-center">
-                                {{ $row->nama_alamat_telp}}
-                            </td>
-                            <td class="font-w600 font-size-sm text-center">
-                                <a href="#">{{ $row->judul}}</a>
-                            </td>
-                            <td class="font-w600 font-size-sm text-center">
-                                <a href="#">{{ $row->daftar}}</a>
-                            </td>
-                            <!-- <td class="font-w600 font-size-sm text-center">
-                                <a href="#">{{ $row->jadwal}}</a>
-                            </td> -->
-                            <td class="font-w600 font-size-sm text-center">
-                                <a href="#">{{ $row->sertifikat}}</a>
-                            </td>
-                            <td width="250" style="text-align: center;">
-                                <form action="{{url('edit3b/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
-                                            class="fa fa-edit"></i></button>
-                                </form>
-                                <form action="{{url('hapus3b/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-danger"><i
-                                            class="fa fa-trash"></i></button>
-                                </form>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
         </div>
     </div>
 

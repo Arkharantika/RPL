@@ -41,31 +41,32 @@
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Topik Paparan
                                     dan Laporan Teknis Interna :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="topik"
+                                <textarea type="form-control" class="form-control" placeholder="contoh : Renewable energy " name="topik"
                                     id="topik" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Judul Paparan
                                     dan Laporan Teknis Internal :</label>
-                                <textarea type="form-control" class="form-control" placeholder="hai" name="judul"
+                                <textarea type="form-control" class="form-control" placeholder="contoh : Final report “Piezoelectric Generator for Self-Powered Micro/Nano devices” Tahun: 2013" name="judul"
                                     id="judul" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Nama Lembaga Pemberi Tugas
                                     :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="nama_alamat"
+                                <textarea type="form-control" class="form-control" placeholder="contoh : King Abdulaziz City for Science and Technology (KACST), Riyadh, Saudi Arabia 
+" name="nama_alamat"
                                     id="nama_alamat" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Kedudukan di Dalam Paparan
                                     :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="kedudukan"
+                                <textarea type="form-control" class="form-control" placeholder="contoh : Research assistant" name="kedudukan"
                                     id="kedudukan" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Kedudukan di Dalam Penulisan
                                     Laporan Teknis :</label>
-                                <textarea type="form-control" class="form-control" placeholder=""
+                                <textarea type="form-control" class="form-control" placeholder="contoh : Penulis draft laporan final"
                                     name="kedudukan_penulisan" id="kedudukan_penulisan" required></textarea>
                             </div>
                             <div class="form-group">
@@ -129,6 +130,7 @@
                             <th class="text-center">Kedudukan di Dalam Paparan</th>
                             <th class="text-center">Link G-Drive Surat keputusan penugasan</th>
                             <th class="text-center">Link G-Drive -Executive summary atau fotokopi laporan teknis</th>
+                            <th class="text-center">komentar</th>
                             <th class="text-center">action</th>
                         </tr>
                     </thead>
@@ -158,7 +160,15 @@
                             <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
+                            <td class="font-w600 font-size-sm text-center">
+                                <a href="#">{{ $row->komentar}}</a>
+                            </td>
                             <td width="250" style="text-align: center;">
+                                <form action="{{url('edit5a/'.$row->id)}}" method="post" class="d-inline">
+                                    @csrf
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
+                                </form>
                                 <form action="{{url('hapus5a/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
                                     <button type="submit" class="btn btn-sm btn-alt-danger"><i

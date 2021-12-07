@@ -41,31 +41,31 @@
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Jenis Instruktur
                                     (Pengajar / Dosen Tamu/ Mentor / Pembimbing) :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="judul"
+                                <textarea type="form-control" class="form-control" placeholder="contoh : Mentor dalam workshop “Artificial Intelligence (AI) and Computational Intelligence (CI)”" name="judul"
                                     id="judul" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Waktu dan Tempat Sebagai
                                     Instruktur :</label>
-                                <textarea type="form-control" class="form-control" placeholder="hai" name="waktu"
+                                <textarea type="form-control" class="form-control" placeholder="contoh : Rabu, 10 Maret 2019. Tempat: laboratorium Komputer dan jaringan, Fakultas Teknik, UNS" name="waktu"
                                     id="waktu" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Nama Lembaga Pemberi Tugas
                                     :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="nama_alamat"
+                                <textarea type="form-control" class="form-control" placeholder="contoh : Laboratorium Komputer dan jaringan, Fakultas Teknik, UNS" name="nama_alamat"
                                     id="nama_alamat" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Jumlah Peserta
                                     :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="kedudukan"
+                                <textarea type="form-control" class="form-control" placeholder="contoh : >10" name="kedudukan"
                                     id="kedudukan" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Lamanya Kegiatan Instruktur
                                     (Jam) :</label>
-                                <textarea type="form-control" class="form-control" placeholder=""
+                                <textarea type="form-control" class="form-control" placeholder="contoh : 4 jam"
                                     name="kedudukan_penulisan" id="kedudukan_penulisan" required></textarea>
                             </div>
                             <div class="form-group">
@@ -129,6 +129,7 @@
                                 (Jam)</th>
                             <th class="text-center">Link G-Drive Surat tugas </th>
                             <th class="text-center">Link G-Drive Jadwal kegiatan instruktur dan silabusnya</th>
+                            <th class="text-center">komentar</th>
                             <th class="text-center">action</th>
                         </tr>
                     </thead>
@@ -158,9 +159,17 @@
                             <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
+                            <td class="font-w600 font-size-sm text-center">
+                                <a href="#">{{ $row->komentar}}</a>
+                            </td>
                             <td width="250" style="text-align: center;">
+                                <form action="{{url('edit5d/'.$row->id)}}" method="post" class="d-inline">
+                                    @csrf
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
+                                </form>
                                 <form action="{{url('hapus5d/'.$row->id)}}" method="post" class="d-inline">
-                                    
+
                                     @csrf
                                     <button type="submit" class="btn btn-sm btn-alt-danger"><i
                                             class="fa fa-trash"></i></button>

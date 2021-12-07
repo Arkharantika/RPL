@@ -702,7 +702,7 @@ class TadraftController extends Controller
             'judul' => $request->judul,
             'nama_lembaga' => $request->nama_alamat,
             'kedudukan' => $request->kedudukan,
-            'kedudukan_penulisan' => $request->kedudukan_penulisan,
+            // 'kedudukan_penulisan' => $request->kedudukan_penulisan,
             'jadwal' => $request->jadwal,
             'sertifikat' => $request->sertifikat,
         ]);
@@ -1246,6 +1246,438 @@ class TadraftController extends Controller
             'komentar' => $request->komentar
         ]);
         return back()->with('message','Data Berhasil dikomentari !!');
+        // return back()->withInput();
+    
+    }
+
+    
+    public function edit2a($id){
+        
+        $datanya = dua_a::where('id',$id)->get()->first();
+        $idnya = $id;
+        return view('ngedit2a',compact('datanya','idnya'));
+    }
+    public function ubah2a(Request $request,$id){
+        
+        // return $request;
+        // // return $id;
+
+        dua_a::where('id',$id)->update([
+            // 'nim' => $nimnya,
+            'gelar_tahun' => $request->gelar,
+            'jurusan' => $request->jurusan,
+            'nama_alamat_telp' => $request->nama_univ,
+            'sks' => $request->sks,
+            'judul_skripsi' => $request->judul,
+            'nama_pem' => $request->nama_pem,
+            'ijazah' => $request->ijazah,
+            'transkrip' => $request->transkrip,
+        ]);
+        return redirect('PresensiSeminarKP')->with('message','Data Berhasil Diubah !!');
+        // return back()->withInput();
+    
+    }
+
+    public function edit2b($id){
+        
+        $datanya = dua_b::where('id',$id)->get()->first();
+        $idnya = $id;
+        return view('ngedit2b',compact('datanya','idnya'));
+    }
+    public function ubah2b(Request $request,$id){
+        
+        // return $request;
+        // // return $id;
+
+        dua_b::where('id',$id)->update([
+            // 'nim' => $nimnya,
+            'jenis_pendidikan' => $request->jenis,
+            'waktu' => $request->waktu,
+            'nama_alamat_telp' => $request->nama_alamat,
+            'materi' => $request->materi,
+            'lamanya' => $request->lama,
+            'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        return redirect('dua/b')->with('message','Data Berhasil Diubah !!');
+        // return back()->withInput();
+    
+    }
+
+    public function edit2c($id){
+        
+        $datanya = dua_c::where('id',$id)->get()->first();
+        $idnya = $id;
+        return view('ngedit2c',compact('datanya','idnya'));
+    }
+
+    public function ubah2c(Request $request,$id){
+        
+        // return $request;
+        // // return $id;
+
+        dua_c::where('id',$id)->update([
+            // 'nim' => $nimnya,
+            'jenis_pendidikan' => $request->jenis,
+            'waktu' => $request->waktu,
+            'nama_alamat_telp' => $request->nama_alamat,
+            'materi' => $request->materi,
+            'lamanya' => $request->lama,
+            'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        return redirect('dua/c')->with('message','Data Berhasil Diubah !!');
+        // return back()->withInput();
+    
+    }
+
+    public function edit3a($id){
+        
+        $datanya = tiga_a::where('id',$id)->get()->first();
+        $idnya = $id;
+        return view('ngedit3a',compact('datanya','idnya'));
+    }
+
+    public function ubah3a(Request $request,$id){
+        
+        // return $request;
+        // // return $id;
+
+        tiga_a::where('id',$id)->update([
+            // 'nim' => $nimnya,
+            'bentuk_kegiatan' => $request->jenis,
+            'waktu' => $request->waktu,
+            'nama_alamat_telp' => $request->nama_alamat,
+            'judul' => $request->materi,
+            'daftar' => $request->lama,
+            // 'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        return redirect('tiga/a')->with('message','Data Berhasil Diubah !!');
+        // return back()->withInput();
+    
+    }
+
+    public function edit3b($id){
+        
+        $datanya = tiga_b::where('id',$id)->get()->first();
+        $idnya = $id;
+        return view('ngedit3b',compact('datanya','idnya'));
+    }
+
+    public function ubah3b(Request $request,$id){
+        
+        // return $request;
+        // // return $id;
+
+        tiga_b::where('id',$id)->update([
+            // 'nim' => $nimnya,
+            'bentuk_kegiatan' => $request->jenis,
+            'waktu' => $request->waktu,
+            'nama_alamat_telp' => $request->nama_alamat,
+            'judul' => $request->materi,
+            'daftar' => $request->lama,
+            // 'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        return redirect('tiga/b')->with('message','Data Berhasil Diubah !!');
+        // return back()->withInput();
+    
+    }
+
+    public function edit4a($id){
+        
+        $datanya = empat_a::where('id',$id)->get()->first();
+        $idnya = $id;
+        return view('ngedit4a',compact('datanya','idnya'));
+    }
+
+    public function ubah4a(Request $request,$id){
+        
+        // return $request;
+        // // return $id;
+
+        empat_a::where('id',$id)->update([
+            // 'nim' => $nimnya,
+            'jenis_bidang' => $request->jenis,
+            'waktu' => $request->waktu,
+            'nama_alamat_telp' => $request->nama_alamat,
+            'jabatan' => $request->materi,
+            'uraian' => $request->lama,
+            // 'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        return redirect('empat/a')->with('message','Data Berhasil Diubah !!');
+        // return back()->withInput();
+    
+    }
+
+    public function edit4b($id){
+        
+        $datanya = empat_b::where('id',$id)->get()->first();
+        $idnya = $id;
+        return view('ngedit4b',compact('datanya','idnya'));
+    }
+
+    public function ubah4b(Request $request,$id){
+        
+        // return $request;
+        // // return $id;
+
+        empat_b::where('id',$id)->update([
+            // 'nim' => $nimnya,
+            'jenis_bidang' => $request->jenis,
+            'waktu' => $request->waktu,
+            'nama_alamat_telp' => $request->nama_alamat,
+            'jabatan' => $request->materi,
+            'uraian' => $request->lama,
+            // 'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        return redirect('empat/b')->with('message','Data Berhasil Diubah !!');
+        // return back()->withInput();
+    
+    }
+
+    public function edit5a($id){
+        
+        $datanya = lima_a::where('id',$id)->get()->first();
+        $idnya = $id;
+        return view('ngedit5a',compact('datanya','idnya'));
+    }
+
+    public function ubah5a(Request $request,$id){
+        
+        // return $request;
+        // // return $id;
+
+        lima_a::where('id',$id)->update([
+            // 'nim' => $nimnya,
+            'topik' => $request->topik,
+            'judul' => $request->judul,
+            'nama_lembaga' => $request->nama_alamat,
+            'kedudukan' => $request->kedudukan,
+            'kedudukan_penulisan' => $request->kedudukan_penulisan,
+            'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        return redirect('lima/a')->with('message','Data Berhasil Diubah !!');
+        // return back()->withInput();
+    
+    }
+
+    public function edit5b($id){
+        
+        $datanya = lima_b::where('id',$id)->get()->first();
+        $idnya = $id;
+        return view('ngedit5b',compact('datanya','idnya'));
+    }
+
+    public function ubah5b(Request $request,$id){
+        
+        // return $request;
+        // // return $id;
+
+        lima_b::where('id',$id)->update([
+            // 'nim' => $nimnya,
+            'topik' => $request->topik,
+            'judul' => $request->judul,
+            'nama_lembaga' => $request->nama_alamat,
+            'kedudukan' => $request->kedudukan,
+            // 'kedudukan_penulisan' => $request->kedudukan_penulisan,
+            'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        return redirect('lima/b')->with('message','Data Berhasil Diubah !!');
+        // return back()->withInput();
+    
+    }
+
+    public function edit5c($id){
+        
+        $datanya = lima_c::where('id',$id)->get()->first();
+        $idnya = $id;
+        return view('ngedit5c',compact('datanya','idnya'));
+    }
+
+    public function ubah5c(Request $request,$id){
+        
+        // return $request;
+        // // return $id;
+
+        lima_c::where('id',$id)->update([
+            // 'nim' => $nimnya,
+            'judul' => $request->judul,
+            'waktu' => $request->waktu,
+            'nama_lembaga' => $request->nama_alamat,
+            'jumlah' => $request->kedudukan,
+            'jenis' => $request->kedudukan_penulisan,
+            'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        return redirect('lima/c')->with('message','Data Berhasil Diubah !!');
+        // return back()->withInput();
+    
+    }
+
+    public function edit5d($id){
+        
+        $datanya = lima_d::where('id',$id)->get()->first();
+        $idnya = $id;
+        return view('ngedit5d',compact('datanya','idnya'));
+    }
+
+    public function ubah5d(Request $request,$id){
+        
+        // return $request;
+        // // return $id;
+
+        lima_d::where('id',$id)->update([
+            // 'nim' => $nimnya,
+            'jenis' => $request->judul,
+            'waktu' => $request->waktu,
+            'nama_lembaga' => $request->nama_alamat,
+            'jumlah' => $request->kedudukan,
+            'lamanya' => $request->kedudukan_penulisan,
+            'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        return redirect('lima/d')->with('message','Data Berhasil Diubah !!');
+        // return back()->withInput();
+    
+    }
+
+    public function edit5e($id){
+        
+        $datanya = lima_e::where('id',$id)->get()->first();
+        $idnya = $id;
+        return view('ngedit5e',compact('datanya','idnya'));
+    }
+
+    public function ubah5e(Request $request,$id){
+        
+        // return $request;
+        // // return $id;
+
+        lima_e::where('id',$id)->update([
+            // 'nim' => $nimnya,
+            'topik' => $request->judul,
+            'judul' => $request->waktu,
+            'jenis' => $request->nama_alamat,
+            // 'jumlah' => $request->kedudukan,
+            // 'lamanya' => $request->kedudukan_penulisan,
+            'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        return redirect('lima/e')->with('message','Data Berhasil Diubah !!');
+        // return back()->withInput();
+    
+    }
+
+    public function edit5f($id){
+        
+        $datanya = lima_f::where('id',$id)->get()->first();
+        $idnya = $id;
+        return view('ngedit5f',compact('datanya','idnya'));
+    }
+
+    public function ubah5f(Request $request,$id){
+        
+        // return $request;
+        // // return $id;
+
+        lima_f::where('id',$id)->update([
+            // 'nim' => $nimnya,
+            'judul' => $request->judul,
+            'bidang' => $request->waktu,
+            'jumlah' => $request->nama_alamat,
+            // 'jumlah' => $request->kedudukan,
+            // 'lamanya' => $request->kedudukan_penulisan,
+            'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        return redirect('lima/f')->with('message','Data Berhasil Diubah !!');
+        // return back()->withInput();
+    
+    }
+
+    public function edit6a($id){
+        
+        $datanya = enam_a::where('id',$id)->get()->first();
+        $idnya = $id;
+        return view('ngedit6a',compact('datanya','idnya'));
+    }
+
+    public function ubah6a(Request $request,$id){
+        
+        // return $request;
+        // // return $id;
+
+        enam_a::where('id',$id)->update([
+            // 'nim' => $nimnya,
+            'jenis_pendidikan' => $request->judul,
+            'waktu' => $request->waktu,
+            'nama_alamat_telp' => $request->nama_alamat,
+            // 'jumlah' => $request->kedudukan,
+            // 'lamanya' => $request->kedudukan_penulisan,
+            'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        return redirect('enam/a')->with('message','Data Berhasil Diubah !!');
+        // return back()->withInput();
+    
+    }
+
+    public function edit6b($id){
+        
+        $datanya = enam_b::where('id',$id)->get()->first();
+        $idnya = $id;
+        return view('ngedit6b',compact('datanya','idnya'));
+    }
+
+    public function ubah6b(Request $request,$id){
+        
+        // return $request;
+        // // return $id;
+
+        enam_b::where('id',$id)->update([
+            // 'nim' => $nimnya,
+            'nama_organisasi' => $request->judul,
+            // 'waktu' => $request->waktu,
+            'nama_alamat_telp' => $request->nama_alamat,
+            'kedudukan' => $request->kedudukan,
+            'lamanya' => $request->kedudukan_penulisan,
+            'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        return redirect('enam/b')->with('message','Data Berhasil Diubah !!');
+        // return back()->withInput();
+    
+    }
+
+    public function edit6c($id){
+        
+        $datanya = enam_c::where('id',$id)->get()->first();
+        $idnya = $id;
+        return view('ngedit6c',compact('datanya','idnya'));
+    }
+
+    public function ubah6c(Request $request,$id){
+        
+        // return $request;
+        // // return $id;
+
+        enam_c::where('id',$id)->update([
+            // 'nim' => $nimnya,
+            'bentuk' => $request->judul,
+            'instansi' => $request->waktu,
+            'tahun' => $request->nama_alamat,
+            // 'kedudukan' => $request->kedudukan,
+            'lamanya' => $request->kedudukan_penulisan,
+            'jadwal' => $request->jadwal,
+            'sertifikat' => $request->sertifikat,
+        ]);
+        return redirect('enam/c')->with('message','Data Berhasil Diubah !!');
         // return back()->withInput();
     
     }

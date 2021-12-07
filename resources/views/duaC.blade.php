@@ -38,36 +38,40 @@
                         <div class="tab-pane active" id="wizard-validation-classic-step1" role="tabpanel">
 
                             <div class="form-group">
-                                <label class="form-label"><i class="bx bx-caret-right"></i>Jenis Pendidikan / Pelatihan Kerja Formal  :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="jenis" id="jenis"
-                                    required></textarea>
+                                <label class="form-label"><i class="bx bx-caret-right"></i>Jenis Pendidikan / Pelatihan
+                                    Kerja Formal :</label>
+                                <textarea type="form-control" class="form-control" placeholder="contoh : Seminar Nasional" name="jenis"
+                                    id="jenis" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Waktu Pelaksanaan :</label>
-                                <textarea type="form-control" class="form-control" placeholder="hai" name="waktu"
+                                <textarea type="form-control" class="form-control" placeholder="contoh : 18 Oktober 2018" name="waktu"
                                     id="waktu" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Nama & Alamat
-                                Penyelenggara
-                                (No. Telpon, Fax, E-mail) :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="nama_alamat" id="nama_alamat"
-                                    required></textarea>
+                                    Penyelenggara
+                                    (No. Telpon, Fax, E-mail) :</label>
+                                <textarea type="form-control" class="form-control" placeholder="contoh : LPPMP, UNS" name="nama_alamat"
+                                    id="nama_alamat" required></textarea>
                             </div>
                             <div class="form-group">
-                                <label class="form-label"><i class="bx bx-caret-right"></i>Materi Pendidikan / Pelatihan Kerja Formal :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="materi" id="materi"
-                                    required></textarea>
+                                <label class="form-label"><i class="bx bx-caret-right"></i>Materi Pendidikan / Pelatihan
+                                    Kerja Formal :</label>
+                                <textarea type="form-control" class="form-control" placeholder="contoh : 
+- Akuntabilitas pemberlajaran di perguruan tinggi" name="materi"
+                                    id="materi" required></textarea>
                             </div>
                             <div class="form-group">
-                                <label class="form-label"><i class="bx bx-caret-right"></i>Lamanya Pendidikan / Pelatihan Kerja (jam) :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="lama"
-                                    id="lama" required></textarea>
+                                <label class="form-label"><i class="bx bx-caret-right"></i>Lamanya Pendidikan /
+                                    Pelatihan Kerja (jam) :</label>
+                                <textarea type="form-control" class="form-control" placeholder="contoh : 4 jam" name="lama" id="lama"
+                                    required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Link G-Drive Jadwal :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="jadwal" id="jadwal"
-                                    required></textarea>
+                                <textarea type="form-control" class="form-control" placeholder="" name="jadwal"
+                                    id="jadwal" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Link G-Drive Sertifikat
@@ -123,6 +127,7 @@
                             <th class="text-center">Lamanya Pendidikan</th>
                             <th class="text-center">Link G-Drive Jadwal</th>
                             <th class="text-center">Link G-Drive Sertifikat</th>
+                            <th class="text-center">komentar</th>
                             <th class="text-center">action</th>
                         </tr>
                     </thead>
@@ -152,7 +157,15 @@
                             <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
+                            <td class="font-w600 font-size-sm text-center">
+                                <a href="#">{{ $row->komentar}}</a>
+                            </td>
                             <td width="250" style="text-align: center;">
+                                <form action="{{url('edit2c/'.$row->id)}}" method="post" class="d-inline">
+                                    @csrf
+                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                            class="fa fa-edit"></i></button>
+                                </form>
                                 <form action="{{url('hapus2c/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
                                     <button type="submit" class="btn btn-sm btn-alt-danger"><i

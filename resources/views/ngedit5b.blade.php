@@ -30,7 +30,7 @@
                 </ul>
                 <!-- END Step Tabs -->
 
-                <form method="post" action="b/kirim" enctype="multipart/form-data">
+                <form method="post" action="{{url('ubah5b/'.$idnya)}}" enctype="multipart/form-data">
                     @csrf
 
                     <div class="block-content block-content-full tab-content" style="min-height: 265px;">
@@ -41,26 +41,26 @@
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Topik Paparan Pada Pertemuan
                                     Teknis :</label>
-                                <textarea type="form-control" class="form-control" placeholder="contoh : International Conference on Industrial, Mechanical, Electrical, and Chemical Engineering (ICIMECE) 2018" name="topik"
+                                <textarea type="form-control" class="form-control" placeholder="{{$datanya->topik}}" name="topik"
                                     id="topik" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Judul Paparan
                                     Pada Pertemuan Teknis :</label>
-                                <textarea type="form-control" class="form-control" placeholder="contoh : “Green & Renewable Energy Technology for Sustainable Development” " name="judul"
+                                <textarea type="form-control" class="form-control" placeholder="{{$datanya->judul}}" name="judul"
                                     id="judul" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Nama Lembaga
                                     Pemberi Tugas
                                     :</label>
-                                <textarea type="form-control" class="form-control" placeholder="contoh : Fakultas Teknik, UNS" name="nama_alamat"
+                                <textarea type="form-control" class="form-control" placeholder="{{$datanya->nama_lembaga}}" name="nama_alamat"
                                     id="nama_alamat" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Kedudukan di Dalam Paparan
                                     :</label>
-                                <textarea type="form-control" class="form-control" placeholder="contoh : Moderator dan reviewer Bidang Teknik Elektro" name="kedudukan"
+                                <textarea type="form-control" class="form-control" placeholder="{{$datanya->kedudukan}}" name="kedudukan"
                                     id="kedudukan" required></textarea>
                             </div>
                             <!-- <div class="form-group">
@@ -72,14 +72,14 @@
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Link G-Drive Surat Keputusan
                                     Penugasan :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="jadwal"
+                                <textarea type="form-control" class="form-control" placeholder="{{$datanya->jadwal}}" name="jadwal"
                                     id="jadwal" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Link G-Drive Sertifikat
                                     resmi/ucapan terima kasih
                                     :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="sertifikat"
+                                <textarea type="form-control" class="form-control" placeholder="{{$datanya->sertifikat}}" name="sertifikat"
                                     id="sertifikat" required></textarea>
                             </div>
 
@@ -92,8 +92,8 @@
                             <!-- INI TOMBOLNYAA !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
                             <div class="form-group">
                                 <div class="d-grid">
-                                    <button type="submit" id="covid" class="btn btn-danger btn-lg px-5"><i
-                                            class="bx bx-sun"></i>Tambah</button>
+                                    <button type="submit" id="covid" class="btn btn-success btn-lg px-5"><i
+                                            class="bx bx-sun"></i>Ubah Data</button>
                                 </div>
                             </div>
                         </div>
@@ -106,81 +106,6 @@
             </div>
             <!-- END Validation Wizard Classic -->
 
-        </div>
-    </div>
-
-    <div class="block">
-        <!-- Judul Halaman -->
-        <div class="block-header block-header-default">
-            <h3 class="block-title">List Pendidikan Yang Pernah di tempuh</h3>
-        </div>
-        <div class="block-content block-content-full">
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered text-center js-dataTable-edited">
-                    <thead>
-                        <tr>
-                            <th class="d-none d-sm-table-cell text-center">No</th>
-                            <th class="d-none d-sm-table-cell text-center">Topik Paparan Pada Pertemuan Teknis
-                            </th>
-                            <th class="text-center">Judul Paparan
-                                Pada Pertemuan Teknis</th>
-                            <th class="text-center">Nama Lembaga
-                                Pemberi Tugas</th>
-                            <th class="text-center">Kedudukan di
-                                Dalam Paparan</th>
-                            <!-- <th class="text-center">Lamanya Pendidikan</th> -->
-                            <th class="text-center">Link G-Drive Jadwal</th>
-                            <th class="text-center">Link G-Drive Sertifikat</th>
-                            <th class="text-center">komentar</th>
-                            <th class="text-center">action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $no=1; $idx=0; ?>
-                        @foreach ($datanya as $row)
-                        <tr>
-                            <td class="d-none d-sm-table-cell text-center font-size-sm text-center">{{ $no++}}</td>
-                            <td class="d-none d-sm-table-cell text-center font-size-sm text-center">
-                                {{ $row->topik}}
-                            </td>
-                            <td class="font-w600 font-size-sm text-center">
-                                <a href="#">{{ $row->judul}}</a>
-                            </td>
-                            <td class="font-size-sm text-center">
-                                {{ $row->nama_lembaga}}
-                            </td>
-                            <td class="font-w600 font-size-sm text-center">
-                                <a href="#">{{ $row->kedudukan}}</a>
-                            </td>
-                            <!-- <td class="font-w600 font-size-sm text-center">
-                                <a href="#">{{ $row->kedudukan_penulisan}}</a>
-                            </td> -->
-                            <td class="font-w600 font-size-sm text-center">
-                                <a href="#">{{ $row->jadwal}}</a>
-                            </td>
-                            <td class="font-w600 font-size-sm text-center">
-                                <a href="#">{{ $row->sertifikat}}</a>
-                            </td>
-                            <td class="font-w600 font-size-sm text-center">
-                                <a href="#">{{ $row->komentar}}</a>
-                            </td>
-                            <td width="250" style="text-align: center;">
-                                <form action="{{url('edit5b/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
-                                            class="fa fa-edit"></i></button>
-                                </form>
-                                <form action="{{url('hapus5b/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-danger"><i
-                                            class="fa fa-trash"></i></button>
-                                </form>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
         </div>
     </div>
 

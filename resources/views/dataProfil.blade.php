@@ -69,7 +69,9 @@
                         <td width="250" style="text-align: center;">
                         <form action="{{url('komentar2a/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
+                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
+                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
+                                    id="komentar" required rows="4"></textarea>
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -137,7 +139,9 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar2b/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
+                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
+                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
+                                    id="komentar" required rows="4"></textarea>
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -204,7 +208,9 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar2c/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
+                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
+                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
+                                    id="komentar" required rows="4"></textarea>
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -271,7 +277,9 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar3a/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
+                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
+                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
+                                    id="komentar" required rows="4"></textarea>
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -338,7 +346,9 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar3b/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
+                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
+                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
+                                    id="komentar" required rows="4"></textarea>
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -405,7 +415,9 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar4a/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
+                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
+                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
+                                    id="komentar" required rows="4"></textarea>
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -472,7 +484,9 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar4b/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
+                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
+                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
+                                    id="komentar" required rows="4"></textarea>
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -539,7 +553,9 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar5a/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
+                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
+                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
+                                    id="komentar" required rows="4"></textarea>
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -607,7 +623,9 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar5b/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
+                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
+                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
+                                    id="komentar" required rows="4"></textarea>
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -672,7 +690,9 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar5c/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
+                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
+                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
+                                    id="komentar" required rows="4"></textarea>
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -739,7 +759,9 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar5d/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
+                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
+                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
+                                    id="komentar" required rows="4"></textarea>
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -807,7 +829,9 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar5e/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
+                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
+                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
+                                    id="komentar" required rows="4"></textarea>
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -873,7 +897,9 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar5f/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
+                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
+                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
+                                    id="komentar" required rows="4"></textarea>
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -943,7 +969,9 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar6a/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
+                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
+                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
+                                    id="komentar" required rows="4"></textarea>
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -1013,7 +1041,9 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar6b/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
+                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
+                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
+                                    id="komentar" required rows="4"></textarea>
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>
@@ -1082,7 +1112,9 @@
                             <td width="250" style="text-align: center;">
                             <form action="{{url('komentar6c/'.$row->id)}}" method="post" class="d-inline">
                                     @csrf
-                                    <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}">
+                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
+                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
+                                    id="komentar" required rows="4"></textarea>
                                     <button type="submit" class="btn btn-sm btn-alt-warning"><i
                                             class="fa fa-edit"></i></button>
                                 </form>

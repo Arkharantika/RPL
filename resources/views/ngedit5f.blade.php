@@ -29,7 +29,7 @@
                 </ul>
                 <!-- END Step Tabs -->
 
-                <form method="post" action="f/kirim" enctype="multipart/form-data">
+                <form method="post" action="{{url('ubah5f/'.$idnya)}}" enctype="multipart/form-data">
                     @csrf
 
                     <div class="block-content block-content-full tab-content" style="min-height: 265px;">
@@ -40,19 +40,18 @@
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Judul Buku / Monograf /
                                     Standard and Code / Patent / Proceeding Seminar :</label>
-                                <textarea type="form-control" class="form-control" placeholder="contoh : “Self-Tunable Piezoelectric Energy Harvester”, ISBN 978-3-659-33664-5, LAP Lambert Academic Publishing, Feb. 2, 2013. 
-Link: https://www.amazon.com/Self-Tunable-Piezoelectric-Energy-Harvester/dp/3659336645" name="judul"
+                                <textarea type="form-control" class="form-control" placeholder="{{$datanya->judul}}" name="judul"
                                     id="judul" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Bidang Profesi :</label>
-                                <textarea type="form-control" class="form-control" placeholder="contoh : Teknik Elektro" name="waktu"
+                                <textarea type="form-control" class="form-control" placeholder="{{$datanya->bidang}}" name="waktu"
                                     id="waktu" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Jumlah Halaman
                                     :</label>
-                                <textarea type="form-control" class="form-control" placeholder="contoh : 124 hal" name="nama_alamat"
+                                <textarea type="form-control" class="form-control" placeholder="{{$datanya->jumlah}}" name="nama_alamat"
                                     id="nama_alamat" required></textarea>
                             </div>
                             <!-- <div class="form-group">
@@ -71,7 +70,7 @@ Link: https://www.amazon.com/Self-Tunable-Piezoelectric-Energy-Harvester/dp/3659
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Link G-Drive Nomer contoh
                                     atau fotokopi buku/monograf/standar dan code/patent/proceeding seminar dll
                                     :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="jadwal"
+                                <textarea type="form-control" class="form-control" placeholder="{{$datanya->jadwal}}" name="jadwal"
                                     id="jadwal" required></textarea>
                             </div>
                             <!-- <div class="form-group">
@@ -91,8 +90,8 @@ Link: https://www.amazon.com/Self-Tunable-Piezoelectric-Energy-Harvester/dp/3659
                             <!-- INI TOMBOLNYAA !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
                             <div class="form-group">
                                 <div class="d-grid">
-                                    <button type="submit" id="covid" class="btn btn-danger btn-lg px-5"><i
-                                            class="bx bx-sun"></i>Tambah</button>
+                                    <button type="submit" id="covid" class="btn btn-success btn-lg px-5"><i
+                                            class="bx bx-sun"></i>Ubah Data</button>
                                 </div>
                             </div>
                         </div>
@@ -105,81 +104,6 @@ Link: https://www.amazon.com/Self-Tunable-Piezoelectric-Energy-Harvester/dp/3659
             </div>
             <!-- END Validation Wizard Classic -->
 
-        </div>
-    </div>
-
-    <div class="block">
-        <!-- Judul Halaman -->
-        <div class="block-header block-header-default">
-            <h3 class="block-title">List Pendidikan Yang Pernah di tempuh</h3>
-        </div>
-        <div class="block-content block-content-full">
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered text-center js-dataTable-edited">
-                    <thead>
-                        <tr>
-                            <th class="d-none d-sm-table-cell text-center">No</th>
-                            <th class="d-none d-sm-table-cell text-center">Judul Buku / Monograf / Standard and Code /
-                                Patent / Proceeding Seminar
-                            </th>
-                            <th class="text-center">Bidang Profesi</th>
-                            <th class="text-center">Jumlah Halaman</th>
-                            <!-- <th class="text-center">Jumlah Peserta</th>
-                            <th class="text-center">Lamanya Kegiatan Instruktur
-                                (Jam)</th> -->
-                            <th class="text-center">Link G-Drive Nomor contoh atau fotokopi jurnal/majalah/surat kabar
-                            </th>
-                            <!-- <th class="text-center">Link G-Drive Jadwal kegiatan instruktur dan silabusnya</th> -->
-                            <th class="text-center">komentar</th>
-                            <th class="text-center">action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $no=1; $idx=0; ?>
-                        @foreach ($datanya as $row)
-                        <tr>
-                            <td class="d-none d-sm-table-cell text-center font-size-sm text-center">{{ $no++}}</td>
-                            <td class="d-none d-sm-table-cell text-center font-size-sm text-center">
-                                {{ $row->judul}}
-                            </td>
-                            <td class="font-w600 font-size-sm text-center">
-                                <a href="#">{{ $row->bidang }}
-                            <td class="font-size-sm text-center">
-                                {{ $row->jumlah}}
-                            </td>
-                            <!-- <td class="font-w600 font-size-sm text-center">
-                                <a href="#">{{ $row->jumlah}}</a>
-                            </td>
-                            <td class="font-w600 font-size-sm text-center">
-                                <a href="#">{{ $row->lamanya}}</a>
-                            </td> -->
-                            <td class="font-w600 font-size-sm text-center">
-                                <a href="#">{{ $row->jadwal}}</a>
-                            </td>
-                            <td class="font-w600 font-size-sm text-center">
-                                <a href="#">{{ $row->komentar}}</a>
-                            </td>
-                            <!-- <td class="font-w600 font-size-sm text-center">
-                                <a href="#">{{ $row->sertifikat}}</a>
-                            </td> -->
-                            <td width="250" style="text-align: center;">
-                                <form action="{{url('edit5f/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
-                                            class="fa fa-edit"></i></button>
-                                </form>
-                                <form action="{{url('hapus5f/'.$row->id)}}" method="post" class="d-inline">
-
-                                    @csrf
-                                    <button type="submit" class="btn btn-sm btn-alt-danger"><i
-                                            class="fa fa-trash"></i></button>
-                                </form>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
         </div>
     </div>
 

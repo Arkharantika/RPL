@@ -28,7 +28,6 @@
                     </li>
                 </ul>
                 <!-- END Step Tabs -->
-
                 <form method="post" action="dua/a" enctype="multipart/form-data">
                     @csrf
 
@@ -40,35 +39,36 @@
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Gelar Yang Diperoleh dan
                                     Bulan/Tahun Kelulusan :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="gelar" id="gelar"
+                                <textarea type="form-control" class="form-control" placeholder="contoh : Sarjana Teknik" name="gelar" id="gelar"
                                     required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Jurusan/ Bidang :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="jurusan"
+                                <textarea type="form-control" class="form-control" placeholder="contoh : Teknik Elektro" name="jurusan"
                                     id="jurusan" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Jumlah SKS :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="sks" id="sks"
+                                <textarea type="form-control" class="form-control" placeholder="contoh : 144" name="sks" id="sks"
                                     required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Judul Tugas Akhir :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="judul" id="judul"
+                                <textarea type="form-control" class="form-control" placeholder="contoh : 3D Segmentation of Bone Structure on CT Image" name="judul" id="judul"
                                     required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Nama Pembimbing dan Alamat
                                     (jika ada) :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="nama_pem"
+                                <textarea type="form-control" class="form-control" placeholder="contoh : Dr. I Ketut Eddy Purnama, ST.,MT. dan Diah Puspito Wulandari, ST.,M.Sc." name="nama_pem"
                                     id="nama_pem" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="form-label"><i class="bx bx-caret-right"></i>Nama & Alamat
                                     Perguruan Tinggi
                                     (No. Telpon, Fax, E-mail) :</label>
-                                <textarea type="form-control" class="form-control" placeholder="" name="nama_univ"
+                                <textarea type="form-control" class="form-control" placeholder="contoh : Institut Teknologi Sepuluh Nopember Surabaya
+Jl. Raya ITS, Keputih, Sukolilo, Surabaya, Jawa Timur 60111" name="nama_univ"
                                     id="nama_univ" required></textarea>
                             </div>
                             <div class="form-group">
@@ -130,6 +130,7 @@
                         <th class="text-center">Nama Pembimbing dan Alamat (jika ada)</th>
                         <th class="text-center">link G-Drive Ijazah</th>
                         <th class="text-center">link G-Drive Transkrip</th>
+                        <th class="text-center">Komentar</th>
                         <th class="text-center">Action</th>
                             <!-- <th>Updated at</th> -->
                         </tr>
@@ -162,8 +163,16 @@
                         <td class="font-w600 font-size-sm text-center">
                             <a href="#">{{ $row->transkrip}}</a>
                         </td>
+                        <td class="font-w600 font-size-sm text-center">
+                            <a href="#">{{ $row->komentar}}</a>
+                        </td>
                         </td>
                         <td width="250" style="text-align: center;">
+                            <form action="{{url('edit2a/'.$row->id)}}" method="post" class="d-inline">
+                                @csrf
+                                <button type="submit" class="btn btn-sm btn-alt-warning"><i
+                                        class="fa fa-edit"></i></button>
+                            </form>
                             <form action="{{url('hapus2a/'.$row->id)}}" method="post" class="d-inline">
                                 @csrf
                                 <button type="submit" class="btn btn-sm btn-alt-danger"><i
