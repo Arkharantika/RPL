@@ -44,12 +44,16 @@
                 <h1 class="h3 text-white font-w700 mb-10">{{$dosen->nama_dosen}}</h1>
                 <!-- END Personal -->
                 @endif
+
+                @if (Auth::user()->can('mahasiswa'))
                 <!-- Actions -->
                 <a href="{{url('ta/wisuda/cetakprofil/'.Auth::user()->id)}}"
                     class="btn btn-rounded btn-hero btn-sm btn-alt-secondary mb-5">
                     Cetak Profil
                 </a>
                 <!-- END Actions -->
+                @endif
+
             </div>
         </div>
     </div>

@@ -344,6 +344,7 @@ Route::get('ta/wisuda/dataprofil/{id}','TadraftController@dataProfil')->name('da
 
 Route::get('pembimbing/cetakprofil/{id}','TadraftController@pembimbingcetakProfil')->name('pembimbingcetakProfil');
 Route::get('pembimbing/dataprofil/{id}','TadraftController@pembimbingdataProfil')->name('pembimbingdataProfil');
+Route::get('pembimbing/dataprofilpenguji/{id}','TadraftController@pembimbingdataProfilpenguji')->name('pembimbingdataProfilpenguji');
 
 Route::post('dua/a','TadraftController@duaA')->name('duaA');
 

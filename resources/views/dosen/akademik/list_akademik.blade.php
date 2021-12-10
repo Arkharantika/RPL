@@ -54,11 +54,11 @@
                         <td>
                             <a href="{{url('pembimbing/cetakprofil', $row->nim)}}"
                                 class="btn btn-sm btn-alt-primary mr-5 mb-5" data-toggle="tooltip" data-placement="top"
-                                title="" data-original-title="Lihat"><i class="fa fa-eye"></i></a>
+                                title="" data-original-title="Lihat Draft RPL"><i class="fa fa-eye"></i></a>
 
                             <a href="{{url('pembimbing/dataprofil', $row->nim)}}"
                                 class="btn btn-sm btn-alt-warning mb-5 mr-5" data-toggle="tooltip" data-placement="top"
-                                title="" data-original-title="Perbarui"><i class="fa fa-edit"></i></a>
+                                title="" data-original-title="Cek Data RPL"><i class="fa fa-edit"></i></a>
 
                         </td>
                     </tr>

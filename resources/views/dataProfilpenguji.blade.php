@@ -6,9 +6,9 @@
 <!-- Page Content -->
 <div class="content">
     @if(session()->get('message'))
-        <div class="alert alert-info alert-dismissable mt-20" role="alert">
-            <strong> {{ session()->get('message') }}  </strong> 
-        </div>
+    <div class="alert alert-info alert-dismissable mt-20" role="alert">
+        <strong> {{ session()->get('message') }} </strong>
+    </div>
     @endif
 
     <h1 class="text-center">Data RPL {{$mahasiswa->nama_mhs}}</h1>
@@ -23,62 +23,54 @@
                 <table class="table table-striped table-bordered text-center js-dataTable-edited">
                     <thead>
                         <tr>
-                        <th class="d-none d-sm-table-cell text-center">No</th>
-                        <th class="d-none d-sm-table-cell text-center">Gelar Yang Diperoleh dan Bulan/Tahun Kelulusan
-                        </th>
-                        <th class="text-center">Jurusan/ Bidang</th>
-                        <th class="text-center">Nama & Alamat Perguruan Tinggi (No. Telpon, Fax, E-mail)</th>
-                        <!-- <th class="text-center">Jurusan</th> -->
-                        <th class="text-center">Jumlah SKS</th>
-                        <th class="text-center">Judul Tugas Akhir</th>
-                        <th class="text-center">Nama Pembimbing dan Alamat (jika ada)</th>
-                        <th class="text-center">link G-Drive Ijazah</th>
-                        <th class="text-center">link G-Drive Transkrip</th>
-                        <th class="text-center">komentar</th>
+                            <th class="d-none d-sm-table-cell text-center">No</th>
+                            <th class="d-none d-sm-table-cell text-center">Gelar Yang Diperoleh dan Bulan/Tahun
+                                Kelulusan
+                            </th>
+                            <th class="text-center">Jurusan/ Bidang</th>
+                            <th class="text-center">Nama & Alamat Perguruan Tinggi (No. Telpon, Fax, E-mail)</th>
+                            <!-- <th class="text-center">Jurusan</th> -->
+                            <th class="text-center">Jumlah SKS</th>
+                            <th class="text-center">Judul Tugas Akhir</th>
+                            <th class="text-center">Nama Pembimbing dan Alamat (jika ada)</th>
+                            <th class="text-center">link G-Drive Ijazah</th>
+                            <th class="text-center">link G-Drive Transkrip</th>
+                            <!-- <th class="text-center">komentar</th> -->
                             <!-- <th>Updated at</th> -->
                         </tr>
                     </thead>
                     <tbody>
                         <?php $no=1; $idx=0; ?>
                         @foreach ($datanya as $row)
-                    <tr>
-                        <td class="d-none d-sm-table-cell text-center font-size-sm text-center">{{ $no++}}</td>
-                        <td class="d-none d-sm-table-cell text-center font-size-sm text-center">{{ $row->gelar_tahun}}
-                        </td>
-                        <td class="font-w600 font-size-sm text-center">
-                            <a href="#">{{ $row->jurusan}}</a>
-                        </td>
-                        <td class="font-size-sm text-center">
-                            {{ $row->nama_alamat_telp}}
-                        </td>
-                        <td class="font-w600 font-size-sm text-center">
-                            <a href="#">{{ $row->sks}}</a>
-                        </td>
-                        <td class="font-w600 font-size-sm text-center">
-                            <a href="#">{{ $row->judul_skripsi}}</a>
-                        </td>
-                        <td class="font-w600 font-size-sm text-center">
-                            <a href="#">{{ $row->nama_pem}}</a>
-                        </td>
-                        <td class="font-w600 font-size-sm text-center">
-                            <a href="#">{{ $row->ijazah}}</a>
-                        </td>
-                        <td class="font-w600 font-size-sm text-center">
-                            <a href="#">{{ $row->transkrip}}</a>
-                        </td>
-                        </td>
-                        <td width="250" style="text-align: center;">
-                        <form action="{{url('komentar2a/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
-                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
-                                    id="komentar" required rows="4"></textarea>
-                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
-                                            class="fa fa-edit"></i></button>
-                                </form>
-                        </td>
-                    </tr>
-                    @endforeach
+                        <tr>
+                            <td class="d-none d-sm-table-cell text-center font-size-sm text-center">{{ $no++}}</td>
+                            <td class="d-none d-sm-table-cell text-center font-size-sm text-center">
+                                {{ $row->gelar_tahun}}
+                            </td>
+                            <td class="font-w600 font-size-sm text-center">
+                                <a href="#">{{ $row->jurusan}}</a>
+                            </td>
+                            <td class="font-size-sm text-center">
+                                {{ $row->nama_alamat_telp}}
+                            </td>
+                            <td class="font-w600 font-size-sm text-center">
+                                <a href="#">{{ $row->sks}}</a>
+                            </td>
+                            <td class="font-w600 font-size-sm text-center">
+                                <a href="#">{{ $row->judul_skripsi}}</a>
+                            </td>
+                            <td class="font-w600 font-size-sm text-center">
+                                <a href="#">{{ $row->nama_pem}}</a>
+                            </td>
+                            <td class="font-w600 font-size-sm text-center">
+                                <a href="#">{{ $row->ijazah}}</a>
+                            </td>
+                            <td class="font-w600 font-size-sm text-center">
+                                <a href="#">{{ $row->transkrip}}</a>
+                            </td>
+                            </td>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -108,7 +100,7 @@
                             <th class="text-center">Lamanya Pendidikan</th>
                             <th class="text-center">Link G-Drive Jadwal</th>
                             <th class="text-center">Link G-Drive Sertifikat</th>
-                            <th class="text-center">komentar</th>
+                            <!-- <th class="text-center">komentar</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -136,16 +128,6 @@
                             </td>
                             <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->sertifikat}}</a>
-                            </td>
-                            <td width="250" style="text-align: center;">
-                            <form action="{{url('komentar2b/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
-                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
-                                    id="komentar" required rows="4"></textarea>
-                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
-                                            class="fa fa-edit"></i></button>
-                                </form>
                             </td>
                         </tr>
                         @endforeach
@@ -177,7 +159,7 @@
                             <th class="text-center">Lamanya Pendidikan</th>
                             <th class="text-center">Link G-Drive Jadwal</th>
                             <th class="text-center">Link G-Drive Sertifikat</th>
-                            <th class="text-center">komentar</th>
+                            <!-- <th class="text-center">komentar</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -205,16 +187,6 @@
                             </td>
                             <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->sertifikat}}</a>
-                            </td>
-                            <td width="250" style="text-align: center;">
-                            <form action="{{url('komentar2c/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
-                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
-                                    id="komentar" required rows="4"></textarea>
-                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
-                                            class="fa fa-edit"></i></button>
-                                </form>
                             </td>
                         </tr>
                         @endforeach
@@ -246,7 +218,7 @@
                             <th class="text-center">Daftar Bacaan</th>
                             <!-- <th class="text-center">Link G-Drive Jadwal</th> -->
                             <th class="text-center">Link G-Drive Sertifikat</th>
-                            <th class="text-center">komentar</th>
+                            <!-- <th class="text-center">komentar</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -275,16 +247,6 @@
                             <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
-                            <td width="250" style="text-align: center;">
-                            <form action="{{url('komentar3a/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
-                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
-                                    id="komentar" required rows="4"></textarea>
-                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
-                                            class="fa fa-edit"></i></button>
-                                </form>
-                            </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -305,7 +267,8 @@
                     <thead>
                         <tr>
                             <th class="d-none d-sm-table-cell text-center">No</th>
-                            <th class="d-none d-sm-table-cell text-center">Bentuk Kegiatan Pembelajaran Sehubungan Dengan Penugasan Kerja
+                            <th class="d-none d-sm-table-cell text-center">Bentuk Kegiatan Pembelajaran Sehubungan
+                                Dengan Penugasan Kerja
                             </th>
                             <th class="text-center">Waktu Pelaksanaan</th>
                             <th class="text-center">Nama & Alamat
@@ -315,7 +278,7 @@
                             <th class="text-center">Daftar Bacaan</th>
                             <!-- <th class="text-center">Link G-Drive Jadwal</th> -->
                             <th class="text-center">Link G-Drive Sertifikat</th>
-                            <th class="text-center">komentar</th>
+                            <!-- <th class="text-center">komentar</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -344,16 +307,6 @@
                             <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
-                            <td width="250" style="text-align: center;">
-                            <form action="{{url('komentar3b/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
-                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
-                                    id="komentar" required rows="4"></textarea>
-                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
-                                            class="fa fa-edit"></i></button>
-                                </form>
-                            </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -366,7 +319,8 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">4A Pengalaman Praktik Keinsinyuran pada lembaga / institusi formal (memiliki badan hukum)</h3>
+            <h3 class="block-title">4A Pengalaman Praktik Keinsinyuran pada lembaga / institusi formal (memiliki badan
+                hukum)</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -384,7 +338,7 @@
                             <th class="text-center">Uraian Tugas Keinsinyuran</th>
                             <!-- <th class="text-center">Link G-Drive Jadwal</th> -->
                             <th class="text-center">Link G-Drive Sertifikat</th>
-                            <th class="text-center">komentar</th>
+                            <!-- <th class="text-center">komentar</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -413,16 +367,6 @@
                             <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
-                            <td width="250" style="text-align: center;">
-                            <form action="{{url('komentar4a/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
-                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
-                                    id="komentar" required rows="4"></textarea>
-                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
-                                            class="fa fa-edit"></i></button>
-                                </form>
-                            </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -435,7 +379,8 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">4B Pengalaman Praktik Keinsinyuran pada lembaga / institusi non-formal (tidak ada badan hukum)</h3>
+            <h3 class="block-title">4B Pengalaman Praktik Keinsinyuran pada lembaga / institusi non-formal (tidak ada
+                badan hukum)</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -453,7 +398,7 @@
                             <th class="text-center">Uraian Tugas Keinsinyuran </th>
                             <!-- <th class="text-center">Link G-Drive Jadwal</th> -->
                             <th class="text-center">Link G-Drive Sertifikat</th>
-                            <th class="text-center">komentar</th>
+                            <!-- <th class="text-center">komentar</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -482,16 +427,6 @@
                             <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
-                            <td width="250" style="text-align: center;">
-                            <form action="{{url('komentar4b/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
-                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
-                                    id="komentar" required rows="4"></textarea>
-                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
-                                            class="fa fa-edit"></i></button>
-                                </form>
-                            </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -504,7 +439,8 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">5A Paparan dan Laporan Internal; Konsultasi; dan Inspeksi pada praktik keinsinyuran</h3>
+            <h3 class="block-title">5A Paparan dan Laporan Internal; Konsultasi; dan Inspeksi pada praktik keinsinyuran
+            </h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -522,7 +458,7 @@
                             <th class="text-center">Kedudukan di Dalam Paparan</th>
                             <th class="text-center">Link G-Drive Surat keputusan penugasan</th>
                             <th class="text-center">Link G-Drive -Executive summary atau fotokopi laporan teknis</th>
-                            <th class="text-center">komentar</th>
+                            <!-- <th class="text-center">komentar</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -551,16 +487,6 @@
                             <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
-                            <td width="250" style="text-align: center;">
-                            <form action="{{url('komentar5a/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
-                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
-                                    id="komentar" required rows="4"></textarea>
-                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
-                                            class="fa fa-edit"></i></button>
-                                </form>
-                            </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -573,7 +499,8 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">5B Paparan Pada Pertemuan Teknis (Pemateri dalam pertemuan profesi keinsinyuran)</h3>
+            <h3 class="block-title">5B Paparan Pada Pertemuan Teknis (Pemateri dalam pertemuan profesi keinsinyuran)
+            </h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -592,7 +519,7 @@
                             <!-- <th class="text-center">Lamanya Pendidikan</th> -->
                             <th class="text-center">Link G-Drive Jadwal</th>
                             <th class="text-center">Link G-Drive Sertifikat</th>
-                            <th class="text-center">action</th>
+                            <!-- <th class="text-center">action</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -620,16 +547,6 @@
                             </td>
                             <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->sertifikat}}</a>
-                            </td>
-                            <td width="250" style="text-align: center;">
-                            <form action="{{url('komentar5b/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
-                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
-                                    id="komentar" required rows="4"></textarea>
-                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
-                                            class="fa fa-edit"></i></button>
-                                </form>
                             </td>
                         </tr>
                         @endforeach
@@ -659,7 +576,7 @@
                             <th class="text-center">Jenis Pertemuan Profesi (Lokal, Nasional, Internasional)</th>
                             <th class="text-center">Link G-Drive Jadwal</th>
                             <th class="text-center">Link G-Drive Sertifikat</th>
-                            <th class="text-center">komentar</th>
+                            <!-- <th class="text-center">komentar</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -688,16 +605,6 @@
                             <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
-                            <td width="250" style="text-align: center;">
-                            <form action="{{url('komentar5c/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
-                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
-                                    id="komentar" required rows="4"></textarea>
-                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
-                                            class="fa fa-edit"></i></button>
-                                </form>
-                            </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -710,7 +617,8 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">5D Pengajar / Pelatih / Instruktur / Dosen Tamu pada pembelajaran atau pelatihan keinsinyuran</h3>
+            <h3 class="block-title">5D Pengajar / Pelatih / Instruktur / Dosen Tamu pada pembelajaran atau pelatihan
+                keinsinyuran</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -728,7 +636,7 @@
                                 (Jam)</th>
                             <th class="text-center">Link G-Drive Surat tugas </th>
                             <th class="text-center">Link G-Drive Jadwal kegiatan instruktur dan silabusnya</th>
-                            <th class="text-center">komentar</th>
+                            <!-- <th class="text-center">komentar</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -756,16 +664,6 @@
                             </td>
                             <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->sertifikat}}</a>
-                            </td>
-                            <td width="250" style="text-align: center;">
-                            <form action="{{url('komentar5d/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
-                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
-                                    id="komentar" required rows="4"></textarea>
-                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
-                                            class="fa fa-edit"></i></button>
-                                </form>
                             </td>
                         </tr>
                         @endforeach
@@ -799,7 +697,7 @@
                             <th class="text-center">Link G-Drive Nomor contoh atau fotokopi jurnal/majalah/surat kabar
                             </th>
                             <!-- <th class="text-center">Link G-Drive Jadwal kegiatan instruktur dan silabusnya</th> -->
-                            <th class="text-center">komentar</th>
+                            <!-- <th class="text-center">komentar</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -827,16 +725,6 @@
                             <!-- <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td> -->
-                            <td width="250" style="text-align: center;">
-                            <form action="{{url('komentar5e/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
-                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
-                                    id="komentar" required rows="4"></textarea>
-                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
-                                            class="fa fa-edit"></i></button>
-                                </form>
-                            </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -857,7 +745,8 @@
                     <thead>
                         <tr>
                             <th class="d-none d-sm-table-cell text-center">No</th>
-                            <th class="d-none d-sm-table-cell text-center">Judul Buku / Monograf / Standard and Code / Patent / Proceeding Seminar
+                            <th class="d-none d-sm-table-cell text-center">Judul Buku / Monograf / Standard and Code /
+                                Patent / Proceeding Seminar
                             </th>
                             <th class="text-center">Bidang Profesi</th>
                             <th class="text-center">Jumlah Halaman</th>
@@ -867,7 +756,7 @@
                             <th class="text-center">Link G-Drive Nomor contoh atau fotokopi jurnal/majalah/surat kabar
                             </th>
                             <!-- <th class="text-center">Link G-Drive Jadwal kegiatan instruktur dan silabusnya</th> -->
-                            <th class="text-center">komentar</th>
+                            <!-- <th class="text-center">komentar</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -895,16 +784,6 @@
                             <!-- <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td> -->
-                            <td width="250" style="text-align: center;">
-                            <form action="{{url('komentar5f/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
-                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
-                                    id="komentar" required rows="4"></textarea>
-                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
-                                            class="fa fa-edit"></i></button>
-                                </form>
-                            </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -917,7 +796,8 @@
     <div class="block">
         <!-- Judul Halaman -->
         <div class="block-header block-header-default">
-            <h3 class="block-title">6A Sebagai Pakar atau Nara sumber pada bidang keinsinyuran (saksi ahli, tim ahli, dewan pakar dst)</h3>
+            <h3 class="block-title">6A Sebagai Pakar atau Nara sumber pada bidang keinsinyuran (saksi ahli, tim ahli,
+                dewan pakar dst)</h3>
         </div>
         <div class="block-content block-content-full">
             <div class="table-responsive">
@@ -926,20 +806,20 @@
                         <tr>
                             <th class="d-none d-sm-table-cell text-center">No</th>
                             <th class="d-none d-sm-table-cell text-center">Jenis / Kedudukan Sebagai
-                                    Pakar /
-                                    Nara Sumber
+                                Pakar /
+                                Nara Sumber
                             </th>
                             <th class="text-center">Waktu dan Tempat
-                                    Sebagai Pakar/Nara Sumber</th>
+                                Sebagai Pakar/Nara Sumber</th>
                             <th class="text-center">>Nama Lembaga
-                                    Pemberi Tugas</th>
+                                Pemberi Tugas</th>
                             <!-- <th class="text-center">Jumlah Peserta</th>
                             <th class="text-center">Lamanya Kegiatan Instruktur
                                 (Jam)</th> -->
                             <th class="text-center">Link G-Drive Nomor contoh atau fotokopi jurnal/majalah/surat kabar
                             </th>
                             <th class="text-center">Link G-Drive Jadwal kegiatan instruktur dan silabusnya</th>
-                            <th class="text-center">komentar</th>
+                            <!-- <th class="text-center">komentar</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -966,16 +846,6 @@
                             </td>
                             <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->sertifikat}}</a>
-                            </td>
-                            <td width="250" style="text-align: center;">
-                            <form action="{{url('komentar6a/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
-                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
-                                    id="komentar" required rows="4"></textarea>
-                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
-                                            class="fa fa-edit"></i></button>
-                                </form>
                             </td>
                         </tr>
                         @endforeach
@@ -1010,8 +880,8 @@
                             <th class="text-center">Link G-Drive Surat penugasan
                             </th>
                             <th class="text-center">Link G-Drive Sertifikat/surat
-                                    keterangan atau keanggotaan</th>
-                            <th class="text-center">komentar</th>
+                                keterangan atau keanggotaan</th>
+                            <!-- <th class="text-center">komentar</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -1038,16 +908,6 @@
                             </td>
                             <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->sertifikat}}</a>
-                            </td>
-                            <td width="250" style="text-align: center;">
-                            <form action="{{url('komentar6b/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
-                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
-                                    id="komentar" required rows="4"></textarea>
-                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
-                                            class="fa fa-edit"></i></button>
-                                </form>
                             </td>
                         </tr>
                         @endforeach
@@ -1081,8 +941,8 @@
                             <th class="text-center">Link G-Drive Surat penugasan
                             </th>
                             <th class="text-center">Link G-Drive Sertifikat/surat
-                                    keterangan atau keanggotaan</th>
-                            <th class="text-center">Komentar</th>
+                                keterangan atau keanggotaan</th>
+                            <!-- <th class="text-center">Komentar</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -1110,16 +970,6 @@
                             <td class="font-w600 font-size-sm text-center">
                                 <a href="#">{{ $row->sertifikat}}</a>
                             </td>
-                            <td width="250" style="text-align: center;">
-                            <form action="{{url('komentar6c/'.$row->id)}}" method="post" class="d-inline">
-                                    @csrf
-                                    <!-- <input type="text" class="form-control form-control-lg" name="komentar"  value="{{ $row->komentar}}"> -->
-                                    <textarea type="form-control" class="form-control" placeholder="{{ $row->komentar}}" name="komentar"
-                                    id="komentar" required rows="4"></textarea>
-                                    <button type="submit" class="btn btn-sm btn-alt-warning"><i
-                                            class="fa fa-edit"></i></button>
-                                </form>
-                            </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -1133,43 +983,43 @@
 <!-- Top Modal -->
 <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="modal-top" aria-hidden="true">
     <div class="modal-dialog modal-dialog-top" role="document">
-    <form action="{{route('admin.users.destroy','delete')}}" method="post">
-        <div class="modal-content">
-            <div class="block block-themed block-transparent mb-0">
-                <div class="block-header bg-primary-dark">
-                    <h3 class="block-title">Delete Confirmation</h3>
-                    <div class="block-options">
-                        <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
-                            <i class="si si-close"></i>
-                        </button>
+        <form action="{{route('admin.users.destroy','delete')}}" method="post">
+            <div class="modal-content">
+                <div class="block block-themed block-transparent mb-0">
+                    <div class="block-header bg-primary-dark">
+                        <h3 class="block-title">Delete Confirmation</h3>
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                                <i class="si si-close"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="block-content">
+                        @csrf
+                        @method('DELETE')
+                        <p class="text-center">Are You Sure Want To Delete ?</p>
+                        <input type="hidden" name="user_id" id="user_id" value="">
                     </div>
                 </div>
-                <div class="block-content">
-                    @csrf
-                    @method('DELETE')
-                    <p class="text-center">Are You Sure Want To Delete ?</p>
-                    <input type="hidden" name="user_id" id="user_id" value="">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-alt-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-alt-danger">
+                        <i class="fa fa-check"></i> Yes, Delete
+                    </button>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-alt-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-alt-danger">
-                    <i class="fa fa-check"></i> Yes, Delete
-                </button>
-            </div>
-        </div>
-    </form>
+        </form>
     </div>
 </div>
 <!-- END Top Modal -->
 @endsection
 @section('js_after')
 <script>
-     $('#delete').on('show.bs.modal', function (event) {
-      var button = $(event.relatedTarget) 
-      var user_id = button.data('userid') 
-      var modal = $(this)
-      modal.find('.block-content #user_id').val(user_id);
-})
+    $('#delete').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget)
+        var user_id = button.data('userid')
+        var modal = $(this)
+        modal.find('.block-content #user_id').val(user_id);
+    })
 </script>
 @endsection

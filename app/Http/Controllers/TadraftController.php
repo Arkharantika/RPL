@@ -425,6 +425,57 @@ class TadraftController extends Controller
         // return $pdf->stream();
     }
 
+    public function pembimbingdataProfilpenguji($id)
+    {
+        // $data = User::where('nim',$id)->get();
+        // return $data;
+
+        $no = 0;
+        $kampretos = $id;
+        $mahasiswa = Mahasiswa::where('nim',$kampretos)->get()->last();
+        $datanya = dua_a::where('nim',$kampretos)->get();
+        $duaA = dua_a::where('nim',$kampretos)->get();
+        $duaB = dua_b::where('nim',$kampretos)->get();
+        $duaC = dua_c::where('nim',$kampretos)->get();
+        $tigaA = tiga_a::where('nim',$kampretos)->get();
+        $tigaB = tiga_b::where('nim',$kampretos)->get();
+        $empatA = empat_a::where('nim',$kampretos)->get();
+        $empatB = empat_b::where('nim',$kampretos)->get();
+        $limaA = lima_a::where('nim',$kampretos)->get();
+        $limaB = lima_b::where('nim',$kampretos)->get();
+        $limaC = lima_c::where('nim',$kampretos)->get();
+        $limaD = lima_d::where('nim',$kampretos)->get();
+        $limaE = lima_e::where('nim',$kampretos)->get();
+        $limaF = lima_f::where('nim',$kampretos)->get();
+        $enamA = enam_a::where('nim',$kampretos)->get();
+        $enamB = enam_b::where('nim',$kampretos)->get();
+        $enamC = enam_c::where('nim',$kampretos)->get();
+        $config = [
+            'format' => 'A4-L', // Portrait
+             'margin_left'          => 10,
+             'margin_right'         => 10,
+             'margin_top'           => 15,
+            // 'margin_bottom'        => 25,
+          ];
+
+          $monthList = array(
+              'Jan' => 'Januari',
+              'Feb' => 'Februari',
+              'Mar' => 'Maret',
+              'Apr' => 'April',
+              'May' => 'Mei',
+              'Jun' => 'Juni',
+              'Jul' => 'Juli',
+              'Aug' => 'Agustus',
+              'Sep' => 'September',
+              'Oct' => 'Oktober',
+              'Nov' => 'November',
+              'Dec' => 'Desember',
+          );
+          return view('dataProfilpenguji',compact('datanya','enamC','enamB','enamA','limaF','limaE','limaD','limaC','limaB','limaA','empatB','empatA','tigaB','tigaA','duaC','duaB','no','duaA','mahasiswa','monthList'),[],$config);
+        // return $pdf->stream();
+    }
+
     public function duaA(Request $request){
 
         $mhs = Mahasiswa::mhs(Auth::user()->nim)->first();
